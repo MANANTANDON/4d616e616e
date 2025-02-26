@@ -55,7 +55,13 @@ export default function Home() {
             }}
           >
             <p className="text-xs dark:text-gray-400 text-gray-700">
-              IND: {time.toLocaleTimeString("en-IN", { hour12: true })}
+              IND:{" "}
+              {time
+                .toLocaleTimeString("en-GB", {
+                  timeZone: "Asia/Kolkata",
+                  hour12: true,
+                })
+                .replace(/(am|pm)/i, (match) => match.toUpperCase())}
             </p>
             <p className="text-xs dark:text-gray-400 text-gray-700">
               LON:{" "}
