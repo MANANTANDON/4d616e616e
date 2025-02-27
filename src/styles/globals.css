@@ -14,8 +14,14 @@
   }
 }
 
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+.websiteTitle {
+  font-weight: 800;
+  font-size: 52px;
+  font-style: italic;
+}
+
+@media (max-width: 425px) {
+  .websiteTitle {
+    font-size: 32px;
+  }
+}

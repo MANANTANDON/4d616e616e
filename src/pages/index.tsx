@@ -1,82 +1,50 @@
-"use client";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { TopContainer } from "@/components/Home/TopContainer";
+import Head from "next/head";
 
 export default function Home() {
-  const [time, setTime] = useState<Date | null>(null);
-
-  useEffect(() => {
-    setTime(new Date());
-
-    const interval = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  if (!time) return <div>Loading...</div>;
-
   return (
-    <div className="dark:bg-gray-950 bg-slate-100 h-screen p-4 ">
-      <div className="dark:bg-slate-800 bg-slate-200 rounded-md p-2 dark:text-white flex gap-4">
-        <div
-          className="inline-flex flex-none rounded-full border border-orange-300 bg-orange-100 p-4 sm:p-2 dark:border-orange-300/10 dark:bg-orange-400/10"
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            height: "40px",
-            width: "40px",
-          }}
-        >
-          <Image
-            src="/manan.jpeg"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            alt="Manan Tandon"
-          />
-        </div>
-        <div>
-          <p className="text-sm dark:text-gray-400 text-gray-700">
-            <span>Welcome to </span>
-            <span className="font-semibold dark:text-white">
-              Manan Tandon (manantandon.com){" "}
-            </span>
-            <span>website</span>
-          </p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              gap: "20px",
-            }}
-          >
-            <p className="text-xs dark:text-gray-400 text-gray-700">
-              IND:{" "}
-              {time
-                .toLocaleTimeString("en-GB", {
-                  timeZone: "Asia/Kolkata",
-                  hour12: true,
-                })
-                .replace(/(am|pm)/i, (match) => match.toUpperCase())}
-            </p>
-            <p className="text-xs dark:text-gray-400 text-gray-700">
-              LON:{" "}
-              {time
-                .toLocaleTimeString("en-GB", {
-                  timeZone: "Europe/London",
-                  hour12: true,
-                })
-                .replace(/(am|pm)/i, (match) => match.toUpperCase())}
-            </p>
-          </div>
-        </div>
+    <>
+      <Head>
+        <title>
+          Manan Tandon - Frontend Developer | React.js & Next.js Expert
+        </title>
+        <meta
+          name="description"
+          content="Welcome to the official website of Manan Tandon, a skilled Frontend Developer specializing in React.js and Next.js. Explore innovative UI/UX designs, performance-optimized web applications, and cutting-edge development solutions."
+        />
+        <meta
+          name="keywords"
+          content="Frontend Developer, React.js Developer, Next.js Developer, UI/UX, Web Development, SEO-friendly Websites, Manan Tandon, MananTandon, manantandon, manan, manan tandon"
+        />
+        <meta name="author" content="Manan Tandon" />
+        <meta
+          property="og:title"
+          content="Manan Tandon - Frontend Developer | React.js & Next.js Expert"
+        />
+        <meta
+          property="og:description"
+          content="Explore the work of Manan Tandon, a highly skilled React.js & Next.js developer specializing in high-performance, SEO-friendly web applications."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://your-website-url.com" />
+        <meta
+          property="og:image"
+          content="https://your-website-url.com/og-image.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Manan Tandon - Frontend Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Expert in React.js and Next.js development, delivering high-performance web applications."
+        />
+      </Head>
+      <div>
+        <TopContainer />
       </div>
-    </div>
+    </>
   );
 }
-
-//4d616e616e Portfolio
