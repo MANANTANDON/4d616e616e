@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Manan Tandon - Frontend Developer | React.js & Next.js Expert
-        </title>
+        <title>Manan Tandon (4d616e616e)</title>
         <meta
           name="description"
           content="Welcome to the official website of Manan Tandon, a skilled Frontend Developer specializing in React.js and Next.js. Explore innovative UI/UX designs, performance-optimized web applications, and cutting-edge development solutions."
@@ -18,10 +16,7 @@ export default function Home() {
           content="Frontend Developer, React.js Developer, Next.js Developer, UI/UX, Web Development, SEO-friendly Websites, Manan Tandon, MananTandon, manantandon, manan, manan tandon"
         />
         <meta name="author" content="Manan Tandon" />
-        <meta
-          property="og:title"
-          content="Manan Tandon - Frontend Developer | React.js & Next.js Expert"
-        />
+        <meta property="og:title" content="Manan Tandon (4d616e616e)" />
         <meta
           property="og:description"
           content="Explore the work of Manan Tandon, a highly skilled React.js & Next.js developer specializing in high-performance, SEO-friendly web applications."
