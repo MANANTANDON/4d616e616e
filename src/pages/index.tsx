@@ -22,16 +22,11 @@ export default function Home() {
           content="Explore the work of Manan Tandon, a highly skilled React.js & Next.js developer specializing in high-performance, SEO-friendly web applications."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://your-website-url.com" />
-        <meta
-          property="og:image"
-          content="https://your-website-url.com/og-image.jpg"
-        />
+        <meta property="og:url" content="https://manantandon.com" />
+        <meta property="og:image" content="/manan.png" />
+        <meta property="og:image:alt" content="Manan Tandon" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Manan Tandon - Frontend Developer"
-        />
+        <meta name="twitter:title" content="Manan Tandon (4d616e616e)" />
         <meta
           name="twitter:description"
           content="Expert in React.js and Next.js development, delivering high-performance web applications."
