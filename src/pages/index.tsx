@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Manan Tandon (4d616e616e)</title>
         <link rel="canonical" href="https://manantandon.com/" />
-        <link rel="icon" href="/manan.ico" />
+        <link rel="icon" href="/manancircle.ico" />
         <meta
           name="description"
           content="Welcome to the official website of Manan Tandon, a skilled Frontend Developer specializing in React.js and Next.js. Explore innovative UI/UX designs, performance-optimized web applications, and cutting-edge development solutions."
