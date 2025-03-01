@@ -35,7 +35,7 @@ export default function Home() {
         />
       </Head>
       <div>
-        <Layout>""</Layout>
+        <Layout>Manan Tandon</Layout>
       </div>
     </>
   );
