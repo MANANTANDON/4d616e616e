@@ -19,7 +19,10 @@ export const Header: React.FC = () => {
   };
   return (
     <>
-      <header style={{ zIndex: 1 }}>
+      <header
+        style={{ zIndex: 1 }}
+        className="sticky top-0 z-50 bg-white shadow-md p-4"
+      >
         <Box
           sx={{
             mt: -1,
