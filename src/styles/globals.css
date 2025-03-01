@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   position: absolute;
   overflow: hidden;
@@ -92,7 +92,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
