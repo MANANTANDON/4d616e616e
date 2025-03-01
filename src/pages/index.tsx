@@ -1,6 +1,6 @@
 import React from "react";
-import { TopContainer } from "@/components/Home/TopContainer";
 import Head from "next/head";
+import { Layout } from "@/components/Layout/Layout";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
         />
       </Head>
       <div>
-        <TopContainer />
+        <Layout>""</Layout>
       </div>
     </>
   );
