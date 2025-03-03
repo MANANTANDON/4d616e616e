@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { Box } from "@mui/material";
 import { CreditCard } from "@/components/Card/CreditCard";
-import { Layout } from "@/components/Layout/Layout";
 
 export default function Home() {
   return (
