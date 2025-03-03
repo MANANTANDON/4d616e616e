@@ -1,22 +1,19 @@
-import React, { ReactNode } from "react";
-import { Header } from "../Header/Header";
-import { Box } from "@mui/material";
+//REACT IMPORT
+import React from "react";
 
-export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
+//Components
+import { Header } from "@/components/Header/Header";
+
+//MUI IMPORTS
+import { Box, Typography } from "@mui/material";
+
+export const Layout: React.FC = () => {
   return (
     <>
-      <Box
-        sx={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1000, // Ensure it's above other elements
-          backgroundColor: "white", // Prevents transparency issues
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Optional for better UI
-        }}
-      >
-        <Header />
+      <Header />
+      <Box className="box">
+        <Typography className="fontFamily">manan.</Typography>
       </Box>
-      {children}
     </>
   );
 };
