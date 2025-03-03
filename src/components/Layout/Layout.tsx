@@ -17,7 +17,6 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
       >
         <Header />
       </Box>
-      <Aurora />
       {children}
     </>
   );

@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #f7f7f7;
   --foreground: #171717;
@@ -29,7 +36,7 @@ body {
 }
 
 .fontFamily {
-  font-family: "SF Pro" !important;
+  font-family: "Outfit" !important;
 }
 .websiteTitle {
   font-weight: 800;
