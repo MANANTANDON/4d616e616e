@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import { Box } from "@mui/material";
+import { CreditCard } from "@/components/Card/CreditCard";
 import { Layout } from "@/components/Layout/Layout";
 
 export default function Home() {
@@ -35,7 +37,20 @@ export default function Home() {
         />
       </Head>
       <div>
-        <Layout>Manan Tandon</Layout>
+        {/* <Layout> */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            mx: -1,
+            mt: -1,
+            height: "100vh",
+          }}
+        >
+          <CreditCard />
+        </Box>
+        {/* </Layout> */}
       </div>
     </>
   );
