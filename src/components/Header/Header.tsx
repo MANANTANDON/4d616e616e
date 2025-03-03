@@ -2,7 +2,6 @@ import { Apple, WifiRounded } from "@mui/icons-material";
 import { Box, Grid, Typography } from "@mui/material";
 import { GetCurrentDayAndTime } from "@/hooks/getCurrentDayAndTime";
 import React from "react";
-import { Charging } from "@/components/Misc/Charging";
 
 export const Header: React.FC = () => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
@@ -50,7 +49,6 @@ export const Header: React.FC = () => {
             }}
           >
             <WifiRounded fontSize="small" sx={{ color: "white" }} />
-            <Charging />
             <Typography className="menuFamily">
               {GetCurrentDayAndTime()}
             </Typography>
