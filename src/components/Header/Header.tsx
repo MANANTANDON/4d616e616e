@@ -1,84 +1,62 @@
-import { Box, Container, Tooltip, Typography } from "@mui/material";
+import { Apple, WifiRounded } from "@mui/icons-material";
+import { Box, Grid, Typography } from "@mui/material";
+import { GetCurrentDayAndTime } from "@/hooks/getCurrentDayAndTime";
 import React from "react";
+import { Charging } from "@/components/Misc/Charging";
 
 export const Header: React.FC = () => {
-  const routes = [
-    {
-      name: "Home",
-      route: "/",
-    },
-    {
-      name: "About",
-      route: "/about",
-    },
-  ];
-
-  const resumeButton = {
-    name: "Resumé",
-    route: "/",
-  };
+  const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
   return (
     <>
-      <header
-        style={{ zIndex: 1 }}
-        className="sticky top-0 z-50 bg-white shadow-md p-4"
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          mx: -1,
+          width: "100%",
+          display: { xs: "none", md: "flex" },
+          py: 0.4,
+        }}
+        className="menuGlass"
       >
-        <Box
-          sx={{
-            mt: -1,
-            mx: -1,
-            py: 1,
-            borderBottom: "0.7px solid lightgrey",
-            bgcolor: "#fff",
-          }}
-        >
-          <Container maxWidth="lg">
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Box sx={{ cursor: "pointer" }}>
-                <Tooltip arrow title="Manan Tandon">
-                  <Typography
-                    className="fontFamily"
-                    style={{ fontSize: "20px" }}
-                  >
-                    4d616e616e.
-                  </Typography>
-                </Tooltip>
-              </Box>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "flex" },
-                  gap: 7,
-                  alignItems: "center",
-                }}
-              >
-                {routes?.map((item, key) => (
-                  <Typography className="fontFamily" key={key}>
-                    {item?.name}
-                  </Typography>
-                ))}
-                <Typography
-                  sx={{
-                    px: 2,
-                    bgcolor: "#000",
-                    border: "1px solid lightgrey",
-                    color: "white",
-                    py: 0.5,
-                    borderRadius: "7px",
-                  }}
-                >
-                  {resumeButton?.name}
-                </Typography>
-              </Box>
-            </Box>
-          </Container>
-        </Box>
-      </header>
+        <Grid container>
+          <Grid
+            item
+            xs={6}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: 3,
+              pl: 2,
+            }}
+          >
+            <Apple fontSize="small" sx={{ color: "white" }} />
+            {LeftMenu.map((item, key) => (
+              <Typography key={key} className="menuFamily">
+                {item}
+              </Typography>
+            ))}
+          </Grid>
+          <Grid
+            item
+            xs={6}
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              gap: 3,
+              pr: 2,
+            }}
+          >
+            <WifiRounded fontSize="small" sx={{ color: "white" }} />
+            <Charging />
+            <Typography className="menuFamily">
+              {GetCurrentDayAndTime()}
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 };

@@ -1,7 +1,11 @@
+//REACT IMPORT
 import React from "react";
+
+//NEXTJS IMPORTS
 import Head from "next/head";
-import { Box } from "@mui/material";
-import { CreditCard } from "@/components/Card/CreditCard";
+
+//COMPONENTS IMPORTS
+import { Layout } from "@/components/Layout/Layout";
 
 export default function Home() {
   return (
@@ -36,20 +40,7 @@ export default function Home() {
         />
       </Head>
       <div>
-        {/* <Layout> */}
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mx: -1,
-            mt: -1,
-            height: "100vh",
-          }}
-        >
-          <CreditCard />
-        </Box>
-        {/* </Layout> */}
+        <Layout />
       </div>
     </>
   );
