@@ -1,6 +1,6 @@
 import { Apple, WifiRounded } from "@mui/icons-material";
 import { Box, Grid, Typography } from "@mui/material";
-import { GetCurrentDayAndTime } from "@/hooks/getCurrentDayAndTime";
+import { GetCurrentDayAndTime } from "@/hooks/GetCurrentDayAndTime";
 import React from "react";
 
 export const Header: React.FC = () => {
