@@ -1,6 +1,22 @@
 import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
+// Define the BatteryManager type
+interface BatteryManager extends EventTarget {
+  level: number;
+  charging: boolean;
+  addEventListener: (
+    type: "levelchange" | "chargingchange",
+    listener: (this: BatteryManager, ev: Event) => any
+  ) => void;
+}
+
+declare global {
+  interface Navigator {
+    getBattery?: () => Promise<BatteryManager>;
+  }
+}
+
 const useBatteryStatus = () => {
   const [batteryInfo, setBatteryInfo] = useState<{
     level: number | null;
@@ -9,15 +25,14 @@ const useBatteryStatus = () => {
 
   useEffect(() => {
     const getBatteryStatus = async () => {
-      if ("getBattery" in navigator) {
-        const battery = await (navigator as any).getBattery(); // Type assertion
+      if (navigator.getBattery) {
+        const battery = await navigator.getBattery(); // Now TypeScript recognizes it
 
         setBatteryInfo({
-          level: Math.round(battery.level * 100), // Convert decimal to percentage
-          charging: battery.charging, // True/False
+          level: Math.round(battery.level * 100),
+          charging: battery.charging,
         });
 
-        // Update when battery level or charging state changes
         battery.addEventListener("levelchange", () =>
           setBatteryInfo((prev) => ({
             ...prev,
