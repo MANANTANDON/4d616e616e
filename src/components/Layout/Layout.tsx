@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import { Header } from "../Header/Header";
-import { Aurora } from "../Header/Aurora";
 import { Box } from "@mui/material";
 
 export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
