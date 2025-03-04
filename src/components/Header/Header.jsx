@@ -30,7 +30,7 @@ export const Header = () => {
               pl: 2,
             }}
           >
-            <Apple fontSize="small" sx={{ color: "white" }} />
+            <Apple fontSize="small" sx={{ color: "black" }} />
             {LeftMenu.map((item, key) => (
               <Typography key={key} className="menuFamily">
                 {item}
@@ -48,7 +48,8 @@ export const Header = () => {
               pr: 2,
             }}
           >
-            <WifiRounded fontSize="small" sx={{ color: "white" }} />
+            <WifiRounded fontSize="small" sx={{ color: "black" }} />
+
             <Typography className="menuFamily">
               {GetCurrentDayAndTime()}
             </Typography>

@@ -3,17 +3,15 @@ import React from "react";
 
 //Components
 import { Header } from "@/components/Header/Header";
+import { TimeCard } from "../Misc/TimeCard";
 
 //MUI IMPORTS
-import { Box, Typography } from "@mui/material";
 
 export const Layout = () => {
   return (
     <>
       <Header />
-      <Box className="box">
-        <Typography className="fontFamily">manan.</Typography>
-      </Box>
+      <TimeCard />
     </>
   );
 };
