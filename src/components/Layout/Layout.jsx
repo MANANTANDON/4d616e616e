@@ -7,7 +7,7 @@ import { Header } from "@/components/Header/Header";
 //MUI IMPORTS
 import { Box, Typography } from "@mui/material";
 
-export const Layout: React.FC = () => {
+export const Layout = () => {
   return (
     <>
       <Header />

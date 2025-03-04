@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { GetCurrentDayAndTime } from "@/hooks/GetCurrentDayAndTime";
 import React from "react";
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
   return (
     <>
