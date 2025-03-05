@@ -54,6 +54,10 @@ body {
   place-items: center;
 }
 
+.simpleFont {
+  font-family: "Outfit" !important;
+}
+
 .fontFamily {
   font-family: "Outfit Medium" !important;
   font-size: 46px !important;
