@@ -24,7 +24,15 @@ export const TimeCard = () => {
   }
 
   return (
-    <Box sx={{ mt: "30.39px", mx: -1, pt: 2, pl: 2 }}>
+    <Box
+      sx={{
+        mt: "30.39px",
+        mx: -1,
+        pt: 2,
+        pl: 2,
+        display: { xs: "none", md: "flex" },
+      }}
+    >
       <Box
         sx={{
           height: "160px",
