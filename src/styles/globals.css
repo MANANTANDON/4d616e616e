@@ -57,7 +57,14 @@ body {
 .fontFamily {
   font-family: "Outfit Medium" !important;
   font-size: 46px !important;
-  color: #3e7b27;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: fit-content;
+  border-radius: 12px;
+  margin: auto;
 }
 
 .menuFamily {
