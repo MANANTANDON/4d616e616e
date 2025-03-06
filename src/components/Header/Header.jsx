@@ -2,6 +2,7 @@ import { Apple, WifiRounded } from "@mui/icons-material";
 import { Box, Divider, Grid, Menu, MenuItem, Typography } from "@mui/material";
 import { GetCurrentDayAndTime } from "@/hooks/GetCurrentDayAndTime";
 import React, { useState } from "react";
+import { Charging } from "../Misc/Charging";
 
 export const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -180,6 +181,7 @@ export const Header = () => {
               pr: 2,
             }}
           >
+            <Charging />
             <WifiRounded fontSize="small" sx={{ color: "black" }} />
 
             <Typography className="menuFamily">

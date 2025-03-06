@@ -89,6 +89,10 @@ body {
   font-weight: bold;
 }
 
+.sfpro {
+  font-family: "SF Pro" !important;
+}
+
 .menuGlass {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
