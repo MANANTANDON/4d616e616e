@@ -1,9 +1,10 @@
-import { Apple, WifiRounded } from "@mui/icons-material";
-import { Box, Divider, Grid, Menu, MenuItem, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { GetCurrentDayAndTime } from "@/hooks/GetCurrentDayAndTime";
-import React, { useState } from "react";
+import React from "react";
 import { Charging } from "../Misc/Charging";
 import { AppleMenu } from "./AppleMenu";
+import { WifiMenu } from "./WifiMenu";
+import { HeaderTimeCard } from "../Misc/HeaderTimeCard";
 
 export const Header = () => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
@@ -34,7 +35,11 @@ export const Header = () => {
           >
             <AppleMenu />
             {LeftMenu.map((item, key) => (
-              <Typography key={key} className="menuFamily">
+              <Typography
+                key={key}
+                className="menuFamily"
+                sx={{ fontSize: "14px" }}
+              >
                 {item}
               </Typography>
             ))}
@@ -46,15 +51,17 @@ export const Header = () => {
               display: "flex",
               justifyContent: "flex-end",
               alignItems: "center",
-              gap: 3,
+              gap: 2,
               pr: 2,
             }}
           >
+            {/* Wifi */}
+            <WifiMenu />
+            {/* Charing */}
             <Charging />
-            <WifiRounded fontSize="small" sx={{ color: "black" }} />
-
-            <Typography className="menuFamily">
-              {GetCurrentDayAndTime()}
+            {/* Time */}
+            <Typography className="menuFamily" sx={{ fontSize: "14px" }}>
+              <HeaderTimeCard />
             </Typography>
           </Grid>
         </Grid>

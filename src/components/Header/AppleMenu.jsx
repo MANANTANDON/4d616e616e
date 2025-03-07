@@ -1,4 +1,3 @@
-import { Apple, Close, Height } from "@mui/icons-material";
 import { Box, Divider, Menu, Modal, Typography } from "@mui/material";
 import React, { useState } from "react";
 
@@ -15,6 +14,17 @@ const style = {
   boxShadow: 24,
   borderRadius: "12px",
   p: 1,
+};
+
+const styleTwo = {
+  color: "#ffffff",
+  px: 1,
+  fontSize: "14px",
+  "&:hover": {
+    bgcolor: "rgb(73,119,220)",
+    borderRadius: "4px",
+    cursor: "default",
+  },
 };
 export const AppleMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -39,15 +49,17 @@ export const AppleMenu = () => {
   };
   return (
     <>
-      <Apple
-        fontSize="small"
-        sx={{ color: "black" }}
+      <Typography
+        className="sfpro"
+        sx={{ cursor: "default", fontSize: "14px" }}
+        onClick={handleClick}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      />
+      >
+        􀣺
+      </Typography>
       <Menu
         id="apple-menu"
         anchorEl={anchorEl}
@@ -61,7 +73,7 @@ export const AppleMenu = () => {
             mt: "6px",
             ml: "-10px",
             py: "0px !important ",
-            width: "300px",
+            width: "250px",
             bgcolor: "rgba( 0, 0, 0, 0.5 )",
             boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
             backdropFilter: "blur( 20px )",
@@ -77,90 +89,27 @@ export const AppleMenu = () => {
       >
         <Box sx={{ p: 0.7 }}>
           <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
+            sx={styleTwo}
             className="simpleFont"
             onClick={handleModalOpen}
           >
             About Manan
           </Typography>
           <Divider sx={{ my: 1, borderColor: "#ffffff50", px: 2 }} />
-          <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
-            className="simpleFont"
-          >
+          <Typography sx={styleTwo} className="simpleFont">
             System Settings...
           </Typography>
-          <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
-            className="simpleFont"
-          >
+          <Typography sx={styleTwo} className="simpleFont">
             App Store
           </Typography>
           <Divider sx={{ my: 1, borderColor: "#ffffff50", px: 2 }} />
-          <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
-            className="simpleFont"
-          >
+          <Typography sx={styleTwo} className="simpleFont">
             Sleep
           </Typography>
-          <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
-            className="simpleFont"
-          >
+          <Typography sx={styleTwo} className="simpleFont">
             Restart...
           </Typography>
-          <Typography
-            sx={{
-              color: "#ffffff",
-              px: 1,
-              "&:hover": {
-                bgcolor: "rgb(73,119,220)",
-                borderRadius: "4px",
-                cursor: "default",
-              },
-            }}
-            className="simpleFont"
-          >
+          <Typography sx={styleTwo} className="simpleFont">
             Shutdown...
           </Typography>
         </Box>

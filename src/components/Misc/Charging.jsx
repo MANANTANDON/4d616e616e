@@ -47,11 +47,17 @@ export const Charging = () => {
   return (
     <div>
       {level !== null ? (
-        <Typography className="sfpro">
-          {level}%{charging ? "􀢋" : "􀺸"}
+        <Typography
+          className="sfpro"
+          sx={{ fontSize: "14px", display: "flex", alignItems: "center" }}
+        >
+          <span style={{ fontSize: "12px" }}>{level}% </span>
+          {charging ? "􀢋" : "􀺸"}
         </Typography>
       ) : (
-        <Typography>Battery info not available</Typography>
+        <Typography sx={{ fontSize: "14px" }}>
+          Battery info not available
+        </Typography>
       )}
     </div>
   );
