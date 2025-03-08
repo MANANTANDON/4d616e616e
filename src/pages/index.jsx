@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>Manan Tandon (4d616e616e)</title>
         <link rel="canonical" href="https://manantandon.com/" />
-        <link rel="icon" href="/manancircle.ico" />
+        <link rel="icon" href="/manan.ico" />
         <meta
           name="description"
           content="Welcome to the official website of Manan Tandon, a skilled Frontend Developer specializing in React.js and Next.js. Explore innovative UI/UX designs, performance-optimized web applications, and cutting-edge development solutions."
@@ -30,7 +30,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://manantandon.com" />
-        <meta property="og:image" content="/manan.png" />
+        <meta property="og:image" content="/manan.ico" />
         <meta property="og:image:alt" content="Manan Tandon" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Manan Tandon (4d616e616e)" />

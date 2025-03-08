@@ -5,6 +5,8 @@ import React from "react";
 import { Header } from "@/components/Header/Header";
 import { TimeCard } from "@/components/Misc/TimeCard";
 import { Mobile } from "@/components/Misc/Mobile";
+import { Folder } from "../Misc/Folder";
+import { Box } from "@mui/material";
 
 //MUI IMPORTS
 
@@ -13,7 +15,10 @@ export const Layout = () => {
     <>
       <Mobile />
       <Header />
-      <TimeCard />
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <TimeCard />
+        <Folder />
+      </Box>
     </>
   );
 };
