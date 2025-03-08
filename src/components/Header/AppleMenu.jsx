@@ -1,4 +1,5 @@
 import { Box, Divider, Menu, Modal, Typography } from "@mui/material";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const style = {
@@ -158,7 +159,23 @@ export const AppleMenu = () => {
               }}
             ></Box>
           </Box>
-          <Box sx={{ my: 4 }}>
+          <Box sx={{ my: 2 }}>
+            <Box
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+                height: "150px",
+                width: "106px",
+                margin: "auto",
+              }}
+            >
+              <Image
+                src="/images/manananimoji.png"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </Box>
             <Typography
               className="sfpro"
               fontSize="22px"

@@ -63,7 +63,7 @@ export const WifiMenu = () => {
             boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
             backdropFilter: "blur( 20px )",
             border: "1px solid rgba( 255, 255, 255, 0.3 )",
-            borderRadius: "7px",
+            borderRadius: "6px",
           },
         }}
         sx={{
@@ -77,48 +77,62 @@ export const WifiMenu = () => {
           sx={{
             p: 1,
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            flexDirection: "column",
+            gap: 0.7,
           }}
         >
+          <Typography
+            className="sfpro"
+            sx={{ color: "#CECCCF", fontSize: "12px" }}
+          >
+            Know Networks
+          </Typography>
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
-              gap: 1,
               alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
-            {/*wifi*/}
-            <Typography
-              className="sfpro"
+            <Box
               sx={{
-                color: "#fff",
-                bgcolor: "#3B82F7",
-                width: "fit-content",
-                p: 0.5,
-                fontSize: "14px",
-                height: "20px",
-                width: "20px",
-                borderRadius: "50px",
+                display: "flex",
+                flexDirection: "row",
+                gap: 1,
+                alignItems: "center",
               }}
             >
-              􀙇
-            </Typography>
+              {/*wifi*/}
+              <Typography
+                className="sfpro"
+                sx={{
+                  color: "#fff",
+                  bgcolor: "#3B82F7",
+                  width: "fit-content",
+                  p: 0.5,
+                  fontSize: "14px",
+                  height: "20px",
+                  width: "20px",
+                  borderRadius: "50px",
+                }}
+              >
+                􀙇
+              </Typography>
+              <Typography
+                className="sfpro"
+                sx={{ fontSize: "12px", color: "#CECCCF" }}
+              >
+                4d616e616e-5G
+              </Typography>
+            </Box>
+            {/*lock.fill*/}
             <Typography
               className="sfpro"
-              sx={{ fontSize: "14px", color: "#CECCCF" }}
+              sx={{ color: "#CECCCF", fontSize: "14px" }}
             >
-              4d616e616e
+              􀎡
             </Typography>
           </Box>
-          {/*lock.fill*/}
-          <Typography
-            className="sfpro"
-            sx={{ color: "#CECCCF", fontSize: "14px" }}
-          >
-            􀎡
-          </Typography>
         </Box>
       </Menu>
     </>
