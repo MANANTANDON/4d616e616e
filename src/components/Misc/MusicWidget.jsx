@@ -58,7 +58,7 @@ export const MusicWidget = () => {
                 }}
                 className="sfpro"
               >
-                Lonely Star (Original Explicit)
+                Thursday (Original Explicit)
               </Typography>
               <Typography className="sfpro" sx={{ color: "#ffffff" }}>
                 The Weeknd
