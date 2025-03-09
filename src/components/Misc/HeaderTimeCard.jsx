@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export const HeaderTimeCard = () => {
@@ -22,7 +22,7 @@ export const HeaderTimeCard = () => {
       hour12: true,
     });
 
-    return `${dateStr}, ${timeStr}`;
+    return `${dateStr} ${timeStr}`;
   }
 
   return (
