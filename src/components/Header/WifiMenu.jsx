@@ -1,19 +1,8 @@
 import { Box, Menu, Typography } from "@mui/material";
 import React, { useState } from "react";
-const styleTwo = {
-  color: "#ffffff",
-  px: 1,
-  fontSize: "14px",
-  "&:hover": {
-    bgcolor: "rgb(73,119,220)",
-    borderRadius: "4px",
-    cursor: "default",
-  },
-};
 
 export const WifiMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
@@ -24,14 +13,6 @@ export const WifiMenu = () => {
     setAnchorEl(null);
   };
 
-  const handleModalOpen = () => {
-    handleClose();
-    setModalOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
   return (
     <>
       <Typography

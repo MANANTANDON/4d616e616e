@@ -55,6 +55,12 @@ export const Header = () => {
               pr: 2,
             }}
           >
+            <Typography
+              className="sfpro"
+              sx={{ fontSize: "14px", cursor: "default" }}
+            >
+              4d616e616e 54616E646F6E
+            </Typography>
             {/* Wifi */}
             <WifiMenu />
             {/* Charing */}
