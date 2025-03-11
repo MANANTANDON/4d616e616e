@@ -13,7 +13,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
       sx={{
         position: "absolute",
         position: "absolute",
-        top: "15%",
+        top: "40%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         bgcolor: "#ffffff90",
@@ -21,6 +21,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
         borderRadius: "10px",
         backdropFilter: "blur(80px)",
         overflow: "hidden",
+        boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;",
       }}
     >
       <Grid container>
@@ -32,6 +33,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
                 width: "12px",
                 bgcolor: "#ED6A5E",
                 borderRadius: "50%",
+                border: "0.1px solid #00000030",
                 "&:hover": {
                   bgcolor: "#ED6A5E90",
                 },
@@ -42,8 +44,12 @@ export const ProjectsModal = ({ handleModalClose }) => {
               sx={{
                 height: "12px",
                 width: "12px",
-                bgcolor: "#54504E",
+                bgcolor: "#F5BF4F",
                 borderRadius: "50%",
+                border: "0.1px solid #00000030",
+                "&:hover": {
+                  bgcolor: "#F5BF4F90",
+                },
               }}
               onClick={handleWidth}
             ></Box>
@@ -51,8 +57,12 @@ export const ProjectsModal = ({ handleModalClose }) => {
               sx={{
                 height: "12px",
                 width: "12px",
-                bgcolor: "#54504E",
+                bgcolor: "#62C755",
                 borderRadius: "50%",
+                border: "0.1px solid #00000030",
+                "&:hover": {
+                  bgcolor: "#62C75590",
+                },
               }}
             ></Box>
           </Box>
@@ -65,6 +75,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
             display: "flex",
             flexDirection: "column",
             borderLeft: "1px solid #EEEEEE",
+            height: "400px",
           }}
         >
           <Box
@@ -90,10 +101,30 @@ export const ProjectsModal = ({ handleModalClose }) => {
               Projects
             </Typography>
           </Box>
-          <Box sx={{ p: 1.5 }}>
-            <Typography className="sfpro">
-              Manan Tandon: Work In Progress
-            </Typography>
+          <Box sx={{ p: 3 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "fit-content",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "70px",
+                  height: "40px",
+                  bgcolor: "#ffffff",
+                  borderRadius: "3px",
+                  boxShadow:
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+                }}
+              ></Box>
+              <Typography className="sfpro" sx={{ fontSize: "12px", mt: 2 }}>
+                projects
+              </Typography>
+            </Box>
           </Box>
         </Grid>
       </Grid>
