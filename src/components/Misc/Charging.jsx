@@ -127,7 +127,7 @@ export const Charging = () => {
                 className="sfpro"
                 sx={{ color: "#FFFFFF90", fontSize: "12px" }}
               >
-                Power Source: Power Adpater
+                Power Source: Battery
               </Typography>
               <hr style={{ border: "0.5px solid #FFFFFF90" }} />
               <Box
