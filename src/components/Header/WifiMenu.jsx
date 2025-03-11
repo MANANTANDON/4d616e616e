@@ -66,7 +66,7 @@ export const WifiMenu = () => {
             className="sfpro"
             sx={{ color: "#CECCCF", fontSize: "12px" }}
           >
-            Know Networks
+            Known Networks
           </Typography>
           <Box
             sx={{
