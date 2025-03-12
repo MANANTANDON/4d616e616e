@@ -35,11 +35,7 @@ export const Header = () => {
           >
             <AppleMenu />
             {LeftMenu.map((item, key) => (
-              <Typography
-                key={key}
-                className="menuFamily"
-                sx={{ fontSize: "14px" }}
-              >
+              <Typography key={key} className="sfpro" sx={{ fontSize: "14px" }}>
                 {item}
               </Typography>
             ))}
