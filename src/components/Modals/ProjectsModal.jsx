@@ -25,8 +25,8 @@ export const ProjectsModal = ({ handleModalClose }) => {
       }}
     >
       <Grid container>
-        <Grid item xs={2} sx={{ p: 1.5 }}>
-          <Box sx={{ display: "flex", gap: 1 }}>
+        <Grid item xs={2}>
+          <Box sx={{ display: "flex", gap: 1, p: 1.5 }}>
             <Box
               sx={{
                 height: "12px",
@@ -65,6 +65,44 @@ export const ProjectsModal = ({ handleModalClose }) => {
                 },
               }}
             ></Box>
+          </Box>
+          <Box
+            sx={{
+              px: 1,
+              my: 2,
+              display: "flex",
+              flexDirection: "column",
+              gap: 0.5,
+            }}
+          >
+            <Typography
+              className="sfpro"
+              sx={{ fontSize: "12px", color: "#00000070", px: 0.5 }}
+            >
+              Favorites
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                px: 0.5,
+                py: 0.6,
+                bgcolor: "#00000015",
+                borderRadius: "5px",
+                "&:hover": {
+                  cursor: "default",
+                },
+              }}
+            >
+              <Typography
+                className="sfpro"
+                sx={{ fontSize: "14px", color: "#0271F1" }}
+              >
+                􀎞
+              </Typography>
+              <Typography sx={{ fontSize: "14px" }}>manantandon</Typography>
+            </Box>
           </Box>
         </Grid>
         <Grid
