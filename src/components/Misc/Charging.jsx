@@ -66,6 +66,12 @@ export const Charging = () => {
               display: "flex",
               alignItems: "center",
               cursor: "default",
+              px: 1,
+              "&:hover": {
+                bgcolor: "#00000020",
+                cursor: "default",
+                borderRadius: "5px",
+              },
             }}
             onClick={handleClick}
             id="charging-icon"
