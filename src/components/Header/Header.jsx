@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { GetCurrentDayAndTime } from "@/hooks/GetCurrentDayAndTime";
 import React from "react";
 import { Charging } from "../Misc/Charging";
 import { AppleMenu } from "./AppleMenu";
 import { WifiMenu } from "./WifiMenu";
 import { HeaderTimeCard } from "../Misc/HeaderTimeCard";
+// import { TimeSpentTracker } from "../Misc/TimeSpendTracker";
 
 export const Header = () => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
@@ -47,13 +47,21 @@ export const Header = () => {
               display: "flex",
               justifyContent: "flex-end",
               alignItems: "center",
-              gap: 2,
               pr: 2,
             }}
           >
+            {/* <TimeSpentTracker /> */}
             <Typography
               className="sfpro"
-              sx={{ fontSize: "14px", cursor: "default" }}
+              sx={{
+                fontSize: "14px",
+                px: 1,
+                "&:hover": {
+                  bgcolor: "#00000020",
+                  cursor: "default",
+                  borderRadius: "5px",
+                },
+              }}
             >
               4d616e616e 54616E646F6E
             </Typography>
@@ -62,7 +70,18 @@ export const Header = () => {
             {/* Charing */}
             <Charging />
             {/* Time */}
-            <Typography className="menuFamily" sx={{ fontSize: "14px" }}>
+            <Typography
+              className="menuFamily"
+              sx={{
+                fontSize: "14px",
+                px: 1,
+                "&:hover": {
+                  bgcolor: "#00000020",
+                  cursor: "default",
+                  borderRadius: "5px",
+                },
+              }}
+            >
               <HeaderTimeCard />
             </Typography>
           </Grid>

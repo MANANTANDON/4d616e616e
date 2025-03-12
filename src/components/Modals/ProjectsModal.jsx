@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export const ProjectsModal = ({ handleModalClose }) => {
@@ -149,16 +150,26 @@ export const ProjectsModal = ({ handleModalClose }) => {
                 width: "fit-content",
               }}
             >
-              <Box
-                sx={{
-                  width: "70px",
-                  height: "40px",
-                  bgcolor: "#ffffff",
-                  borderRadius: "3px",
-                  boxShadow:
-                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-                }}
-              ></Box>
+              <Tooltip arrow title="Projects Work in Progress">
+                <Box
+                  sx={{
+                    position: "relative",
+                    overflow: "hidden",
+                    width: "70px",
+                    height: "40px",
+                    borderRadius: "3px",
+                    boxShadow:
+                      "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+                  }}
+                >
+                  <Image
+                    src="/images/slides/slide1.png"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              </Tooltip>
               <Typography className="sfpro" sx={{ fontSize: "12px", mt: 2 }}>
                 projects
               </Typography>

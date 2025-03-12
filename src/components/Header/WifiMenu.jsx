@@ -17,7 +17,16 @@ export const WifiMenu = () => {
     <>
       <Typography
         className="sfpro"
-        sx={{ cursor: "default", fontSize: "14px" }}
+        sx={{
+          cursor: "default",
+          fontSize: "14px",
+          px: 1,
+          "&:hover": {
+            bgcolor: "#00000020",
+            cursor: "default",
+            borderRadius: "5px",
+          },
+        }}
         onClick={handleClick}
         id="wifi-icon"
         aria-controls={open ? "wifi-menu" : undefined}
