@@ -52,7 +52,16 @@ export const AppleMenu = () => {
     <>
       <Typography
         className="sfpro"
-        sx={{ cursor: "default", fontSize: "14px" }}
+        sx={{
+          cursor: "default",
+          fontSize: "14px",
+          px: 1.5,
+          "&:hover": {
+            bgcolor: "#00000020",
+            cursor: "default",
+            borderRadius: "5px",
+          },
+        }}
         onClick={handleClick}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
@@ -71,7 +80,7 @@ export const AppleMenu = () => {
         }}
         PaperProps={{
           sx: {
-            mt: "6px",
+            mt: "3px",
             ml: "-10px",
             py: "0px !important ",
             width: "250px",

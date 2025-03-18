@@ -29,13 +29,24 @@ export const Header = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
-              gap: 3,
-              pl: 2,
+              pl: 0.5,
             }}
           >
             <AppleMenu />
             {LeftMenu.map((item, key) => (
-              <Typography key={key} className="sfpro" sx={{ fontSize: "14px" }}>
+              <Typography
+                key={key}
+                className="sfpro"
+                sx={{
+                  fontSize: "14px",
+                  px: 1.5,
+                  "&:hover": {
+                    bgcolor: "#00000020",
+                    cursor: "default",
+                    borderRadius: "5px",
+                  },
+                }}
+              >
                 {item}
               </Typography>
             ))}
