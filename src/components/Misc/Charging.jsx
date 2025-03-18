@@ -1,4 +1,4 @@
-import { Box, Divider, Menu, Typography } from "@mui/material";
+import { Box, Divider, Menu, Tooltip, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const useBatteryStatus = () => {
@@ -147,9 +147,26 @@ export const Charging = () => {
           </Menu>
         </>
       ) : (
-        <Typography sx={{ fontSize: "14px" }}>
-          Battery info not available
-        </Typography>
+        <Tooltip arrow title="Real Time Battery does not supports Safari.">
+          <Typography
+            className="sfpro"
+            sx={{
+              fontSize: "14px",
+              display: "flex",
+              alignItems: "center",
+              cursor: "default",
+              px: 1,
+              "&:hover": {
+                bgcolor: "#00000020",
+                cursor: "default",
+                borderRadius: "5px",
+              },
+            }}
+          >
+            <span style={{ fontSize: "12px" }}>100% </span>
+            􀛨
+          </Typography>
+        </Tooltip>
       )}
     </div>
   );
