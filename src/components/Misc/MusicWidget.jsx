@@ -1,10 +1,23 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 
 export const MusicWidget = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <>
+      <audio ref={audioRef} src="/audio/Thursday.mp3" />
       <Box sx={{ mt: "30.39px", pt: 2, mx: -1, pl: 2 }}>
         <Box
           sx={{
@@ -73,14 +86,18 @@ export const MusicWidget = () => {
                   width: "fit-content",
                   display: "flex",
                   gap: 1,
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
                 }}
                 className="sfpro"
+                onClick={togglePlayPause}
               >
                 <Typography className="sfpro" sx={{ fontSize: "14px" }}>
-                  􀊄
+                  {isPlaying ? "􀊆" : "􀊄"}
                 </Typography>
                 <Typography className="sfpro" sx={{ fontSize: "14px" }}>
-                  Play
+                  {isPlaying ? "Pause" : "Play"}
                 </Typography>
               </Box>
             </Grid>
