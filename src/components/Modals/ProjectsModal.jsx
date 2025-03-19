@@ -1,9 +1,18 @@
-import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
+import { Box, Container, Grid, Modal, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
+import { ProjectsFileModal } from "./ProjectsFileModal";
+
+const style = {
+  bgcolor: "transparent",
+  boxShadow: 24,
+  height: "100vh",
+  position: "relative",
+};
 
 export const ProjectsModal = ({ handleModalClose }) => {
   const [maxWidth, setMaxWidth] = useState("md");
+  const [open, setOpen] = useState(false);
 
   const handleWidth = () => {
     maxWidth === "lg" ? setMaxWidth("md") : setMaxWidth("lg");
@@ -149,27 +158,26 @@ export const ProjectsModal = ({ handleModalClose }) => {
                 justifyContent: "center",
                 width: "fit-content",
               }}
+              onClick={() => setOpen(true)}
             >
-              <Tooltip arrow title="Projects Work in Progress">
-                <Box
-                  sx={{
-                    position: "relative",
-                    overflow: "hidden",
-                    width: "70px",
-                    height: "40px",
-                    borderRadius: "3px",
-                    boxShadow:
-                      "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-                  }}
-                >
-                  <Image
-                    src="/images/slides/slide1.png"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </Box>
-              </Tooltip>
+              <Box
+                sx={{
+                  position: "relative",
+                  overflow: "hidden",
+                  width: "70px",
+                  height: "40px",
+                  borderRadius: "3px",
+                  boxShadow:
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+                }}
+              >
+                <Image
+                  src="/images/slides/slide1.png"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </Box>
               <Typography className="sfpro" sx={{ fontSize: "12px", mt: 2 }}>
                 projects
               </Typography>
@@ -177,6 +185,22 @@ export const ProjectsModal = ({ handleModalClose }) => {
           </Box>
         </Grid>
       </Grid>
+      <Modal
+        open={open}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        sx={{
+          backdropFilter: "none", // Removes blur effect
+          "& .MuiBackdrop-root": {
+            backgroundColor: "transparent", // Makes backdrop transparent
+          },
+        }}
+      >
+        <Box sx={style}>
+          <ProjectsFileModal setOpen={setOpen} />
+        </Box>
+      </Modal>
     </Container>
   );
 };
+1;
