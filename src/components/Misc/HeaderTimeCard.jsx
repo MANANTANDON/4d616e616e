@@ -1,14 +1,15 @@
+"use client";
 import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export const HeaderTimeCard = () => {
-  const [time, setTime] = useState(getFormattedTime());
+  const [time, setTime] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(getFormattedTime());
-    }, 1000); // Updates every second
+    const updateTime = () => setTime(getFormattedTime());
+    updateTime();
 
+    const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,6 +25,8 @@ export const HeaderTimeCard = () => {
 
     return `${dateStr} ${timeStr}`;
   }
+
+  if (!time) return null;
 
   return (
     <Typography className="sfpro" fontSize="14px">

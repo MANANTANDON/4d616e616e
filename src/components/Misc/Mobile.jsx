@@ -6,7 +6,7 @@ export const Mobile = () => {
     <>
       <Box sx={{ display: { md: "none" } }}>
         <Typography className="fontFamily" sx={{ px: 2 }}>
-          manan.
+          m.
         </Typography>
         <Typography
           sx={{ margin: "auto", width: "fit-content", color: "#fff", mt: 2 }}

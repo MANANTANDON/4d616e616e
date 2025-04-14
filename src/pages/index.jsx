@@ -14,31 +14,43 @@ export default function Home() {
         <title>Manan Tandon (4d616e616e)</title>
         <link rel="canonical" href="https://manantandon.com/" />
         <link rel="icon" href="/manan.ico" />
+
+        {/* Primary Meta Tags */}
+        <meta
+          name="title"
+          content="Manan Tandon | React.js & Next.js Frontend Developer"
+        />
         <meta
           name="description"
-          content="Welcome to the official website of Manan Tandon, a skilled Frontend Developer specializing in React.js and Next.js. Explore innovative UI/UX designs, performance-optimized web applications, and cutting-edge development solutions."
+          content="Portfolio of Manan Tandon, a professional Frontend Developer specializing in React.js and Next.js. Explore UI/UX innovations, and high-performance applications."
         />
         <meta
           name="keywords"
-          content="Frontend Developer, React.js Developer, Next.js Developer, UI/UX, Web Development, SEO-friendly Websites, Manan Tandon, MananTandon, manantandon, manan, manan tandon"
+          content="React Developer, Next.js Developer, Frontend Developer India, UI/UX Portfolio, Web App Developer, Manan Tandon, MananTandon, manantandon"
         />
         <meta name="author" content="Manan Tandon" />
-        <meta property="og:title" content="Manan Tandon (4d616e616e)" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://manantandon.com/" />
+        <meta
+          property="og:title"
+          content="Manan Tandon | React.js & Next.js Frontend Developer"
+        />
         <meta
           property="og:description"
-          content="Explore the work of Manan Tandon, a highly skilled React.js & Next.js developer specializing in high-performance, SEO-friendly web applications."
+          content="Explore the portfolio of Manan Tandon — expert in React.js and Next.js, lightning-fast web experiences."
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://manantandon.com" />
-        <meta property="og:image" content="/manan.ico" />
-        <meta property="og:image:alt" content="Manan Tandon" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Manan Tandon (4d616e616e)" />
         <meta
-          name="twitter:description"
-          content="Expert in React.js and Next.js development, delivering high-performance web applications."
+          property="og:image"
+          content="https://manantandon.com/og-image.jpg"
         />
+        <meta property="og:image:alt" content="Portfolio of Manan Tandon" />
+
+        {/* Robots and indexing */}
+        <meta name="robots" content="index, follow" />
       </Head>
+
       <div>
         <Layout />
       </div>
