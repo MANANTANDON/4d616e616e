@@ -1,28 +1,12 @@
-//REACT IMPORT
 import React from "react";
+import { useMediaQuery } from "@mui/material";
 
 //Components
-import { Header } from "@/components/Header/Header";
-import { TimeCard } from "@/components/Misc/TimeCard";
 import { Mobile } from "@/components/Misc/Mobile";
-import { Folder } from "../Misc/Folder";
-import { Box } from "@mui/material";
-import { MusicWidget } from "../Misc/MusicWidget";
-
-//MUI IMPORTS
+import { Desktop } from "@/components/Desktop/Desktop";
 
 export const Layout = () => {
-  return (
-    <>
-      <Mobile />
-      <Header />
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-          {/* <TimeCard /> */}
-          <MusicWidget />
-        </Box>
-        <Folder />
-      </Box>
-    </>
-  );
+  const isDesktop = useMediaQuery("(min-width:1024px)");
+
+  return <>{isDesktop ? <Desktop /> : <Mobile />}</>;
 };
