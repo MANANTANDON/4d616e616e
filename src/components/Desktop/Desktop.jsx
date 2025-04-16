@@ -3,6 +3,7 @@ import { Header } from "../Header/Header";
 import { Box } from "@mui/material";
 import { MusicWidget } from "../Misc/MusicWidget";
 import { Folder } from "../Misc/Folder";
+import { Dock } from "./Dock/Dock";
 
 export const Desktop = () => {
   return (
@@ -15,6 +16,8 @@ export const Desktop = () => {
         </Box>
         <Folder />
       </Box>
+      {/* Dock */}
+      <Dock />
     </>
   );
 };
