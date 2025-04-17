@@ -7,27 +7,27 @@ export const Dock = () => {
     {
       name: "Finder",
       title: "Finder",
-      path: "/images/Finder.webp",
+      path: "/images/icons/Finder.webp",
     },
     {
       name: "Apple Music",
       title: "Music",
-      path: "/images/AppleMusic.webp",
+      path: "/images/icons/AppleMusic.webp",
     },
     {
       name: "Spotify",
       title: "Spotify",
-      path: "/images/Spotify.webp",
+      path: "/images/icons/Spotify.webp",
     },
     {
       name: "VSCode",
       title: "Visual Studio Code",
-      path: "/images/VSCode.webp",
+      path: "/images/icons/VSCode.webp",
     },
     {
       name: "Adobe Illustrator",
       title: "Adobe Illustrator",
-      path: "/images/Illustrator.webp",
+      path: "/images/icons/Illustrator.webp",
     },
   ];
   return (
