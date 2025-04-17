@@ -24,7 +24,7 @@ export const ProjectSlides = () => {
         }}
       >
         {projectImages?.map((item, key) => (
-          <a href={item?.link} key={key}>
+          <a href={item?.link} target="_blank" key={key}>
             <Box
               sx={{
                 position: "relative",
