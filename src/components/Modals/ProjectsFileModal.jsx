@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import { ProjectSlides } from "../Project/ProjectSlides";
 
 export const ProjectsFileModal = ({ setOpen }) => {
   return (
@@ -21,7 +22,7 @@ export const ProjectsFileModal = ({ setOpen }) => {
       }}
     >
       <Grid container>
-        <Grid item xs={1}>
+        <Grid item xs={1.7}>
           <Box sx={{ display: "flex", gap: 1, p: 1.5 }}>
             <Box
               sx={{
@@ -61,10 +62,13 @@ export const ProjectsFileModal = ({ setOpen }) => {
               }}
             ></Box>
           </Box>
+          <Box sx={{ my: 2.5 }}>
+            <ProjectSlides />
+          </Box>
         </Grid>
         <Grid
           item
-          xs={11}
+          xs={10.3}
           sx={{
             bgcolor: "#FFFFFF",
             display: "flex",
