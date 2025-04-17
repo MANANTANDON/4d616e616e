@@ -39,6 +39,8 @@ export const ProjectSlides = () => {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
+                placeholder="blur"
+                blurDataURL={item?.src}
               />
             </Box>
           </a>
