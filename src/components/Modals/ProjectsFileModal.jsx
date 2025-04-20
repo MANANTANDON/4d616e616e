@@ -1,9 +1,34 @@
 import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { ProjectSlides } from "../Project/ProjectSlides";
 
 export const ProjectsFileModal = ({ setOpen }) => {
+  const [slidesNo, setSlideNo] = useState(0);
+  const projectImages = [
+    { name: "Projects", src: "/images/slides/slide1.png" },
+    {
+      name: "Khabargaon",
+      src: "/images/slides/kg.webp",
+      link: "https://khabargaon.com/",
+    },
+    {
+      name: "News Arena India",
+      src: "/images/slides/nai.webp",
+      link: "https://newsarenaindia.com/",
+    },
+    {
+      name: "News 4 Himachal",
+      src: "/images/slides/n4h.webp",
+      link: "https://news4himachal.in/",
+    },
+    {
+      name: "Future Shift Labs",
+      src: "/images/slides/fsl.webp",
+      link: "https://tracker.futureshiftlabs.com/",
+    },
+    { name: "Content Management System", src: "/images/slides/cms.webp" },
+  ];
   return (
     <Container
       maxWidth="xl"
@@ -63,7 +88,10 @@ export const ProjectsFileModal = ({ setOpen }) => {
             ></Box>
           </Box>
           <Box sx={{ my: 2.5 }}>
-            <ProjectSlides />
+            <ProjectSlides
+              projectImages={projectImages}
+              setSlideNo={setSlideNo}
+            />
           </Box>
         </Grid>
         <Grid
@@ -91,23 +119,35 @@ export const ProjectsFileModal = ({ setOpen }) => {
               className="sfpro"
               sx={{ fontSize: "14px", fontWeight: "bold" }}
             >
-              Projects
+              {projectImages[slidesNo]?.name}
             </Typography>
           </Box>
-          <Box sx={{ p: 3 }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "fit-content",
-              }}
-            >
-              <Typography className="sfpro">
-                Project Keynote is in Progress :) (4d616e616e)
-              </Typography>
-            </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <a href={projectImages[slidesNo]?.link} target="_blank">
+              <Box
+                sx={{
+                  position: "relative",
+                  overflow: "hidden",
+                  height: "560px",
+                  width: "1000px",
+                }}
+              >
+                <Image
+                  src={projectImages[slidesNo]?.src}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  alt={projectImages[slidesNo]?.name}
+                  title={projectImages[slidesNo]?.name}
+                />
+              </Box>
+            </a>
           </Box>
         </Grid>
       </Grid>
