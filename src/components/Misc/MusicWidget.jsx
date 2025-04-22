@@ -44,6 +44,7 @@ export const MusicWidget = () => {
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
+                  alt="The Weeknd's Thursday"
                 />
               </Box>
             </Grid>
