@@ -42,6 +42,7 @@ export const Folder = () => {
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            alt="Mac os Folder"
           />
         </Box>
         <Typography

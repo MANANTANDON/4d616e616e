@@ -2,6 +2,7 @@ import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ProjectSlides } from "../Project/ProjectSlides";
+import { ThreeButton } from "../Misc/ThreeButton";
 
 export const ProjectsFileModal = ({ setOpen }) => {
   const [slidesNo, setSlideNo] = useState(0);
@@ -35,59 +36,25 @@ export const ProjectsFileModal = ({ setOpen }) => {
       sx={{
         position: "absolute",
         top: "30px",
-        bottom: 0,
         right: 0,
         left: 0,
-        bgcolor: "#ffffff90",
         px: "0px !important",
         borderRadius: "10px",
-        backdropFilter: "blur(80px)",
         overflow: "hidden",
+        backdropFilter: "blur(80px)",
         boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;",
       }}
     >
-      <Grid container>
-        <Grid item xs={1.7}>
-          <Box sx={{ display: "flex", gap: 1, p: 1.5 }}>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#ED6A5E",
-                borderRadius: "50%",
-                border: "0.1px solid #00000030",
-                "&:hover": {
-                  bgcolor: "#ED6A5E90",
-                },
-              }}
-              onClick={() => setOpen(false)}
-            ></Box>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#F5BF4F",
-                borderRadius: "50%",
-                border: "0.1px solid #00000030",
-                "&:hover": {
-                  bgcolor: "#F5BF4F90",
-                },
-              }}
-            ></Box>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#62C755",
-                borderRadius: "50%",
-                border: "0.1px solid #00000030",
-                "&:hover": {
-                  bgcolor: "#62C75590",
-                },
-              }}
-            ></Box>
-          </Box>
-          <Box sx={{ my: 2.5 }}>
+      <Grid container sx={{ bgcolor: "#E0E0E0" }}>
+        <Grid item xs={1.7} sx={{ bgcolor: "#D3D3D3" }}>
+          <ThreeButton setOpen={setOpen} />
+          <Box
+            sx={{
+              mt: 2.5,
+              overflow: "scroll !important",
+              height: { lg: "630px", xl: "690px" },
+            }}
+          >
             <ProjectSlides
               projectImages={projectImages}
               setSlideNo={setSlideNo}
@@ -98,11 +65,10 @@ export const ProjectsFileModal = ({ setOpen }) => {
           item
           xs={10.3}
           sx={{
-            bgcolor: "#FFFFFF",
+            bgcolor: "#E0E0E0",
             display: "flex",
             flexDirection: "column",
-            borderLeft: "1px solid #EEEEEE",
-            height: "100vh",
+            height: { lg: "700px", xl: "750px" },
           }}
         >
           <Box
@@ -127,6 +93,7 @@ export const ProjectsFileModal = ({ setOpen }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              height: { lg: "700px", xl: "750px" },
             }}
           >
             <a href={projectImages[slidesNo]?.link} target="_blank">
@@ -134,8 +101,9 @@ export const ProjectsFileModal = ({ setOpen }) => {
                 sx={{
                   position: "relative",
                   overflow: "hidden",
-                  height: "560px",
-                  width: "1000px",
+                  height: "530px",
+                  width: "950px",
+                  boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px",
                 }}
               >
                 <Image
