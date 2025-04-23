@@ -116,4 +116,13 @@ body {
   .websiteTitle {
     font-size: 32px;
   }
+  body {
+    background-image: url("/images/iphoneWallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* overflow-x: hidden;
+  overflow-y: hidden; */
+    height: 100vh;
+  }
 }
