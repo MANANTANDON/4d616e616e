@@ -37,6 +37,10 @@
   }
 } */
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-image: url("/images/SequoiaLight.webp");
   background-repeat: no-repeat;
