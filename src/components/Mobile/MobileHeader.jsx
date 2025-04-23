@@ -13,7 +13,7 @@ export const MobileHeader = () => {
           justifyContent: "space-between",
         }}
       >
-        <Box>
+        <Box sx={{ ml: 2.5 }}>
           <Typography
             className="sfpro"
             sx={{ color: "#FFFFFF", fontWeight: "bolder" }}
@@ -21,17 +21,26 @@ export const MobileHeader = () => {
             {currentTime}
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 0.2 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mr: 1.4 }}>
           {/* Signal Icon*/}
-          <Typography className="sfpro" sx={{ color: "#FFFFFF" }}>
+          <Typography
+            className="sfpro"
+            sx={{ color: "#FFFFFF", fontSize: "14px" }}
+          >
             􀭧
           </Typography>
           {/*Wifi Icon*/}
-          <Typography className="sfpro" sx={{ color: "#FFFFFF" }}>
+          <Typography
+            className="sfpro"
+            sx={{ color: "#FFFFFF", fontSize: "14px" }}
+          >
             􀙇
           </Typography>
           {/*Battery Icon*/}
-          <Typography className="sfpro" sx={{ color: "#FFFFFF" }}>
+          <Typography
+            className="sfpro"
+            sx={{ color: "#FFFFFF", fontSize: "16px" }}
+          >
             􀛨
           </Typography>
         </Box>
