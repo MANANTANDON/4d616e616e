@@ -4,7 +4,6 @@ import React, { useRef, useState } from "react";
 
 export const MusicWidgetMobile = () => {
   const is320 = useMediaQuery("(max-width:320px)");
-  const is375 = useMediaQuery("");
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -25,7 +24,9 @@ export const MusicWidgetMobile = () => {
           sx={{
             borderRadius: "20px",
             bgcolor: "#71695E",
-            p: is320 ? "12px" : "16px",
+            px: is320 ? "12px" : "14px",
+            pt: is320 ? "10px" : "14px",
+            pb: is320 ? "10px" : "12px",
           }}
         >
           <Grid
@@ -58,7 +59,7 @@ export const MusicWidgetMobile = () => {
               }}
             >
               <Typography
-                sx={{ fontSize: "12px", color: "#ffffff" }}
+                sx={{ fontSize: is320 ? "10px" : "12px", color: "#ffffff" }}
                 className="sfpro"
               >
                 NOW PLAYING
@@ -72,13 +73,16 @@ export const MusicWidgetMobile = () => {
                   WebkitBoxOrient: "vertical",
                   fontWeight: "bold",
                   color: "#ffffff",
-                  fontSize: "16px",
+                  fontSize: is320 ? "14px" : "16px",
                 }}
                 className="sfpro"
               >
                 Enjoy the Show
               </Typography>
-              <Typography className="sfpro" sx={{ color: "#ffffff" }}>
+              <Typography
+                className="sfpro"
+                sx={{ color: "#ffffff", fontSize: is320 ? "14px" : "16px" }}
+              >
                 The Weeknd
               </Typography>
               <Box
@@ -86,7 +90,7 @@ export const MusicWidgetMobile = () => {
                   bgcolor: "#90887D",
                   color: "#ffffff",
                   borderRadius: "50px",
-                  py: 0.7,
+                  py: is320 ? 0.5 : 0.7,
                   px: 1.5,
                   width: "fit-content",
                   display: "flex",
@@ -98,15 +102,30 @@ export const MusicWidgetMobile = () => {
                 className="sfpro"
                 onClick={togglePlayPause}
               >
-                <Typography className="sfpro" sx={{ fontSize: "14px" }}>
+                <Typography
+                  className="sfpro"
+                  sx={{ fontSize: is320 ? "12px" : "14px" }}
+                >
                   {isPlaying ? "􀊆" : "􀊄"}
                 </Typography>
-                <Typography className="sfpro" sx={{ fontSize: "14px" }}>
+                <Typography
+                  className="sfpro"
+                  sx={{ fontSize: is320 ? "12px" : "14px" }}
+                >
                   {isPlaying ? "Pause" : "Play"}
                 </Typography>
               </Box>
             </Grid>
           </Grid>
+        </Box>
+        <Box>
+          <Typography
+            textAlign="center"
+            className="sfpro"
+            sx={{ color: "#FBF8EF", fontSize: "12px", mt: 1.2 }}
+          >
+            Music
+          </Typography>
         </Box>
       </Box>
     </>
