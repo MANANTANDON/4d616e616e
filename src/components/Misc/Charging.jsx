@@ -41,7 +41,7 @@ const useBatteryStatus = () => {
   return batteryInfo;
 };
 
-export const Charging = () => {
+export const Charging = ({ type }) => {
   const { level, charging } = useBatteryStatus();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -79,7 +79,9 @@ export const Charging = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <span style={{ fontSize: "12px" }}>{level}% </span>
+            {type !== "mobile" && (
+              <span style={{ fontSize: "12px" }}>{level}% </span>
+            )}
             {charging
               ? "􀢋"
               : level <= 25

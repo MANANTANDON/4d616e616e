@@ -1,6 +1,8 @@
 import { useCurrentMobileTime } from "@/hooks/useCurrentMobileTime";
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Charging } from "../Misc/Charging";
+import { MobileCharging } from "../Misc/MobileCharging";
 
 export const MobileHeader = () => {
   const currentTime = useCurrentMobileTime();
@@ -37,12 +39,7 @@ export const MobileHeader = () => {
             􀙇
           </Typography>
           {/*Battery Icon*/}
-          <Typography
-            className="sfpro"
-            sx={{ color: "#FFFFFF", fontSize: "16px" }}
-          >
-            􀛨
-          </Typography>
+          <MobileCharging />
         </Box>
       </Box>
     </>
