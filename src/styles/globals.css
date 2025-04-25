@@ -112,7 +112,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .websiteTitle {
     font-size: 32px;
   }
