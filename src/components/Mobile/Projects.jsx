@@ -41,41 +41,43 @@ export const Projects = () => {
         <Grid container gap={2}>
           {projects?.map((item, key) => (
             <Grid xs={2.5} key={key}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  src={item?.src}
-                  layout="intrinsic"
-                  width={"60"}
-                  height={"60"}
-                  objectFit="cover"
-                  objectPosition="center"
-                  alt={item?.name}
-                  title={item?.name}
-                  style={{ borderRadius: "12px" }}
-                />
-                <Typography
+              <a href={item?.link} target="_blank">
+                <Box
                   sx={{
-                    fontSize: "12px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    display: "-webkit-box",
-                    WebkitLineClamp: "1",
-                    WebkitBoxOrient: "vertical",
-                    textAlign: "center",
-                    color: "#FBF8EF",
-                    mt: 1.2,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
                   }}
-                  className="sfpro"
                 >
-                  {item?.short_name}
-                </Typography>
-              </Box>
+                  <Image
+                    src={item?.src}
+                    layout="intrinsic"
+                    width={"60"}
+                    height={"60"}
+                    objectFit="cover"
+                    objectPosition="center"
+                    alt={item?.name}
+                    title={item?.name}
+                    style={{ borderRadius: "12px" }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: "12px",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      display: "-webkit-box",
+                      WebkitLineClamp: "1",
+                      WebkitBoxOrient: "vertical",
+                      textAlign: "center",
+                      color: "#FBF8EF",
+                      mt: 1.2,
+                    }}
+                    className="sfpro"
+                  >
+                    {item?.short_name}
+                  </Typography>
+                </Box>
+              </a>
             </Grid>
           ))}
         </Grid>
