@@ -51,6 +51,10 @@ body {
   height: 98vh;
 }
 
+a {
+  text-decoration: none;
+}
+
 .box {
   margin: -10px;
   height: 100vh;
