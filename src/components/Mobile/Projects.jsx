@@ -37,8 +37,15 @@ export const Projects = () => {
   ];
   return (
     <>
-      <Box sx={{ mt: 2.5 }}>
-        <Grid container gap={2}>
+      <Box sx={{ mt: 2.5, mx: 2 }}>
+        <Grid
+          container
+          gap={1.5}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           {projects?.map((item, key) => (
             <Grid xs={2.5} key={key}>
               <a href={item?.link} target="_blank">
@@ -70,7 +77,7 @@ export const Projects = () => {
                       WebkitBoxOrient: "vertical",
                       textAlign: "center",
                       color: "#FBF8EF",
-                      mt: 1.2,
+                      mt: 1,
                     }}
                     className="sfpro"
                   >
