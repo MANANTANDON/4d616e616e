@@ -65,7 +65,10 @@ export const Projects = () => {
                     objectPosition="center"
                     alt={item?.name}
                     title={item?.name}
-                    style={{ borderRadius: "12px" }}
+                    style={{
+                      borderRadius: "12px",
+                      border: item?.short_name === "CMS" && "1px solid #3c3c3c",
+                    }}
                   />
                   <Typography
                     sx={{
