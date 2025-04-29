@@ -141,7 +141,7 @@ a {
     background-size: cover;
     background-position: center center;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     height: 100vh;
   }
 }
