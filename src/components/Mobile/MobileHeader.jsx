@@ -13,6 +13,7 @@ export const MobileHeader = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          pt: 2,
         }}
       >
         <Box sx={{ ml: 2.5 }}>
