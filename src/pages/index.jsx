@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>Manan Tandon (4d616e616e)</title>
         <link rel="canonical" href="https://manantandon.com/" />
-        <link rel="icon" href="/manan.ico" />
+        <link rel="icon" href="/4d_logo_one.ico" />
 
         {/* Primary Meta Tags */}
         <meta
@@ -43,7 +43,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://manantandon.com/og-image.jpg"
+          content="https://manantandon.com/4d_logo_one.ico"
         />
         <meta property="og:image:alt" content="Portfolio of Manan Tandon" />
 
