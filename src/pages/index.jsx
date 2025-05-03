@@ -39,7 +39,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Explore the portfolio of Manan Tandon — expert in React.js and Next.js, lightning-fast web experiences."
+          content="Portfolio of Manan Tandon, a professional Frontend Developer specializing in React.js and Next.js. Explore UI/UX innovations, and high-performance applications."
         />
         <meta
           property="og:image"
@@ -50,7 +50,23 @@ export default function Home() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
-        {/* Robots and indexing */}
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@4d616e616eT" />
+        <meta
+          name="twitter:title"
+          content="Manan Tandon | React.js & Next.js Frontend Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Portfolio of Manan Tandon, a professional Frontend Developer specializing in React.js and Next.js. Explore UI/UX innovations, and high-performance applications."
+        />
+        <meta
+          name="twitter:image"
+          content="https://manantandon.com/4d_logo_one.png"
+        />
+
+        {/* Robots */}
         <meta name="robots" content="index, follow" />
       </Head>
 

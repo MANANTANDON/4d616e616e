@@ -29,6 +29,12 @@ export const Projects = () => {
       short_name: "N4H",
     },
     {
+      src: "/images/companies/jist.webp",
+      name: "News 4 Himachal",
+      link: "https://jist.news/",
+      short_name: "JIST",
+    },
+    {
       src: "/images/companies/vercel.png",
       name: "Content Management System",
       link: "https://kgdashboard.khabargaon.com/",
@@ -40,20 +46,19 @@ export const Projects = () => {
       <Box sx={{ mt: 2.5, mx: 2 }}>
         <Grid
           container
-          gap={1.5}
           sx={{
             display: "flex",
-            justifyContent: "space-between",
           }}
         >
           {projects?.map((item, key) => (
-            <Grid xs={2.5} key={key}>
+            <Grid xs={3} key={key}>
               <a href={item?.link} target="_blank">
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    mb: 2,
                   }}
                 >
                   <Image

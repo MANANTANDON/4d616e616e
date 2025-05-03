@@ -46,9 +46,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
-  height: 98vh;
+  height: 100dvh;
 }
 
 a {
@@ -142,6 +140,6 @@ a {
     background-position: center center;
     overflow-x: hidden;
     /* overflow-y: hidden; */
-    height: 100vh;
+    height: 100svh;
   }
 }
