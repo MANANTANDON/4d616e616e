@@ -43,9 +43,12 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://manantandon.com/4d_logo_one.ico"
+          content="https://manantandon.com/4d_logo_one.png"
         />
         <meta property="og:image:alt" content="Portfolio of Manan Tandon" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Robots and indexing */}
         <meta name="robots" content="index, follow" />
