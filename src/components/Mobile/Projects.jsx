@@ -1,8 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { LinkModal } from "./LinkModal";
 
 export const Projects = () => {
+  const [clickLink, setClickLink] = useState();
+  const [open, setOpen] = useState(false);
+
   const projects = [
     {
       src: "/images/companies/news_arena_india.webp",
@@ -30,7 +34,7 @@ export const Projects = () => {
     },
     {
       src: "/images/companies/jist.webp",
-      name: "News 4 Himachal",
+      name: "Jist",
       link: "https://jist.news/",
       short_name: "JIST",
     },
@@ -41,6 +45,11 @@ export const Projects = () => {
       short_name: "CMS",
     },
   ];
+
+  const handleIconClick = (project) => {
+    setClickLink(project);
+    setOpen(true);
+  };
   return (
     <>
       <Box sx={{ mt: 2.5, mx: 2 }}>
@@ -52,51 +61,51 @@ export const Projects = () => {
         >
           {projects?.map((item, key) => (
             <Grid xs={3} key={key}>
-              <a href={item?.link} target="_blank">
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    mb: 2,
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  mb: 2,
+                }}
+                onClick={() => handleIconClick(item)}
+              >
+                <Image
+                  src={item?.src}
+                  layout="intrinsic"
+                  width={"60"}
+                  height={"60"}
+                  objectFit="cover"
+                  objectPosition="center"
+                  alt={item?.name}
+                  title={item?.name}
+                  style={{
+                    borderRadius: "12px",
+                    border: item?.short_name === "CMS" && "1px solid #3c3c3c",
                   }}
+                />
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    display: "-webkit-box",
+                    WebkitLineClamp: "1",
+                    WebkitBoxOrient: "vertical",
+                    textAlign: "center",
+                    color: "#FBF8EF",
+                    mt: 1,
+                  }}
+                  className="sfpro"
                 >
-                  <Image
-                    src={item?.src}
-                    layout="intrinsic"
-                    width={"60"}
-                    height={"60"}
-                    objectFit="cover"
-                    objectPosition="center"
-                    alt={item?.name}
-                    title={item?.name}
-                    style={{
-                      borderRadius: "12px",
-                      border: item?.short_name === "CMS" && "1px solid #3c3c3c",
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitLineClamp: "1",
-                      WebkitBoxOrient: "vertical",
-                      textAlign: "center",
-                      color: "#FBF8EF",
-                      mt: 1,
-                    }}
-                    className="sfpro"
-                  >
-                    {item?.short_name}
-                  </Typography>
-                </Box>
-              </a>
+                  {item?.short_name}
+                </Typography>
+              </Box>
             </Grid>
           ))}
         </Grid>
       </Box>
+      <LinkModal clickLink={clickLink} open={open} setOpen={setOpen} />
     </>
   );
 };
