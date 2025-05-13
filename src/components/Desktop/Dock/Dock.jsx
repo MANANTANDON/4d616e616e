@@ -35,7 +35,7 @@ export const Dock = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "5px",
+          bottom: "10px",
           left: "50%",
           transform: "translateX(-50%)",
           p: 1.5,
