@@ -21,7 +21,7 @@ const Mobile = dynamic(
 );
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 7,
+  height: 5,
   borderRadius: 4,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: "#3c3c3c",

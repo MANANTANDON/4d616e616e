@@ -28,6 +28,11 @@ export const ProjectsFileModal = ({ setOpen }) => {
       src: "/images/slides/fsl.webp",
       link: "https://tracker.futureshiftlabs.com/",
     },
+    {
+      name: "Jist News",
+      src: "/images/slides/jist.webp",
+      link: "https://jist.news/",
+    },
     { name: "Content Management System", src: "/images/slides/cms.webp" },
   ];
   return (
@@ -46,7 +51,7 @@ export const ProjectsFileModal = ({ setOpen }) => {
       }}
     >
       <Grid container sx={{ bgcolor: "#E0E0E0" }}>
-        <Grid item xs={1.7} sx={{ bgcolor: "#D3D3D3" }}>
+        <Grid item xs={1.7} sx={{ bgcolor: "#D3D3D3", px: 1 }}>
           <ThreeButton setOpen={setOpen} />
           <Box
             sx={{
@@ -58,6 +63,7 @@ export const ProjectsFileModal = ({ setOpen }) => {
             <ProjectSlides
               projectImages={projectImages}
               setSlideNo={setSlideNo}
+              slidesNo={slidesNo}
             />
           </Box>
         </Grid>
@@ -97,24 +103,17 @@ export const ProjectsFileModal = ({ setOpen }) => {
             }}
           >
             <a href={projectImages[slidesNo]?.link} target="_blank">
-              <Box
-                sx={{
-                  position: "relative",
-                  overflow: "hidden",
-                  height: "530px",
-                  width: "950px",
-                  boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px",
-                }}
-              >
-                <Image
-                  src={projectImages[slidesNo]?.src}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  alt={projectImages[slidesNo]?.name}
-                  title={projectImages[slidesNo]?.name}
-                />
-              </Box>
+              <Image
+                layout="intrinsic"
+                src={projectImages[slidesNo]?.src}
+                width={950}
+                height={530}
+                placeholder="blur"
+                alt={projectImages[slidesNo]?.name}
+                title={projectImages[slidesNo]?.name}
+                blurDataURL={projectImages[slidesNo]?.src}
+                style={{ boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px" }}
+              />
             </a>
           </Box>
         </Grid>
