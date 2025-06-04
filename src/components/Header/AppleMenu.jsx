@@ -27,7 +27,7 @@ const styleTwo = {
     cursor: "default",
   },
 };
-export const AppleMenu = () => {
+export const AppleMenu = ({ setShowApp }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const open = Boolean(anchorEl);
@@ -116,7 +116,11 @@ export const AppleMenu = () => {
           <Typography sx={styleTwo} className="simpleFont">
             Sleep
           </Typography>
-          <Typography sx={styleTwo} className="simpleFont">
+          <Typography
+            sx={styleTwo}
+            className="simpleFont"
+            onClick={() => setShowApp(false)}
+          >
             Restart...
           </Typography>
           <Typography sx={styleTwo} className="simpleFont">

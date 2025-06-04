@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Tooltip, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ProjectSlides } from "../Project/ProjectSlides";
