@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import dynamic from "next/dynamic";
 
-//Components
 const Desktop = dynamic(
   () => import("@/components/Desktop/Desktop").then((mod) => mod.Desktop),
   { ssr: false }
@@ -34,23 +33,58 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export const Layout = () => {
   const isMobile = useMediaQuery("(max-width:768px)");
-  const [showApp, setShowApp] = useState(false);
-  const [progress, setProgress] = useState(0);
+
+  const [showApp, setShowApp] = useState(false); // App visible
+  const [progress, setProgress] = useState(0); // Progress percent
+  const [showProgressBar, setShowProgressBar] = useState(true); // Controls visibility
+  const [isRestarting, setIsRestarting] = useState(false); // Restart trigger
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + 0.7; // Faster progression for smoother 3 seconds
-        if (next >= 100) {
-          clearInterval(interval);
-          setShowApp(true);
-        }
-        return next;
-      });
-    }, 30); // Ensuring progress happens within 3 seconds
+    let progressInterval;
 
-    return () => clearInterval(interval); // Clear the interval on component unmount
-  }, []);
+    if (!showApp) {
+      setProgress(0);
+
+      if (isRestarting) {
+        // On restart, delay progress bar by 5s
+        setShowProgressBar(false);
+        const delayTimeout = setTimeout(() => {
+          setShowProgressBar(true);
+          startProgress();
+        }, 5000);
+
+        return () => {
+          clearTimeout(delayTimeout);
+          clearInterval(progressInterval);
+        };
+      } else {
+        // First load: show immediately
+        setShowProgressBar(true);
+        startProgress();
+      }
+    }
+
+    function startProgress() {
+      progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          const next = prev + 0.7;
+          if (next >= 100) {
+            clearInterval(progressInterval);
+            setShowApp(true);
+            setIsRestarting(false); // Reset restart flag
+          }
+          return next;
+        });
+      }, 30);
+    }
+
+    return () => clearInterval(progressInterval);
+  }, [showApp, isRestarting]);
+
+  const handleRestart = () => {
+    setIsRestarting(true);
+    setShowApp(false);
+  };
 
   const LoadingScreen = () => (
     <Box
@@ -74,13 +108,15 @@ export const Layout = () => {
       >
         m.
       </Typography>
-      <Box sx={{ width: { xs: "40%", md: "20%" } }}>
-        <BorderLinearProgress
-          variant="determinate"
-          value={progress}
-          aria-label="Progress bar"
-        />
-      </Box>
+      {showProgressBar && (
+        <Box sx={{ width: { xs: "40%", md: "20%" } }}>
+          <BorderLinearProgress
+            variant="determinate"
+            value={progress}
+            aria-label="Progress bar"
+          />
+        </Box>
+      )}
     </Box>
   );
 
@@ -96,7 +132,9 @@ export const Layout = () => {
         </>
       )}
 
-      {showApp && <>{isMobile ? <Mobile /> : <Desktop />}</>}
+      {showApp && (
+        <>{isMobile ? <Mobile /> : <Desktop setShowApp={handleRestart} />}</>
+      )}
     </>
   );
 };

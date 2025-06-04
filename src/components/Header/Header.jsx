@@ -6,7 +6,7 @@ import { WifiMenu } from "./WifiMenu";
 import { HeaderTimeCard } from "../Misc/HeaderTimeCard";
 // import { TimeSpentTracker } from "../Misc/TimeSpendTracker";
 
-export const Header = () => {
+export const Header = ({ setShowApp }) => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
   return (
     <>
@@ -32,7 +32,7 @@ export const Header = () => {
               pl: 0.5,
             }}
           >
-            <AppleMenu />
+            <AppleMenu setShowApp={setShowApp} />
             {LeftMenu.map((item, key) => (
               <Typography
                 key={key}

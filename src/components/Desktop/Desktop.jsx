@@ -5,10 +5,10 @@ import { MusicWidget } from "../Misc/MusicWidget";
 import { Folder } from "../Misc/Folder";
 import { Dock } from "./Dock/Dock";
 
-export const Desktop = () => {
+export const Desktop = ({ setShowApp }) => {
   return (
     <>
-      <Header />
+      <Header setShowApp={setShowApp} />
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
           {/* <TimeCard /> */}
