@@ -8,6 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import dynamic from "next/dynamic";
+import styles from "./Layout.module.css";
 
 const Desktop = dynamic(
   () => import("@/components/Desktop/Desktop").then((mod) => mod.Desktop),
@@ -33,32 +34,26 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export const Layout = () => {
   const isMobile = useMediaQuery("(max-width:768px)");
-
-  const [showApp, setShowApp] = useState(false); // App visible
-  const [progress, setProgress] = useState(0); // Progress percent
-  const [showProgressBar, setShowProgressBar] = useState(true); // Controls visibility
-  const [isRestarting, setIsRestarting] = useState(false); // Restart trigger
+  const [showApp, setShowApp] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [showProgressBar, setShowProgressBar] = useState(true);
+  const [isRestarting, setIsRestarting] = useState(false);
 
   useEffect(() => {
     let progressInterval;
-
     if (!showApp) {
       setProgress(0);
-
       if (isRestarting) {
-        // On restart, delay progress bar by 5s
         setShowProgressBar(false);
         const delayTimeout = setTimeout(() => {
           setShowProgressBar(true);
           startProgress();
         }, 5000);
-
         return () => {
           clearTimeout(delayTimeout);
           clearInterval(progressInterval);
         };
       } else {
-        // First load: show immediately
         setShowProgressBar(true);
         startProgress();
       }
@@ -71,7 +66,7 @@ export const Layout = () => {
           if (next >= 100) {
             clearInterval(progressInterval);
             setShowApp(true);
-            setIsRestarting(false); // Reset restart flag
+            setIsRestarting(false);
           }
           return next;
         });
@@ -87,37 +82,23 @@ export const Layout = () => {
   };
 
   const LoadingScreen = () => (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        minHeight: "100vh",
-        bgcolor: "#000000",
-        color: "#FFFFFF",
-        m: -1,
-        gap: 3,
-        overflowY: "hidden",
-      }}
-    >
+    <div className={styles.loadingContainer}>
       <Typography
-        sx={{ fontSize: "60px", fontWeight: "bolder" }}
-        className="sfpro"
+        className={`${styles.loadingTitle} sfpro`}
         aria-label="Loading screen"
       >
         m.
       </Typography>
       {showProgressBar && (
-        <Box sx={{ width: { xs: "40%", md: "20%" } }}>
+        <div className={styles.progressContainer}>
           <BorderLinearProgress
             variant="determinate"
             value={progress}
             aria-label="Progress bar"
           />
-        </Box>
+        </div>
       )}
-    </Box>
+    </div>
   );
 
   return (
@@ -125,13 +106,12 @@ export const Layout = () => {
       {!showApp && (
         <>
           <LoadingScreen />
-          <div style={{ display: "none" }}>
+          <div className={styles.hiddenPreload}>
             <Desktop />
             <Mobile />
           </div>
         </>
       )}
-
       {showApp && (
         <>{isMobile ? <Mobile /> : <Desktop setShowApp={handleRestart} />}</>
       )}

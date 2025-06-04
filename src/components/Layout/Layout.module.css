@@ -1,0 +1,46 @@
+/* Layout.module.css */
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  margin: -10px;
+  gap: 24px;
+  overflow-y: hidden;
+}
+
+.loadingTitle {
+  font-size: 60px;
+  font-weight: bolder;
+}
+
+.progressContainer {
+  width: 40%;
+}
+
+.hiddenPreload {
+  display: none;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+  .progressContainer {
+    width: 20%;
+  }
+}
+
+/* Styled component equivalent for BorderLinearProgress */
+.borderLinearProgress {
+  height: 5px;
+  border-radius: 4px;
+  background-color: #3c3c3c;
+}
+
+.borderLinearProgress .MuiLinearProgress-bar {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
