@@ -82,7 +82,7 @@ export const Layout = () => {
     if (isShutdown) {
       const shutdownTimer = setTimeout(() => {
         setShowPressKey(true);
-      }, 3000); // Reduced from 7 seconds to 3 seconds
+      }, 7000); // Reduced from 7 seconds to 3 seconds
 
       return () => clearTimeout(shutdownTimer);
     }
