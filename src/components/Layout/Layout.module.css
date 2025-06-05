@@ -5,10 +5,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #000000;
   color: #ffffff;
-  margin: -10px;
   gap: 24px;
   overflow-y: hidden;
 }

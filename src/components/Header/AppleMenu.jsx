@@ -27,7 +27,8 @@ const styleTwo = {
     cursor: "default",
   },
 };
-export const AppleMenu = ({ setShowApp }) => {
+
+export const AppleMenu = ({ setShowApp, onShutdown }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const open = Boolean(anchorEl);
@@ -48,6 +49,12 @@ export const AppleMenu = ({ setShowApp }) => {
   const handleModalClose = () => {
     setModalOpen(false);
   };
+
+  const handleShutdown = () => {
+    handleClose();
+    onShutdown();
+  };
+
   return (
     <>
       <Typography
@@ -123,7 +130,11 @@ export const AppleMenu = ({ setShowApp }) => {
           >
             Restart...
           </Typography>
-          <Typography sx={styleTwo} className="simpleFont">
+          <Typography
+            sx={styleTwo}
+            className="simpleFont"
+            onClick={handleShutdown}
+          >
             Shutdown...
           </Typography>
         </Box>
