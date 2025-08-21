@@ -52,6 +52,13 @@ const contactData = [
     isLink: true,
   },
   {
+    label: "Github:",
+    value: "https://github.com/MANANTANDON",
+    href: "https://github.com/MANANTANDON",
+    isLink: true,
+    external: true,
+  },
+  {
     label: "X - formerly Twitter:",
     value: "https://x.com/4d616e616eT",
     href: "https://x.com/4d616e616eT",
