@@ -79,11 +79,6 @@ const contactData = [
     isLink: true,
     external: true,
   },
-  {
-    label: "Contact Whatsapp:",
-    value: "xxxxxxxxxx😎",
-    isLink: false,
-  },
 ];
 
 export const NotesWidget = () => {
