@@ -1,9 +1,8 @@
 import { Box, Container, Grid, Modal, Typography } from "@mui/material";
-import Image from "next/image";
 import React, { useState } from "react";
 import { ProjectsFileModal } from "./ProjectsFileModal";
-import { MananTandon } from "../Desktop/manantandon";
 import { Applications } from "../Desktop/Applications";
+import { MananTandon } from "../Desktop/MananTandon";
 
 const style = {
   bgcolor: "transparent",
