@@ -14,6 +14,18 @@ export const PageOne = () => {
       link: "https://consult.homeivf.com/",
       short_name: "HomeIVF",
     },
+    {
+      src: "/images/companies/govern_better.webp",
+      name: "Govern Better",
+      link: "https://governbetter.co/",
+      short_name: "Govern Better",
+    },
+    {
+      src: "/images/companies/shyna_gupta.webp",
+      name: "Shyna Gupta",
+      link: "https://shynagupta.com/",
+      short_name: "Shyna Gupta",
+    },
   ];
 
   const handleIconClick = (project) => {
