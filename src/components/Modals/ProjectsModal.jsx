@@ -2,6 +2,8 @@ import { Box, Container, Grid, Modal, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ProjectsFileModal } from "./ProjectsFileModal";
+import { MananTandon } from "../Desktop/manantandon";
+import { Applications } from "../Desktop/Applications";
 
 const style = {
   bgcolor: "transparent",
@@ -13,10 +15,16 @@ const style = {
 export const ProjectsModal = ({ handleModalClose }) => {
   const [maxWidth, setMaxWidth] = useState("md");
   const [open, setOpen] = useState(false);
+  const [selectMenu, setSelectedMenu] = useState("Applications");
 
   const handleWidth = () => {
     maxWidth === "lg" ? setMaxWidth("md") : setMaxWidth("lg");
   };
+
+  const sideMenu = [
+    { icons: "􀎞", name: "manantandon" },
+    { icons: "􀈕", name: "Applications" },
+  ];
   return (
     <Container
       maxWidth={maxWidth}
@@ -91,28 +99,32 @@ export const ProjectsModal = ({ handleModalClose }) => {
             >
               Favorites
             </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-                px: 0.5,
-                py: 0.6,
-                bgcolor: "#00000015",
-                borderRadius: "5px",
-                "&:hover": {
-                  cursor: "default",
-                },
-              }}
-            >
-              <Typography
-                className="sfpro"
-                sx={{ fontSize: "14px", color: "#0271F1" }}
+            {sideMenu?.map((item, key) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 0.5,
+                  px: 0.5,
+                  py: 0.6,
+                  bgcolor: selectMenu === item.name && "#00000015",
+                  borderRadius: "5px",
+                  "&:hover": {
+                    cursor: "default",
+                  },
+                }}
+                key={key}
+                onClick={() => setSelectedMenu(item.name)}
               >
-                􀎞
-              </Typography>
-              <Typography sx={{ fontSize: "14px" }}>manantandon</Typography>
-            </Box>
+                <Typography
+                  className="sfpro"
+                  sx={{ fontSize: "13px", color: "#0271F1" }}
+                >
+                  {item.icons}
+                </Typography>
+                <Typography sx={{ fontSize: "13px" }}>{item?.name}</Typography>
+              </Box>
+            ))}
           </Box>
         </Grid>
         <Grid
@@ -130,7 +142,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
             sx={{
               bgcolor: "#F6F6F7",
               py: 1.5,
-              px: 2,
+              px: 1,
               display: "flex",
               gap: 2.5,
               borderBottom: "1px solid #EEEEEE",
@@ -146,42 +158,20 @@ export const ProjectsModal = ({ handleModalClose }) => {
               className="sfpro"
               sx={{ fontSize: "14px", fontWeight: "bold" }}
             >
-              Projects
+              {selectMenu === "manantandon" ? "manantandon" : "Applications"}
             </Typography>
           </Box>
-          <Box sx={{ p: 3 }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "fit-content",
-              }}
-              onClick={() => setOpen(true)}
-            >
-              <Box
-                sx={{
-                  position: "relative",
-                  overflow: "hidden",
-                  width: "70px",
-                  height: "40px",
-                  borderRadius: "3px",
-                  boxShadow:
-                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-                }}
-              >
-                <Image
-                  src="/images/slides/slide1.png"
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </Box>
-              <Typography className="sfpro" sx={{ fontSize: "12px", mt: 2 }}>
-                projects
-              </Typography>
-            </Box>
+          <Box
+            sx={{
+              px: selectMenu === "manantandon" ? 3 : 1,
+              py: selectMenu === "manantandon" ? 3 : 3,
+            }}
+          >
+            {selectMenu === "manantandon" ? (
+              <MananTandon setOpen={setOpen} />
+            ) : (
+              <Applications />
+            )}
           </Box>
         </Grid>
       </Grid>
