@@ -8,6 +8,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { PageOne } from "./Pages/PageOne";
+import { NotesWidgetMobile } from "./NotesWidgetMobile";
 
 // Custom styles for pagination color and position
 const swiperStyles = `
@@ -58,6 +59,7 @@ export const MobileHome = () => {
         </SwiperSlide>
         <SwiperSlide style={{ height: "100%" }}>
           <div style={{ height: "100%", overflow: "auto" }}>
+            <NotesWidgetMobile />
             <PageOne />
           </div>
         </SwiperSlide>
