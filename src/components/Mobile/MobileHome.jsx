@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MusicWidgetMobile } from "./MusicWidgetMobile";
 import { Projects } from "./Projects";
 import { MobileDock } from "./MobileDock";
@@ -21,11 +21,25 @@ const swiperStyles = `
   }
   
   .swiper-pagination {
-    bottom: 110px !important;
+    bottom: 70px !important;
   }
 `;
 
 export const MobileHome = () => {
+  const [screenHeight, setScreenHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setScreenHeight(window.innerHeight - 84);
+    };
+
+    updateHeight();
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
     <>
       <style>{swiperStyles}</style>
@@ -39,7 +53,7 @@ export const MobileHome = () => {
         simulateTouch={true}
         allowTouchMove={true}
         style={{
-          height: "calc(100vh - 40px)",
+          height: screenHeight,
           width: "100%",
           overflow: "hidden",
         }}
