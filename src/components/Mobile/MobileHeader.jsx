@@ -1,7 +1,6 @@
 import { useCurrentMobileTime } from "@/hooks/useCurrentMobileTime";
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { Charging } from "../Misc/Charging";
 import { MobileCharging } from "../Misc/MobileCharging";
 
 export const MobileHeader = () => {

@@ -19,7 +19,7 @@ export const MusicWidgetMobile = () => {
   return (
     <>
       <audio ref={audioRef} src="/audio/EnjoyTheShow.mp3" />
-      <Box sx={{ mx: 1.5, mt: 4.5 }}>
+      <Box sx={{ mx: 1.5, mt: 2 }}>
         <Box
           sx={{
             borderRadius: "20px",

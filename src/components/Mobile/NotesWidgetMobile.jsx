@@ -5,7 +5,7 @@ import React from "react";
 const styles = {
   container: {
     mx: 1.5,
-    mt: 4.5,
+    mt: 2,
   },
   widget: {
     width: "100%",
