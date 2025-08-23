@@ -21,7 +21,7 @@ const swiperStyles = `
   }
   
   .swiper-pagination {
-    bottom: 70px !important;
+    bottom: 60px !important;
   }
 `;
 
