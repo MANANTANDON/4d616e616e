@@ -219,8 +219,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    overflow-x: hidden;
     overflow-y: auto;
-    height: 100svh;
+    height: auto;
   }
 }

@@ -82,38 +82,49 @@ const contactData = [
 
 export const NotesWidgetMobile = () => {
   return (
-    <Box sx={styles.container}>
-      <Box sx={styles.widget}>
-        <Box sx={styles.header}>
-          <Typography
-            className="sfpro"
-            sx={{ pl: 2, fontSize: "16px", display: "flex", gap: 1 }}
-          >
-            <span>􀈕</span>
-            <span>Notes</span>
-          </Typography>
-        </Box>
-        <Box sx={styles.content}>
-          {contactData.map((contact, index) => (
-            <Box key={index} sx={styles.contactItem}>
-              <Typography sx={styles.label}>{contact.label}</Typography>
-              {contact.isLink ? (
-                <Typography
-                  component="a"
-                  href={contact.href}
-                  target={contact.external ? "_blank" : undefined}
-                  rel={contact.external ? "noopener noreferrer" : undefined}
-                  sx={styles.link}
-                >
-                  {contact.value}
-                </Typography>
-              ) : (
-                <Typography sx={styles.link}>{contact.value}</Typography>
-              )}
-            </Box>
-          ))}
+    <>
+      <Box sx={styles.container}>
+        <Box sx={styles.widget}>
+          <Box sx={styles.header}>
+            <Typography
+              className="sfpro"
+              sx={{ pl: 2, fontSize: "16px", display: "flex", gap: 1 }}
+            >
+              <span>􀈕</span>
+              <span>Notes</span>
+            </Typography>
+          </Box>
+          <Box sx={styles.content}>
+            {contactData.map((contact, index) => (
+              <Box key={index} sx={styles.contactItem}>
+                <Typography sx={styles.label}>{contact.label}</Typography>
+                {contact.isLink ? (
+                  <Typography
+                    component="a"
+                    href={contact.href}
+                    target={contact.external ? "_blank" : undefined}
+                    rel={contact.external ? "noopener noreferrer" : undefined}
+                    sx={styles.link}
+                  >
+                    {contact.value}
+                  </Typography>
+                ) : (
+                  <Typography sx={styles.link}>{contact.value}</Typography>
+                )}
+              </Box>
+            ))}
+          </Box>
         </Box>
       </Box>
-    </Box>
+      <Box>
+        <Typography
+          textAlign="center"
+          className="sfpro"
+          sx={{ color: "#FBF8EF", fontSize: "12px", mt: 1.2 }}
+        >
+          Notes
+        </Typography>
+      </Box>
+    </>
   );
 };

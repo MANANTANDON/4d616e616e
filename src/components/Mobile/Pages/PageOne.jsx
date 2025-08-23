@@ -18,7 +18,7 @@ export const PageOne = () => {
       src: "/images/companies/govern_better.webp",
       name: "Govern Better",
       link: "https://governbetter.co/",
-      short_name: "Govern Better",
+      short_name: "GB",
     },
     {
       src: "/images/companies/shyna_gupta.webp",
@@ -32,9 +32,10 @@ export const PageOne = () => {
     setClickLink(project);
     setOpen(true);
   };
+
   return (
     <>
-      <Box sx={{ mt: 2.5, mx: 2 }}>
+      <Box sx={{ mt: 2.5, mx: -1 }}>
         <Grid
           container
           sx={{
@@ -42,7 +43,7 @@ export const PageOne = () => {
           }}
         >
           {projects?.map((item, key) => (
-            <Grid xs={3} key={key}>
+            <Grid xs={3} key={key} sx={{}}>
               <Box
                 sx={{
                   display: "flex",

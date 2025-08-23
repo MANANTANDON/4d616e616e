@@ -6,7 +6,7 @@ import { MobileHome } from "../Mobile/MobileHome";
 export const Mobile = () => {
   return (
     <>
-      <Box sx={{ height: "100vh", m: -1 }} className="iphone-screen-blur">
+      <Box sx={{ height: "100dvh", m: -1 }} className="iphone-screen-blur">
         {/* time + Wifi + Signal + battery*/}
         <MobileHeader />
         <MobileHome />

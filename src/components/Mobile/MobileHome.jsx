@@ -2,7 +2,6 @@ import React from "react";
 import { MusicWidgetMobile } from "./MusicWidgetMobile";
 import { Projects } from "./Projects";
 import { MobileDock } from "./MobileDock";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -22,7 +21,7 @@ const swiperStyles = `
   }
   
   .swiper-pagination {
-    bottom: 140px !important;
+    bottom: 110px !important;
   }
 `;
 
@@ -35,30 +34,27 @@ export const MobileHome = () => {
         modules={[Pagination]}
         slidesPerView={1}
         spaceBetween={10}
-        // Add these properties to ensure touch works properly
         touchRatio={1}
         touchAngle={45}
         simulateTouch={true}
         allowTouchMove={true}
-        // Ensure proper height and overflow
         style={{
-          height: "100vh",
+          height: "calc(100vh - 40px)",
           width: "100%",
           overflow: "hidden",
         }}
-        // Add resistance and threshold for better touch response
         resistance={true}
         resistanceRatio={0.85}
         threshold={10}
       >
         <SwiperSlide style={{ height: "100%" }}>
-          <div style={{ height: "100%", overflow: "auto" }}>
+          <div style={{ height: "100%", overflow: "hidden" }}>
             <MusicWidgetMobile />
             <Projects />
           </div>
         </SwiperSlide>
         <SwiperSlide style={{ height: "100%" }}>
-          <div style={{ height: "100%", overflow: "auto" }}>
+          <div style={{ height: "100%", overflow: "hidden" }}>
             <NotesWidgetMobile />
             <PageOne />
           </div>
