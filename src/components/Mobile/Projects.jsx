@@ -44,6 +44,12 @@ export const Projects = () => {
       link: "https://kgdashboard.khabargaon.com/",
       short_name: "CMS",
     },
+    {
+      src: "/images/companies/snowchild_studio.webp",
+      name: "Snowchild Studio",
+      link: "https://snowchildstudio.com/",
+      short_name: "Snowchild Studio",
+    },
   ];
 
   const handleIconClick = (project) => {
