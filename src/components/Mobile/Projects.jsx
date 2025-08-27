@@ -50,6 +50,12 @@ export const Projects = () => {
       link: "https://snowchildstudio.com/",
       short_name: "Snowchild Studio",
     },
+    {
+      src: "/images/games/snowchild-wordle.webp",
+      name: "Snowchild Wordle",
+      link: "/snowchild-wordle",
+      short_name: "SW",
+    },
   ];
 
   const handleIconClick = (project) => {
