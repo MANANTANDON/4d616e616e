@@ -2,13 +2,13 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Alert from "../IOS26/Alert";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  bgcolor: "#D7EDF5",
   borderRadius: "30px",
   outline: "none",
   width: "calc(100% - 70px)",
@@ -25,6 +25,9 @@ export const LinkModal = ({ clickLink, open, setOpen }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
+        {/* <Box sx={style}>
+          <Alert />
+        </Box> */}
         <Box sx={style} className="liquidGlass">
           <Box sx={{ px: "12px" }}>
             <Typography
