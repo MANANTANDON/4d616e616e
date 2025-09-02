@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import { WordleDesign } from "./Wordle/WordleDesign";
 
 export const Wordle = () => {
   return (
@@ -28,6 +29,7 @@ export const Wordle = () => {
           Snowchild Wordle
         </Typography>
       </Box>
+      <WordleDesign />
     </>
   );
 };
