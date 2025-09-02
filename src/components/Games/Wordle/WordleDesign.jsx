@@ -76,6 +76,21 @@ export const WordleDesign = () => {
     }
   };
 
+  // Function to get border color for each cell
+  const getBorderColor = (rowIndex, colIndex) => {
+    const color = rowColors[rowIndex][colIndex];
+    switch (color) {
+      case "green":
+        return "#6AAA64";
+      case "yellow":
+        return "#C9B458";
+      case "grey":
+        return "#787C7E";
+      default:
+        return "#D4D6DA";
+    }
+  };
+
   // Function to get text color for each cell
   const getTextColor = (rowIndex, colIndex) => {
     const color = rowColors[rowIndex][colIndex];
@@ -150,7 +165,7 @@ export const WordleDesign = () => {
   }, [handleKeyPress]);
 
   return (
-    <Box sx={{ py: 5 }}>
+    <Box sx={{ border: "1px solid green", py: 5 }}>
       <Box
         sx={{
           display: "flex",
@@ -169,7 +184,7 @@ export const WordleDesign = () => {
               <Box
                 key={colIndex}
                 sx={{
-                  border: "2px solid #D4D6DA",
+                  border: `2px solid ${getBorderColor(rowIndex, colIndex)}`,
                   height: "52px",
                   width: "52px",
                   display: "flex",
@@ -193,8 +208,7 @@ export const WordleDesign = () => {
       {/* Instructions */}
       <Box sx={{ textAlign: "center", mt: 3, color: "#666" }}>
         <p>Type letters to fill the grid</p>
-        <p>Press BACKSPACE to delete </p>
-        <p>Press ENTER to submit row</p>
+        <p>Press BACKSPACE to delete</p> <p>Press ENTER to submit row</p>
       </Box>
     </Box>
   );
