@@ -165,7 +165,7 @@ export const WordleDesign = () => {
   }, [handleKeyPress]);
 
   return (
-    <Box sx={{ border: "1px solid green", py: 5 }}>
+    <Box sx={{ py: 5 }}>
       <Box
         sx={{
           display: "flex",
