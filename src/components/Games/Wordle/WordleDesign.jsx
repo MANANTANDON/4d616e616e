@@ -21,8 +21,6 @@ export const WordleDesign = () => {
       .map(() => Array(COLS).fill(""))
   );
 
-  console.log(fiveLetterWords?.five_letter_words);
-
   // Function to get random word from the word list
   const getRandomWord = useCallback(() => {
     if (fiveLetterWords?.five_letter_words?.length > 0) {
