@@ -19,12 +19,12 @@ export const Wordle = () => {
         <Image
           src="/images/games/snowchild-wordle.webp"
           layout="intrinsic"
-          height={70}
-          width={70}
+          height={40}
+          width={40}
         />
         <Typography
           className="sfpro"
-          sx={{ fontSize: { xs: "25px", md: "32px" }, fontWeight: 700 }}
+          sx={{ fontSize: { xs: "18px", md: "22px" }, fontWeight: 700 }}
         >
           Snowchild Wordle
         </Typography>

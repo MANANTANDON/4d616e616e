@@ -1,12 +1,15 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useState, useEffect, useCallback } from "react";
+import fiveLetterWords from "@/utils/five_letter_words.json";
 
 export const WordleDesign = () => {
   const ROWS = 6;
   const COLS = 5;
-  const [todaysWord, setTodaysWord] = useState("ALOHA");
+  const [todaysWord, setTodaysWord] = useState("");
   const [currentRow, setCurrentRow] = useState(0);
   const [currentCol, setCurrentCol] = useState(0);
+  const [gameWon, setGameWon] = useState(false);
+  const [gameLost, setGameLost] = useState(false);
   const [board, setBoard] = useState(
     Array(ROWS)
       .fill()
@@ -17,6 +20,24 @@ export const WordleDesign = () => {
       .fill()
       .map(() => Array(COLS).fill(""))
   );
+
+  console.log(fiveLetterWords?.five_letter_words);
+
+  // Function to get random word from the word list
+  const getRandomWord = useCallback(() => {
+    if (fiveLetterWords?.five_letter_words?.length > 0) {
+      const randomIndex = Math.floor(
+        Math.random() * fiveLetterWords.five_letter_words.length
+      );
+      return fiveLetterWords.five_letter_words[randomIndex].toUpperCase();
+    }
+    return "ALOHA"; // Fallback word
+  }, []);
+
+  // Initialize today's word on component mount
+  useEffect(() => {
+    setTodaysWord(getRandomWord());
+  }, [getRandomWord]);
 
   // Function to check word and assign colors
   const checkWord = useCallback(
@@ -57,6 +78,14 @@ export const WordleDesign = () => {
         newColors[row] = colors;
         return newColors;
       });
+
+      // Check if the word is guessed correctly
+      if (guess === todaysWord) {
+        setGameWon(true);
+      } else if (row === ROWS - 1) {
+        // If this was the last row and word wasn't guessed, game is lost
+        setGameLost(true);
+      }
     },
     [todaysWord, board]
   );
@@ -79,6 +108,8 @@ export const WordleDesign = () => {
   // Function to get border color for each cell
   const getBorderColor = (rowIndex, colIndex) => {
     const color = rowColors[rowIndex][colIndex];
+    const hasLetter = board[rowIndex][colIndex] !== "";
+
     switch (color) {
       case "green":
         return "#6AAA64";
@@ -87,7 +118,7 @@ export const WordleDesign = () => {
       case "grey":
         return "#787C7E";
       default:
-        return "#D4D6DA";
+        return hasLetter ? "#080808" : "#D4D6DA";
     }
   };
 
@@ -101,6 +132,15 @@ export const WordleDesign = () => {
 
   const handleKeyPress = useCallback(
     (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "r") {
+        return; // Allow default browser refresh behavior
+      }
+
+      // Don't allow input if game is won or lost
+      if (gameWon || gameLost) {
+        return;
+      }
+
       const key = event.key.toUpperCase();
 
       // Handle letter input (A-Z)
@@ -133,7 +173,7 @@ export const WordleDesign = () => {
           // Check the word and assign colors
           checkWord(currentRow);
 
-          // Move to next row if current row is complete
+          // Move to next row if current row is complete and game is not won
           if (currentRow < ROWS - 1) {
             setCurrentRow((prev) => prev + 1);
             setCurrentCol(0);
@@ -150,7 +190,7 @@ export const WordleDesign = () => {
         event.preventDefault();
       }
     },
-    [currentRow, currentCol, checkWord]
+    [currentRow, currentCol, checkWord, gameWon, gameLost]
   );
 
   // Add event listener for keystrokes
@@ -165,7 +205,8 @@ export const WordleDesign = () => {
   }, [handleKeyPress]);
 
   return (
-    <Box sx={{ py: 5 }}>
+    <Box sx={{ py: 2 }}>
+      {/* <Typography className="sfpro">{todaysWord}</Typography> */}
       <Box
         sx={{
           display: "flex",
@@ -205,10 +246,47 @@ export const WordleDesign = () => {
         ))}
       </Box>
 
+      {/* Win message */}
+      {gameWon && (
+        <Box
+          sx={{
+            textAlign: "center",
+            mt: 3,
+            color: "#6AAA64",
+            fontSize: "18px",
+            fontWeight: "bold",
+          }}
+          className="sfpro"
+        >
+          🎉 You guessed the word {todaysWord}! 🎉
+        </Box>
+      )}
+
+      {/* Loss message */}
+      {gameLost && (
+        <Box
+          sx={{
+            textAlign: "center",
+            mt: 3,
+            color: "#d32f2f",
+            fontSize: "18px",
+            fontWeight: "bold",
+          }}
+          className="sfpro"
+        >
+          😔 Game Over! The word was {todaysWord}
+        </Box>
+      )}
+
       {/* Instructions */}
       <Box sx={{ textAlign: "center", mt: 3, color: "#666" }}>
-        <p>Type letters to fill the grid</p>
-        <p>Press BACKSPACE to delete</p> <p>Press ENTER to submit row</p>
+        {!gameWon && !gameLost && (
+          <>
+            <p>Type letters to fill the grid</p>
+            <p>Press BACKSPACE to delete</p>
+            <p>Press ENTER to submit row</p>
+          </>
+        )}
       </Box>
     </Box>
   );
