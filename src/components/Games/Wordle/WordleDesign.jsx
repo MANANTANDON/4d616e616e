@@ -204,6 +204,8 @@ export const WordleDesign = () => {
     };
   }, [handleKeyPress]);
 
+  console.log(todaysWord, "=======================");
+
   return (
     <Box sx={{ py: 2 }}>
       {/* <Typography className="sfpro">{todaysWord}</Typography> */}
