@@ -151,25 +151,22 @@ export const WordleDesign = () => {
       : "black";
   };
 
-  const handleKeyPress = useCallback(
-    (event) => {
-      // if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "r") {
-      //   return; // Allow default browser refresh behavior
-      // }
-
+  // Shared input handler that both physical keyboard and on-screen keyboard can use
+  const handleInput = useCallback(
+    (key) => {
       // Don't allow input if game is won or lost
       if (gameWon || gameLost) {
         return;
       }
 
-      const key = event.key.toUpperCase();
+      const upperKey = key.toUpperCase();
 
       // Handle letter input (A-Z)
-      if (key >= "A" && key <= "Z" && key.length === 1) {
+      if (upperKey >= "A" && upperKey <= "Z" && upperKey.length === 1) {
         if (currentCol < COLS && currentRow < ROWS) {
           setBoard((prevBoard) => {
             const newBoard = [...prevBoard];
-            newBoard[currentRow][currentCol] = key;
+            newBoard[currentRow][currentCol] = upperKey;
             return newBoard;
           });
           setCurrentCol((prev) => prev + 1);
@@ -177,7 +174,7 @@ export const WordleDesign = () => {
       }
 
       // Handle backspace
-      else if (key === "BACKSPACE") {
+      else if (upperKey === "BACKSPACE" || upperKey === "DELETE") {
         if (currentCol > 0) {
           setCurrentCol((prev) => prev - 1);
           setBoard((prevBoard) => {
@@ -189,7 +186,7 @@ export const WordleDesign = () => {
       }
 
       // Handle enter key
-      else if (key === "ENTER") {
+      else if (upperKey === "ENTER") {
         if (currentCol === COLS) {
           // Check the word and assign colors
           checkWord(currentRow);
@@ -201,6 +198,17 @@ export const WordleDesign = () => {
           }
         }
       }
+    },
+    [currentRow, currentCol, checkWord, gameWon, gameLost]
+  );
+
+  // Physical keyboard event handler
+  const handleKeyPress = useCallback(
+    (event) => {
+      const key = event.key.toUpperCase();
+
+      // Handle the input
+      handleInput(key);
 
       // Prevent default behavior for handled keys
       if (
@@ -211,7 +219,7 @@ export const WordleDesign = () => {
         event.preventDefault();
       }
     },
-    [currentRow, currentCol, checkWord, gameWon, gameLost]
+    [handleInput]
   );
 
   // Add event listener for keystrokes
@@ -294,7 +302,7 @@ export const WordleDesign = () => {
                 borderRadius: "10px",
               }}
             >
-              <Typography>Today's Word</Typography>
+              <Typography>Hidden Word was</Typography>
               <Typography
                 sx={{
                   bgcolor: "#397E32",
@@ -314,7 +322,7 @@ export const WordleDesign = () => {
         <Box sx={{ textAlign: "center", mt: 2 }}>
           {!gameWon && !gameLost && (
             <>
-              <Keyboard />
+              <Keyboard onKeyClick={handleInput} />
             </>
           )}
         </Box>
