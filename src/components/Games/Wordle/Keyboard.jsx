@@ -44,9 +44,6 @@ export const Keyboard = ({ onKeyClick }) => {
                   "&:hover": {
                     bgcolor: "#b8bbc0",
                   },
-                  "&:active": {
-                    bgcolor: "#a8abb0",
-                  },
                 }}
               >
                 {item}
