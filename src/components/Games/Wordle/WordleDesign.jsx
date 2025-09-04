@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import React, { useState, useEffect, useCallback } from "react";
 import fiveLetterWords from "@/utils/five_letter_words.json";
 
@@ -130,9 +130,9 @@ export const WordleDesign = () => {
 
   const handleKeyPress = useCallback(
     (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "r") {
-        return; // Allow default browser refresh behavior
-      }
+      // if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "r") {
+      //   return; // Allow default browser refresh behavior
+      // }
 
       // Don't allow input if game is won or lost
       if (gameWon || gameLost) {
@@ -206,7 +206,6 @@ export const WordleDesign = () => {
 
   return (
     <Box sx={{ py: 2 }}>
-      {/* <Typography className="sfpro">{todaysWord}</Typography> */}
       <Box
         sx={{
           display: "flex",
@@ -231,7 +230,7 @@ export const WordleDesign = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "20px",
+                  fontSize: "28px",
                   fontWeight: "bold",
                   backgroundColor: getCellColor(rowIndex, colIndex),
                   color: getTextColor(rowIndex, colIndex),
