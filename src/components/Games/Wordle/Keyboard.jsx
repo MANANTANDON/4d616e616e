@@ -113,10 +113,10 @@ export const Keyboard = ({ onKeyClick }) => {
                   fontSize: key === 0 ? "12px" : "20px",
                   cursor: "pointer",
                   "&:hover": {
-                    bgcolor: "#b8bbc0",
+                    bgcolor: item === "ENTER" ? "#0086FD" : "#D4D6DA",
                   },
                   "&:active": {
-                    bgcolor: "#a8abb0",
+                    bgcolor: item === "ENTER" ? "#0086FD" : "#D4D6DA",
                   },
                 }}
               >
