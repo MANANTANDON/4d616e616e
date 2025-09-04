@@ -41,9 +41,6 @@ export const Keyboard = ({ onKeyClick }) => {
                   justifyContent: "center",
                   fontSize: "20px",
                   cursor: "pointer",
-                  "&:hover": {
-                    bgcolor: "#b8bbc0",
-                  },
                 }}
               >
                 {item}
@@ -74,12 +71,6 @@ export const Keyboard = ({ onKeyClick }) => {
                   justifyContent: "center",
                   fontSize: "20px",
                   cursor: "pointer",
-                  "&:hover": {
-                    bgcolor: "#b8bbc0",
-                  },
-                  "&:active": {
-                    bgcolor: "#a8abb0",
-                  },
                 }}
               >
                 {item}
@@ -109,12 +100,6 @@ export const Keyboard = ({ onKeyClick }) => {
                   justifyContent: "center",
                   fontSize: key === 0 ? "12px" : "20px",
                   cursor: "pointer",
-                  "&:hover": {
-                    bgcolor: item === "ENTER" ? "#0086FD" : "#D4D6DA",
-                  },
-                  "&:active": {
-                    bgcolor: item === "ENTER" ? "#0086FD" : "#D4D6DA",
-                  },
                 }}
               >
                 {item === "BACKSPACE" ? (
