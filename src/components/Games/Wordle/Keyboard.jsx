@@ -1,13 +1,13 @@
-import { Box, Button } from "@mui/material";
-import { Backspace } from "@mui/icons-material";
+import { BackspaceRounded, TurnLeftRounded } from "@mui/icons-material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 export const Keyboard = ({ onKeyClick }) => {
-  const keyboardRows = [
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-    ["ENTER", "Z", "X", "C", "V", "B", "N", "M", "BACKSPACE"],
-  ];
+  const keyboard = {
+    rowOne: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    rowTwo: ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+    rowThird: ["ENTER", "Z", "X", "C", "V", "B", "N", "M", "BACKSPACE"],
+  };
 
   const handleKeyClick = (key) => {
     if (onKeyClick) {
@@ -16,55 +16,122 @@ export const Keyboard = ({ onKeyClick }) => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 1,
-        alignItems: "center",
-        mt: 2,
-      }}
-    >
-      {keyboardRows.map((row, rowIndex) => (
-        <Box
-          key={rowIndex}
-          sx={{
-            display: "flex",
-            gap: 0.5,
-            justifyContent: "center",
-          }}
-        >
-          {row.map((key) => (
-            <Button
-              key={key}
-              onClick={() => handleKeyClick(key)}
-              sx={{
-                minWidth:
-                  key === "ENTER" || key === "BACKSPACE" ? "60px" : "40px",
-                height: "48px",
-                backgroundColor: "#d4d6da",
-                color: "#000",
-                fontSize:
-                  key === "ENTER" || key === "BACKSPACE" ? "12px" : "16px",
-                fontWeight: "bold",
-                border: "none",
-                borderRadius: "4px",
-                cursor: "pointer",
-                "&:hover": {
-                  backgroundColor: "#b8bbc0",
-                },
-                "&:active": {
-                  backgroundColor: "#a8abb0",
-                },
-                textTransform: "none",
-              }}
-              className="sfpro"
-            >
-              {key === "BACKSPACE" ? <Backspace fontSize="small" /> : key}
-            </Button>
-          ))}
+    <>
+      <Container maxWidth="sm">
+        <Box sx={{ mx: -1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "5px",
+            }}
+          >
+            {keyboard.rowOne?.map((item, key) => (
+              <Typography
+                key={key}
+                onClick={() => handleKeyClick(item)}
+                sx={{
+                  height: "58px",
+                  width: "43px",
+                  borderRadius: "4px",
+                  bgcolor: "#D4D6DA",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "20px",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "#b8bbc0",
+                  },
+                  "&:active": {
+                    bgcolor: "#a8abb0",
+                  },
+                }}
+              >
+                {item}
+              </Typography>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "5px",
+              my: "5px",
+              mx: 2,
+            }}
+          >
+            {keyboard.rowTwo?.map((item, key) => (
+              <Typography
+                key={key}
+                onClick={() => handleKeyClick(item)}
+                sx={{
+                  height: "58px",
+                  width: "43px",
+                  borderRadius: "4px",
+                  bgcolor: "#D4D6DA",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "20px",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "#b8bbc0",
+                  },
+                  "&:active": {
+                    bgcolor: "#a8abb0",
+                  },
+                }}
+              >
+                {item}
+              </Typography>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "5px",
+            }}
+          >
+            {keyboard.rowThird?.map((item, key) => (
+              <Typography
+                key={key}
+                onClick={() => handleKeyClick(item)}
+                sx={{
+                  height: "58px",
+                  width: key === 0 ? "63px" : "43px",
+                  borderRadius: "4px",
+                  bgcolor: item === "ENTER" ? "#0086FD" : "#D4D6DA",
+                  color: item === "ENTER" ? "#FFFFFF" : "#000000",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: key === 0 ? "12px" : "20px",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "#b8bbc0",
+                  },
+                  "&:active": {
+                    bgcolor: "#a8abb0",
+                  },
+                }}
+              >
+                {item === "BACKSPACE" ? (
+                  <BackspaceRounded fontSize="small" />
+                ) : item === "ENTER" ? (
+                  <TurnLeftRounded sx={{ transform: "rotate(180deg)" }} />
+                ) : (
+                  item
+                )}
+              </Typography>
+            ))}
+          </Box>
         </Box>
-      ))}
-    </Box>
+      </Container>
+    </>
   );
 };
