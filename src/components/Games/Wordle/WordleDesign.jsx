@@ -1,8 +1,28 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import React, { useState, useEffect, useCallback } from "react";
 import fiveLetterWords from "@/utils/five_letter_words.json";
+import { WinLoseModal } from "./WinLoseModal";
 
 export const WordleDesign = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const style = {
+    width: "100%",
+    height: "100%",
+    outline: "none",
+    bgcolor: "#FFFFFF",
+    borderRadius: "5px",
+    overflow: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  };
+
   const ROWS = 6;
   const COLS = 5;
   const [todaysWord, setTodaysWord] = useState("");
@@ -80,9 +100,11 @@ export const WordleDesign = () => {
       // Check if the word is guessed correctly
       if (guess === todaysWord) {
         setGameWon(true);
+        setOpen(true);
       } else if (row === ROWS - 1) {
         // If this was the last row and word wasn't guessed, game is lost
         setGameLost(true);
+        setOpen(true);
       }
     },
     [todaysWord, board]
@@ -205,88 +227,113 @@ export const WordleDesign = () => {
   console.log(todaysWord, "=======================");
 
   return (
-    <Box sx={{ py: 2 }}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "center",
-          gap: "5px",
-        }}
-      >
-        {Array.from(Array(ROWS)).map((_, rowIndex) => (
+    <>
+      <Box sx={{ py: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "5px",
+          }}
+        >
+          {Array.from(Array(ROWS)).map((_, rowIndex) => (
+            <Box
+              key={rowIndex}
+              sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+            >
+              {Array.from(Array(COLS)).map((_, colIndex) => (
+                <Box
+                  key={colIndex}
+                  sx={{
+                    border: `2px solid ${getBorderColor(rowIndex, colIndex)}`,
+                    height: "52px",
+                    width: "52px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    backgroundColor: getCellColor(rowIndex, colIndex),
+                    color: getTextColor(rowIndex, colIndex),
+                    transition: "all 0.3s ease",
+                  }}
+                  className="sfpro"
+                >
+                  {board[rowIndex][colIndex]}
+                </Box>
+              ))}
+            </Box>
+          ))}
+        </Box>
+
+        {/* Win message */}
+        {gameWon && (
           <Box
-            key={rowIndex}
-            sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+            sx={{
+              textAlign: "center",
+              mt: 3,
+              color: "#6AAA64",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
+            className="sfpro"
           >
-            {Array.from(Array(COLS)).map((_, colIndex) => (
-              <Box
-                key={colIndex}
-                sx={{
-                  border: `2px solid ${getBorderColor(rowIndex, colIndex)}`,
-                  height: "52px",
-                  width: "52px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "28px",
-                  fontWeight: "bold",
-                  backgroundColor: getCellColor(rowIndex, colIndex),
-                  color: getTextColor(rowIndex, colIndex),
-                  transition: "all 0.3s ease",
-                }}
-                className="sfpro"
-              >
-                {board[rowIndex][colIndex]}
-              </Box>
-            ))}
+            🎉 You guessed the word {todaysWord}! 🎉
           </Box>
-        ))}
-      </Box>
-
-      {/* Win message */}
-      {gameWon && (
-        <Box
-          sx={{
-            textAlign: "center",
-            mt: 3,
-            color: "#6AAA64",
-            fontSize: "18px",
-            fontWeight: "bold",
-          }}
-          className="sfpro"
-        >
-          🎉 You guessed the word {todaysWord}! 🎉
-        </Box>
-      )}
-
-      {/* Loss message */}
-      {gameLost && (
-        <Box
-          sx={{
-            textAlign: "center",
-            mt: 3,
-            color: "#d32f2f",
-            fontSize: "18px",
-            fontWeight: "bold",
-          }}
-          className="sfpro"
-        >
-          😔 Game Over! The word was {todaysWord}
-        </Box>
-      )}
-
-      {/* Instructions */}
-      <Box sx={{ textAlign: "center", mt: 3, color: "#666" }}>
-        {!gameWon && !gameLost && (
-          <>
-            <p>Type letters to fill the grid</p>
-            <p>Press BACKSPACE to delete</p>
-            <p>Press ENTER to submit row</p>
-          </>
         )}
+
+        {/* Loss message */}
+        {gameLost && (
+          <Box
+            sx={{
+              textAlign: "center",
+              mt: 3,
+              color: "#d32f2f",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
+            className="sfpro"
+          >
+            😔 Game Over! The word was {todaysWord}
+          </Box>
+        )}
+
+        {/* Instructions */}
+        <Box sx={{ textAlign: "center", mt: 3, color: "#666" }}>
+          {!gameWon && !gameLost && (
+            <>
+              <p>Type letters to fill the grid</p>
+              <p>Press BACKSPACE to delete</p>
+              <p>Press ENTER to submit row</p>
+            </>
+          )}
+        </Box>
       </Box>
-    </Box>
+      {
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          slotProps={{
+            backdrop: {
+              sx: {
+                backgroundColor: "rgba(0, 0, 0, 0.2)", // 0.2% opacity
+              },
+            },
+          }}
+        >
+          <Box sx={style}>
+            <WinLoseModal
+              gameLost={gameLost}
+              gameWon={gameWon}
+              setOpen={setOpen}
+            />
+          </Box>
+        </Modal>
+      }
+    </>
   );
 };
