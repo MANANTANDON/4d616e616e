@@ -1,4 +1,4 @@
-import { Box, Modal } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import React, { useState, useEffect, useCallback } from "react";
 import fiveLetterWords from "@/utils/five_letter_words.json";
 import { WinLoseModal } from "./WinLoseModal";
@@ -100,11 +100,11 @@ export const WordleDesign = () => {
       // Check if the word is guessed correctly
       if (guess === todaysWord) {
         setGameWon(true);
-        setOpen(true);
+        setTimeout(() => setOpen(true), 3000);
       } else if (row === ROWS - 1) {
         // If this was the last row and word wasn't guessed, game is lost
         setGameLost(true);
-        setOpen(true);
+        setTimeout(() => setOpen(true), 3000);
       }
     },
     [todaysWord, board]
@@ -268,35 +268,44 @@ export const WordleDesign = () => {
           ))}
         </Box>
 
-        {/* Win message */}
-        {gameWon && (
+        {(gameLost || gameWon) && (
           <Box
             sx={{
               textAlign: "center",
               mt: 3,
-              color: "#6AAA64",
               fontSize: "18px",
               fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
             className="sfpro"
           >
-            🎉 You guessed the word {todaysWord}! 🎉
-          </Box>
-        )}
-
-        {/* Loss message */}
-        {gameLost && (
-          <Box
-            sx={{
-              textAlign: "center",
-              mt: 3,
-              color: "#d32f2f",
-              fontSize: "18px",
-              fontWeight: "bold",
-            }}
-            className="sfpro"
-          >
-            😔 Game Over! The word was {todaysWord}
+            <Box
+              sx={{
+                border: "1.3px solid #e8e8e8",
+                width: "fit-content",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 1,
+                p: 2,
+                borderRadius: "10px",
+              }}
+            >
+              <Typography>Today's Word</Typography>
+              <Typography
+                sx={{
+                  bgcolor: "#397E32",
+                  px: 1.5,
+                  py: 1,
+                  color: "#FFFFFF",
+                  borderRadius: "5px",
+                }}
+              >
+                {todaysWord}
+              </Typography>
+            </Box>
           </Box>
         )}
 
@@ -311,29 +320,27 @@ export const WordleDesign = () => {
           )}
         </Box>
       </Box>
-      {
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          slotProps={{
-            backdrop: {
-              sx: {
-                backgroundColor: "rgba(0, 0, 0, 0.2)", // 0.2% opacity
-              },
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        slotProps={{
+          backdrop: {
+            sx: {
+              backgroundColor: "rgba(0, 0, 0, 0.2)", // 0.2% opacity
             },
-          }}
-        >
-          <Box sx={style}>
-            <WinLoseModal
-              gameLost={gameLost}
-              gameWon={gameWon}
-              setOpen={setOpen}
-            />
-          </Box>
-        </Modal>
-      }
+          },
+        }}
+      >
+        <Box sx={style}>
+          <WinLoseModal
+            gameLost={gameLost}
+            gameWon={gameWon}
+            setOpen={setOpen}
+          />
+        </Box>
+      </Modal>
     </>
   );
 };
