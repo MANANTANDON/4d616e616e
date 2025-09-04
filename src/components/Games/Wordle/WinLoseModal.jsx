@@ -65,9 +65,8 @@ export const WinLoseModal = ({ gameLost, gameWon, setOpen }) => {
             fullWidth
             sx={{
               textTransform: "none",
-              bgcolor: "#FFFFFF",
-              color: "#000000",
-              border: "1.5px solid grey",
+              bgcolor: "#000000",
+              color: "#ffffff",
               borderRadius: "30px",
               mt: 2,
             }}
@@ -150,8 +149,8 @@ export const WinLoseModal = ({ gameLost, gameWon, setOpen }) => {
             fullWidth
             sx={{
               textTransform: "none",
-              bgcolor: "#FFFFFF",
-              color: "#000000",
+              bgcolor: "#000000",
+              color: "#ffffff",
               border: "1.5px solid grey",
               borderRadius: "30px",
               mt: 2,

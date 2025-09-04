@@ -2,6 +2,7 @@ import { Box, Modal, Typography } from "@mui/material";
 import React, { useState, useEffect, useCallback } from "react";
 import fiveLetterWords from "@/utils/five_letter_words.json";
 import { WinLoseModal } from "./WinLoseModal";
+import { Keyboard } from "./Keyboard";
 
 export const WordleDesign = () => {
   const [open, setOpen] = useState(false);
@@ -310,12 +311,10 @@ export const WordleDesign = () => {
         )}
 
         {/* Instructions */}
-        <Box sx={{ textAlign: "center", mt: 3, color: "#666" }}>
+        <Box sx={{ textAlign: "center", mt: 2 }}>
           {!gameWon && !gameLost && (
             <>
-              <p>Type letters to fill the grid</p>
-              <p>Press BACKSPACE to delete</p>
-              <p>Press ENTER to submit row</p>
+              <Keyboard />
             </>
           )}
         </Box>
