@@ -45,7 +45,7 @@ export const Projects = () => {
       short_name: "CMS",
     },
     {
-      src: "/images/companies/snowchild_studio.webp",
+      src: "/images/companies/snowchild_studio.png",
       name: "Snowchild Studio",
       link: "https://snowchildstudio.com/",
       short_name: "Snowchild Studio",

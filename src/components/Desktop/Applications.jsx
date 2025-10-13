@@ -59,7 +59,7 @@ export const Applications = () => {
       short_name: "Shyna Gupta",
     },
     {
-      src: "/images/companies/snowchild_studio.webp",
+      src: "/images/companies/snowchild_studio.png",
       name: "Snowchild Studio",
       link: "https://snowchildstudio.com/",
       short_name: "Snowchild Studio",

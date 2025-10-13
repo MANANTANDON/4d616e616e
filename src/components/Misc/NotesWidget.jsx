@@ -7,6 +7,7 @@ const styles = {
     pt: 0,
     mx: -1,
     pl: 2,
+    position: "relative",
   },
   widget: {
     width: "340px",
@@ -84,6 +85,45 @@ const contactData = [
 export const NotesWidget = () => {
   return (
     <Box sx={styles.container}>
+      <Box
+        sx={{
+          position: "absolute",
+          right: "-280px",
+          top: "40%",
+          bgcolor: "#00000090",
+          py: 1,
+          px: 4,
+          borderRadius: "12px",
+          pointerEvents: "none",
+          border: "1px solid #66666680",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#FFFFFF",
+            fontSize: "14px",
+            fontWeight: "600",
+            textAlign: "center",
+          }}
+          className="sfpro"
+        >
+          Lets Connect.
+        </Typography>
+        <Typography
+          sx={{
+            color: "#dfdfdf",
+            fontSize: "12px",
+            fontWeight: "600",
+            textAlign: "center",
+            width: "200px",
+            mt: 0.5,
+          }}
+          className="sfpro"
+        >
+          Have a project in mind or want to collaborate? Feel free to reach out
+          to me anytime.
+        </Typography>
+      </Box>
       <Box sx={styles.widget}>
         <Box sx={styles.header}>
           <Typography

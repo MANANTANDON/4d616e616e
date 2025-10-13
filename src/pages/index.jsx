@@ -10,10 +10,13 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Manan Tandon (4d616e616e) | React.js & Next.js Frontend Developer
+          Manan Tandon (4d616e616e) | Expert React.js & Next.js Frontend
+          Developer
         </title>
-        <link rel="canonical" href="https://manantandon.com/" />
+        <link rel="canonical" href="https://www.manantandon.com/" />
         <link rel="icon" href="/4d_logo_one.ico" />
+        <link rel="apple-touch-icon" href="/4d_logo_one.png" />
+        <link rel="shortcut icon" href="/4d_logo_one.ico" />
 
         {/* Primary Meta Tags */}
         <meta
@@ -22,11 +25,11 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="Professional Frontend Developer Manan Tandon specializing in React.js, Next.js, and modern web technologies. Crafting exceptional user experiences with cutting-edge UI/UX design and high-performance web applications."
+          content="Professional Frontend Developer Manan Tandon specializing in React.js, Next.js, TypeScript, and modern web technologies. Creating high-performance web applications with exceptional UI/UX design. Available for freelance projects and collaborations."
         />
         <meta
           name="keywords"
-          content="React Developer, Next.js Developer, Frontend Developer India, UI/UX Developer, JavaScript Developer, TypeScript Developer, Web App Developer, Portfolio, Manan Tandon, MananTandon, manantandon, 4d616e616e, Full Stack Developer, Modern Web Development"
+          content="Manan Tandon, 4d616e616e, React Developer, Next.js Developer, Frontend Developer, TypeScript Developer, JavaScript Expert, UI/UX Developer, Web Developer India, Freelance Developer, Full Stack Developer, Modern Web Development, React Portfolio, Next.js Portfolio"
         />
         <meta name="author" content="Manan Tandon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +41,7 @@ export default function Home() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://manantandon.com/" />
+        <meta property="og:url" content="https://www.manantandon.com/" />
         <meta property="og:site_name" content="Manan Tandon Portfolio" />
         <meta property="og:locale" content="en_US" />
         <meta
@@ -51,18 +54,18 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://manantandon.com/4d_logo_one.png"
+          content="https://www.manantandon.com/4d_logo_one.png"
         />
         <meta
           property="og:image:alt"
-          content="Manan Tandon - Frontend Developer Portfolio"
+          content="Manan Tandon - Frontend Developer Portfolio Logo"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:secure_url"
-          content="https://manantandon.com/4d_logo_one.png"
+          content="https://www.manantandon.com/4d_logo_one.png"
         />
 
         {/* Twitter Meta Tags */}
@@ -79,11 +82,11 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://manantandon.com/4d_logo_one.png"
+          content="https://www.manantandon.com/4d_logo_one.png"
         />
         <meta
           name="twitter:image:alt"
-          content="Manan Tandon - Frontend Developer Portfolio"
+          content="Manan Tandon - Frontend Developer Portfolio Logo"
         />
 
         {/* Additional SEO Meta Tags */}
@@ -93,6 +96,12 @@ export default function Home() {
         />
         <meta name="googlebot" content="index, follow" />
         <meta name="bingbot" content="index, follow" />
+        <meta name="google" content="nositelinkssearchbox" />
+
+        {/* Geographic and Contact Information */}
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
+        <meta name="contact" content="manantandon@gmail.com" />
 
         {/* Structured Data for Better SEO */}
         <script
@@ -103,12 +112,18 @@ export default function Home() {
               "@type": "Person",
               name: "Manan Tandon",
               alternateName: "4d616e616e",
+              email: "manantandon@gmail.com",
               jobTitle: "Frontend Developer",
               description:
-                "Professional Frontend Developer specializing in React.js, Next.js, and modern web technologies",
-              url: "https://manantandon.com/",
-              image: "https://manantandon.com/4d_logo_one.png",
-              sameAs: ["https://twitter.com/4d616e616eT"],
+                "Professional Frontend Developer specializing in React.js, Next.js, TypeScript, and modern web technologies",
+              url: "https://www.manantandon.com/",
+              image: "https://www.manantandon.com/4d_logo_one.png",
+              sameAs: [
+                "https://x.com/4d616e616eT",
+                "https://github.com/MANANTANDON",
+                "https://www.linkedin.com/in/manan-t-663472146/",
+                "https://www.instagram.com/4d616e616e/",
+              ],
               worksFor: {
                 "@type": "Organization",
                 name: "Freelance",
@@ -121,6 +136,80 @@ export default function Home() {
                 "Frontend Development",
                 "UI/UX Design",
                 "Web Development",
+                "Responsive Design",
+                "Performance Optimization",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
+
+        {/* Breadcrumb Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.manantandon.com/",
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* WebSite Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Manan Tandon Portfolio",
+              alternateName: "4d616e616e Portfolio",
+              url: "https://www.manantandon.com/",
+              description:
+                "Professional Frontend Developer Portfolio showcasing React.js and Next.js projects",
+              author: {
+                "@type": "Person",
+                name: "Manan Tandon",
+              },
+            }),
+          }}
+        />
+
+        {/* Professional Service Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Manan Tandon - Frontend Development Services",
+              image: "https://www.manantandon.com/4d_logo_one.png",
+              description:
+                "Professional Frontend Development services specializing in React.js, Next.js, and modern web technologies",
+              url: "https://www.manantandon.com/",
+              email: "manantandon@gmail.com",
+              priceRange: "$$",
+              areaServed: {
+                "@type": "Country",
+                name: "Worldwide",
+              },
+              serviceType: [
+                "Frontend Development",
+                "React Development",
+                "Next.js Development",
+                "UI/UX Design",
+                "Web Application Development",
               ],
             }),
           }}
@@ -131,8 +220,10 @@ export default function Home() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin=""
+          crossOrigin="anonymous"
         />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Additional Meta for Mobile */}
         <meta name="format-detection" content="telephone=no" />
@@ -143,13 +234,20 @@ export default function Home() {
           content="black-translucent"
         />
         <meta name="apple-mobile-web-app-title" content="Manan Tandon" />
+        <meta name="application-name" content="Manan Tandon Portfolio" />
 
         {/* Security Headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <meta
           httpEquiv="Referrer-Policy"
           content="strict-origin-when-cross-origin"
         />
+        <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+
+        {/* Accessibility */}
+        <meta name="color-scheme" content="dark light" />
       </Head>
 
       <main>
