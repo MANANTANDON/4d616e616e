@@ -5,24 +5,28 @@ import React from "react";
 export const MobileDock = () => {
   const DockIcons = [
     {
-      name: "Finder",
-      title: "Finder",
-      path: "/images/icons/Finder.webp",
+      name: "X",
+      title: "Twitter (formerly Twitter)",
+      path: "/images/icons/socials/x.png",
+      link: "https://x.com/4d616e616eT",
     },
     {
-      name: "Apple Music",
-      title: "Music",
-      path: "/images/icons/AppleMusic.webp",
+      name: "Github",
+      title: "Github",
+      path: "/images/icons/socials/github.png",
+      link: "https://github.com/MANANTANDON",
     },
     {
-      name: "Spotify",
-      title: "Spotify",
-      path: "/images/icons/Spotify.webp",
+      name: "Instagram",
+      title: "Instagram",
+      path: "/images/icons/socials/instagram.png",
+      link: "https://www.instagram.com/4d616e616e/",
     },
     {
-      name: "VSCode",
-      title: "Visual Studio Code",
-      path: "/images/icons/VSCode.webp",
+      name: "Linkedin",
+      title: "Linkedin",
+      path: "/images/icons/socials/linkedin.png",
+      link: "https://www.linkedin.com/in/manan-t-663472146/",
     },
   ];
   return (
@@ -42,7 +46,7 @@ export const MobileDock = () => {
         className="iphone-dock-blur"
       >
         {DockIcons?.map((item, key) => (
-          <Tooltip arrow title={item?.title} key={key}>
+          <a href={item.link} target="_blank" key={key}>
             <Box
               sx={{
                 position: "relative",
@@ -60,7 +64,7 @@ export const MobileDock = () => {
                 objectPosition="center"
               />
             </Box>
-          </Tooltip>
+          </a>
         ))}
       </Box>
     </>
