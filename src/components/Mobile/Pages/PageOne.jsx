@@ -26,6 +26,12 @@ export const PageOne = () => {
       link: "https://shynagupta.com/",
       short_name: "Shyna Gupta",
     },
+    {
+      src: "/images/icons/socials/email.png",
+      name: "Mail",
+      link: "mailto:manantandon@gmail.com",
+      short_name: "Mail",
+    },
   ];
 
   const handleIconClick = (project) => {

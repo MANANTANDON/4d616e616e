@@ -21,7 +21,7 @@ const swiperStyles = `
   }
   
   .swiper-pagination {
-    bottom: 60px !important;
+    bottom: 10px !important;
   }
 `;
 
@@ -53,9 +53,10 @@ export const MobileHome = () => {
         simulateTouch={true}
         allowTouchMove={true}
         style={{
-          height: screenHeight,
+          height: screenHeight - 60,
           width: "100%",
           overflow: "hidden",
+          position: "relative",
         }}
         resistance={true}
         resistanceRatio={0.85}

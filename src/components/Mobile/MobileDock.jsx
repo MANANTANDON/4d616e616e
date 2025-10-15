@@ -29,6 +29,7 @@ export const MobileDock = () => {
       link: "https://www.linkedin.com/in/manan-t-663472146/",
     },
   ];
+
   return (
     <>
       <Box
@@ -46,25 +47,31 @@ export const MobileDock = () => {
         className="iphone-dock-blur"
       >
         {DockIcons?.map((item, key) => (
-          <a href={item.link} target="_blank" key={key}>
-            <Box
-              sx={{
-                position: "relative",
-                overflow: "hidden",
-                height: "60px",
-                width: "60px",
-                borderRadius: "12px",
+          <Box
+            key={key}
+            component="a"
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              cursor: "pointer",
+              display: "block",
+              position: "relative",
+              // Ensure the link is clickable
+              pointerEvents: "auto",
+            }}
+          >
+            <Image
+              src={item.path}
+              alt={item.title}
+              width={60}
+              height={60}
+              style={{
+                // Prevent image from blocking clicks
+                pointerEvents: "none",
               }}
-            >
-              <Image
-                src={item?.path}
-                alt={item?.name}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </Box>
-          </a>
+            />
+          </Box>
         ))}
       </Box>
     </>
