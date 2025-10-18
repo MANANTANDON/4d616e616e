@@ -70,7 +70,7 @@ export const MobileHome = () => {
         </SwiperSlide>
         <SwiperSlide style={{ height: "100%" }}>
           <div style={{ height: "100%", overflow: "hidden" }}>
-            <NotesWidgetMobile />
+            {/* <NotesWidgetMobile /> */}
             <PageOne />
           </div>
         </SwiperSlide>

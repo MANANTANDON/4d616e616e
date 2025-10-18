@@ -32,6 +32,18 @@ export const PageOne = () => {
       link: "mailto:manantandon@gmail.com",
       short_name: "Mail",
     },
+    {
+      src: "/images/companies/csr-voice.jpg",
+      name: "CSR Voice",
+      link: "https://www.csrvoice.com/",
+      short_name: "CSR Voice",
+    },
+    {
+      src: "/images/companies/bri-nandi.png",
+      name: "Bri Nandi",
+      link: "https://www.brinandi.com/",
+      short_name: "Bri Nandi",
+    },
   ];
 
   const handleIconClick = (project) => {
