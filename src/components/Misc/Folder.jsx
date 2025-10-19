@@ -7,12 +7,20 @@ import { ProjectsModal } from "../Modals/ProjectsModal";
 const modalStyle = {
   bgcolor: "transparent",
   boxShadow: 24,
-  height: "100vh",
-  position: "relative",
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  m: -1,
+  pointerEvents: "none", // Allow clicks to pass through
+};
+
+const modalContentStyle = {
+  pointerEvents: "auto", // Re-enable pointer events for the modal content
 };
 
 export const Folder = () => {
   const [modalOpen, setModalOpen] = useState(false);
+
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
 
@@ -24,7 +32,7 @@ export const Folder = () => {
       iconWidth: "80px",
       name: "Projects",
       description: "Click to view my projects.",
-      left: "-220px", // Tooltip position
+      left: "-220px",
       onClick: handleModalOpen,
     },
     {
@@ -34,7 +42,7 @@ export const Folder = () => {
       iconWidth: "57px",
       name: "Resume",
       description: "You can check my resume",
-      left: "-220px", // Tooltip position
+      left: "-220px",
       href: "/resume.pdf",
     },
   ];
@@ -42,7 +50,6 @@ export const Folder = () => {
   const IconComponent = ({ icon }) => {
     const content = (
       <>
-        {/* Icon Image Container */}
         <Box
           sx={{
             position: "relative",
@@ -60,15 +67,12 @@ export const Folder = () => {
             alt={`${icon.name} Icon`}
           />
         </Box>
-
-        {/* Icon Name */}
         <Typography
           sx={{
             color: "#ffffff",
             textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
             textAlign: "center",
             fontSize: "13px",
-            // Add margin top only for the folder to match original spacing
             mt: icon.type === "folder" ? 1 : 0,
           }}
           className="sfpro"
@@ -79,20 +83,14 @@ export const Folder = () => {
     );
 
     return (
-      <Box
-        onClick={icon.type === "folder" ? icon.onClick : undefined}
-        sx={{ position: "relative" }}
-      >
-        {/* The content wrapped in an anchor tag for files, or just the content for folders */}
+      <Box sx={{ position: "relative" }}>
         {icon.type === "file" ? (
           <a href={icon.href} target="_blank" rel="noopener noreferrer">
             {content}
           </a>
         ) : (
-          content
+          <div onClick={icon.onClick}>{content}</div>
         )}
-
-        {/* Tooltip */}
         <Box
           sx={{
             position: "absolute",
@@ -119,7 +117,6 @@ export const Folder = () => {
 
   return (
     <>
-      {/* Main container */}
       <Box
         sx={{
           width: "fit-content",
@@ -132,29 +129,18 @@ export const Folder = () => {
           gap: 2,
         }}
       >
-        {/* Render icons from the array */}
         {desktopIcons.map((icon, index) => (
           <IconComponent key={index} icon={icon} />
         ))}
       </Box>
 
-      {/* PROJECTS MODAL */}
-      <Modal
-        open={modalOpen}
-        onClose={handleModalClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={{
-          backdropFilter: "none",
-          "& .MuiBackdrop-root": {
-            backgroundColor: "transparent",
-          },
-        }}
-      >
+      {modalOpen && (
         <Box sx={modalStyle}>
-          <ProjectsModal handleModalClose={handleModalClose} />
+          <Box sx={modalContentStyle}>
+            <ProjectsModal handleModalClose={handleModalClose} />
+          </Box>
         </Box>
-      </Modal>
+      )}
     </>
   );
 };
