@@ -15,14 +15,14 @@ export const Day2 = () => {
   return (
     <>
       {!laptop && (
-        <div className="flex items-center justify-center h-[100vh]">
+        <div className="flex items-center justify-center h-screen">
           <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
             Switch to Desktop
           </div>
         </div>
       )}
       {laptop && (
-        <div className="h-[100vh] w-[100vw] bg-[#F8F9FB] ">
+        <div className="h-screen w-screen bg-[#F8F9FB] ">
           <Grid2 container spacing={2} sx={{ position: "relative" }}>
             {Array.from(Array(11)).map((item, key) => (
               <Grid2
