@@ -46,42 +46,75 @@ export const ProjectsModal = ({ handleModalClose }) => {
           <Box sx={{ display: "flex", gap: 1, p: 1.5 }}>
             <Box
               sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#ED6A5E",
+                height: "14px",
+                width: "14px",
+                bgcolor: "#FF5C60",
+                color: "#990001",
+                border: "1px solid #FC1827",
                 borderRadius: "50%",
+                fontSize: "7px",
                 border: "0.1px solid #00000030",
                 "&:hover": {
-                  bgcolor: "#ED6A5E90",
+                  cursor: "default",
                 },
               }}
+              className="flex items-center justify-center"
               onClick={handleModalClose}
-            ></Box>
+            >
+              <Box
+                className="sfpro font-bold"
+                sx={{ opacity: 0, "&:hover": { opacity: 1 } }}
+              >
+                􀆄
+              </Box>
+            </Box>
             <Box
               sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#F5BF4F",
+                height: "14px",
+                width: "14px",
+                bgcolor: "#FAC800",
+                color: "#985601",
+                border: "1px solid #F8B700",
                 borderRadius: "50%",
                 border: "0.1px solid #00000030",
+                fontSize: "9px",
                 "&:hover": {
-                  bgcolor: "#F5BF4F90",
+                  cursor: "default",
                 },
               }}
               onClick={handleWidth}
-            ></Box>
+              className="flex items-center justify-center"
+            >
+              <Box
+                className="sfpro font-bold"
+                sx={{ opacity: 0, "&:hover": { opacity: 1 } }}
+              >
+                􀅽
+              </Box>
+            </Box>
             <Box
               sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#62C755",
+                height: "14px",
+                width: "14px",
+                bgcolor: "#28C840",
+                color: "#036200",
+                border: "1px solid #036200",
                 borderRadius: "50%",
                 border: "0.1px solid #00000030",
+                fontSize: "7px",
                 "&:hover": {
-                  bgcolor: "#62C75590",
+                  cursor: "default",
                 },
               }}
-            ></Box>
+              className="flex items-center justify-center"
+            >
+              <Box
+                className="sfpro font-bold"
+                sx={{ opacity: 0, "&:hover": { opacity: 1 } }}
+              >
+                􀅊
+              </Box>
+            </Box>
           </Box>
           <Box
             sx={{
