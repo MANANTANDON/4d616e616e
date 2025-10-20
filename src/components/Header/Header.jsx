@@ -14,12 +14,10 @@ export const Header = ({ setShowApp, onShutdown }) => {
         sx={{
           position: "absolute",
           top: 0,
-          mx: -1,
-          width: "100%",
           display: { xs: "none", md: "flex" },
           py: 0.4,
         }}
-        className="menuGlass"
+        className="menuGlass w-screen"
       >
         <Grid container>
           <Grid

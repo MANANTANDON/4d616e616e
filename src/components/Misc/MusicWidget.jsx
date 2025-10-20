@@ -21,8 +21,7 @@ export const MusicWidget = () => {
       <Box sx={{ mt: "30.39px", pt: 2, mx: -1, pl: 2 }}>
         <Box
           sx={{
-            height: "130px",
-            width: "314px",
+            width: "340px",
             borderRadius: "20px",
             bgcolor: "#71695E",
             p: "16px",
