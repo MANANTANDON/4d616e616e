@@ -23,10 +23,10 @@ export const Dock = () => {
       short_name: "FSL",
     },
     {
-      src: "/images/companies/home_ivf.webp",
-      name: "Home IVF",
-      link: "https://consult.homeivf.com/",
-      short_name: "HomeIVF",
+      src: "/images/companies/csr-voice.jpg",
+      name: "CSR Voice",
+      link: "https://www.csrvoice.com/",
+      short_name: "CSR Voice",
     },
     {
       src: "/images/companies/govern_better.webp",
