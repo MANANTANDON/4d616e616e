@@ -117,7 +117,7 @@ export const Layout = () => {
   };
 
   const LoadingScreen = () => (
-    <Box className={styles.loadingContainer} sx={{ my: -1, mx: -1 }}>
+    <Box className={styles.loadingContainer} sx={{}}>
       <Typography
         className={`${styles.loadingTitle} sfpro`}
         aria-label="Loading screen"
