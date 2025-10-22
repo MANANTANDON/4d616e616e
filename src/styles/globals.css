@@ -43,6 +43,16 @@
   display: none;
 }
 
+/* .custom-scrollbar::-webkit-scrollbar {
+  background-color: transparent;
+  width: 7px;
+  height: 7px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #bebab7;
+  border-radius: 50px;
+} */
+
 body {
   background-image: url("/images/macos_Light.webp");
   background-repeat: no-repeat;
