@@ -120,7 +120,7 @@ const TableComponent = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   const MAX_VISIBLE_COLUMNS = 5;
-  const MIN_VISIBLE_COLUMNS = 2;
+  const MIN_VISIBLE_COLUMNS = 1;
 
   // Determine the number of columns to actually render:
   const visibleColumns = isExpanded
@@ -147,46 +147,46 @@ const TableComponent = ({
         width: `${tableWidth}px`, // Width is based on the currently visible columns
       }}
     >
-      {/* Table Header Section */}
-      <div className="bg-[#DDD8D4] text-center pl-[5px] pr-[15px] py-[5px] flex flex-row justify-between items-center border-b border-[#CDC9C6]">
-        {/* Placeholder for section weight input */}
-        <input
-          placeholder="0%"
-          className="border-2 border-dashed border-[#BEBAB7] bg-[#FFFFFF] px-[14px] py-[9px] rounded-[10px] w-[68px] outline-0 text-center text-[#AE5A58] font-semibold"
-        />
-        <div className="font-semibold text-gray-700">{title}</div>
+      <div className="sticky top-0">
+        {/* Table Header Section */}
+        <div className="bg-[#DDD8D4] text-center pl-[5px] pr-[15px] py-[5px] flex flex-row justify-between items-center border-b border-[#CDC9C6]">
+          {/* Placeholder for section weight input */}
+          <input
+            placeholder="0%"
+            className="border-2 border-dashed border-[#BEBAB7] bg-[#FFFFFF] px-[14px] py-[9px] rounded-[10px] w-[68px] outline-0 text-center text-[#AE5A58] font-semibold"
+          />
+          <div className="font-semibold text-gray-700">{title}</div>
 
-        {/* Expand/Collapse Button */}
-        {showExpandButton ? (
-          <button
-            className="cursor-pointer font-semibold text-xl w-[68px] flex justify-end text-gray-700 hover:text-gray-900 transition-colors"
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? "−" : "+"}
-          </button>
-        ) : (
-          <div className="w-[68px]" /> // Placeholder to align the title
-        )}
-      </div>
+          {/* Expand/Collapse Button */}
+          {showExpandButton ? (
+            <button
+              className="cursor-pointer font-semibold text-xl w-[68px] flex justify-end text-gray-700 hover:text-gray-900 transition-colors"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? "−" : "+"}
+            </button>
+          ) : (
+            <div className="w-[68px]" /> // Placeholder to align the title
+          )}
+        </div>
 
-      {/* Dynamic Headers Row */}
-      <div
-        className="grid"
-        style={{
-          gridTemplateColumns: `repeat(${visibleColumns}, ${columnWidth}px)`,
-        }}
-      >
-        {/* Slice the headers to only show the visible number */}
-        {numberedHeaders.slice(0, visibleColumns).map((header, index) => (
-          <div
-            key={index}
-            className={`bg-[#EDE9E6] text-left flex flex-col justify-center py-[10px] px-[15px] text-[14px] h-[60px] font-semibold text-gray-600 border border-l-0 border-b-0 border-t-0 ${
-              index < visibleColumns - 1 ? "border-r-[#CDC9C6]" : "border-r-0"
-            }`}
-          >
-            {header}
-          </div>
-        ))}
+        {/* Dynamic Headers Row */}
+        <div
+          className="grid"
+          style={{
+            gridTemplateColumns: `repeat(${visibleColumns}, ${columnWidth}px)`,
+          }}
+        >
+          {/* Slice the headers to only show the visible number */}
+          {numberedHeaders.slice(0, visibleColumns).map((header, index) => (
+            <div
+              key={index}
+              className="bg-[#EDE9E6] text-left flex flex-col justify-center py-2.5 px-[15px] text-[14px] h-[60px] font-semibold text-gray-600 border border-l-0 border-b-0 border-t-0 border-r-[#CDC9C6]"
+            >
+              {header}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Dynamic Data Rows */}
@@ -333,17 +333,19 @@ export default function CountryMetrics() {
                 {/* Fixed Country/Overall Score Column */}
                 <div className="bg-[#F4F3F1] text-center w-[230px] h-fit shrink-0 sticky left-0  shadow-xl/30 border-t-0 border-l-0 border-b-0 z-10">
                   {/* WEIGHT HEADER */}
-                  <div className="text-center p-[16px] font-semibold text-gray-700 bg-[#E8E8E8] border-b border-[#CDC9C6]">
-                    WEIGHT
-                  </div>
-
-                  {/* COUNTRY / OVER ALL SCORE HEADERS */}
-                  <div className="grid grid-cols-2">
-                    <div className="col-span-1 bg-[#EDE9E6] text-center flex justify-center items-center text-[14px] h-[60px] font-semibold text-gray-600 border-r border-[#CDC9C6]">
-                      COUNTRY
+                  <div className="sticky top-0">
+                    <div className="text-center p-[16px] font-semibold text-gray-700 bg-[#E8E8E8] border-b border-[#CDC9C6]">
+                      WEIGHT
                     </div>
-                    <div className="col-span-1 bg-[#EDE9E6] text-center flex justify-center items-center text-[14px] h-[60px] font-semibold text-gray-600">
-                      OVER ALL SCORE
+
+                    {/* COUNTRY / OVER ALL SCORE HEADERS */}
+                    <div className="grid grid-cols-2">
+                      <div className="col-span-1 bg-[#EDE9E6] text-center flex justify-center items-center text-[14px] h-[60px] font-semibold text-gray-600 border-r border-[#CDC9C6]">
+                        COUNTRY
+                      </div>
+                      <div className="col-span-1 bg-[#EDE9E6] text-center flex justify-center items-center text-[14px] h-[60px] font-semibold text-gray-600">
+                        OVER ALL SCORE
+                      </div>
                     </div>
                   </div>
 
