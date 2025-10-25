@@ -63,7 +63,6 @@ const generateAllDynamicTables = (countries) => {
       typeof firstCountryData[sectionKey] === "object" &&
       firstCountryData[sectionKey] !== null
     ) {
-      // 1. Generate Headers (Column Titles)
       const rawKeys = Object.keys(firstCountryData[sectionKey]).filter(
         (key) => !keysToIgnore.includes(key)
       );
@@ -75,7 +74,10 @@ const generateAllDynamicTables = (countries) => {
           .trim()
       );
 
-      // 2. Generate Rows (Values for each Country)
+      const editableColumns = rawKeys.map((key) => {
+        return sectionKey === "drugAccess" && key === "gpiData";
+      });
+
       const rows = countries.map((country, countryIndex) => {
         const rowValues = [];
         rawKeys.forEach((key) => {
@@ -84,14 +86,9 @@ const generateAllDynamicTables = (countries) => {
           rowValues.push(value);
         });
 
-        // Add row color as the last element for styling
         rowValues.push(countryIndex % 2 === 0 ? "#EDFFF1" : "#FFFFFF");
         return rowValues;
       });
-
-      // Determine editability based on section name
-      const isEditable =
-        sectionKey === "patientAccess" || sectionKey === "siteAccess";
 
       tableData.push({
         title: sectionKey
@@ -100,7 +97,7 @@ const generateAllDynamicTables = (countries) => {
           .trim(),
         headers: headers,
         rows: rows,
-        editable: isEditable,
+        editableColumns: editableColumns, // Pass the new column-level editability array
         totalColumns: rawKeys.length,
       });
     }
@@ -113,27 +110,23 @@ const TableComponent = ({
   title,
   rowsData,
   headers,
-  editable,
+  editableColumns,
   totalColumns,
 }) => {
-  // State to manage expansion
   const [isExpanded, setIsExpanded] = useState(false);
 
   const MAX_VISIBLE_COLUMNS = 5;
   const MIN_VISIBLE_COLUMNS = 1;
 
-  // Determine the number of columns to actually render:
   const visibleColumns = isExpanded
     ? Math.min(totalColumns, MAX_VISIBLE_COLUMNS)
     : Math.min(totalColumns, MIN_VISIBLE_COLUMNS);
 
-  // Should the expand/collapse button be shown?
   const showExpandButton = totalColumns > MIN_VISIBLE_COLUMNS;
 
-  const columnWidth = 300; // Fixed width per column
+  const columnWidth = 300;
   const tableWidth = visibleColumns * columnWidth;
 
-  // Headers with sequential numbering prefix
   const numberedHeaders = headers.map(
     (header, index) => `# ${index + 1} ${header}`
   );
@@ -144,7 +137,7 @@ const TableComponent = ({
       style={{
         borderRightWidth: "0.5px",
         borderLeftWidth: "0.5px",
-        width: `${tableWidth}px`, // Width is based on the currently visible columns
+        width: `${tableWidth}px`,
       }}
     >
       <div className="sticky top-0">
@@ -166,7 +159,7 @@ const TableComponent = ({
               {isExpanded ? "−" : "+"}
             </button>
           ) : (
-            <div className="w-[68px]" /> // Placeholder to align the title
+            <div className="w-[68px]" />
           )}
         </div>
 
@@ -194,7 +187,6 @@ const TableComponent = ({
         const rowColor = row[row.length - 1];
         const dataValues = row.slice(0, row.length - 1);
 
-        // Only take the values for the currently visible columns
         const valuesToRender = dataValues.slice(0, visibleColumns);
 
         return (
@@ -207,6 +199,7 @@ const TableComponent = ({
           >
             {valuesToRender.map((value, colIndex) => {
               const isLastVisibleColumn = colIndex === visibleColumns - 1;
+              const isCellEditable = editableColumns[colIndex];
 
               return (
                 <div
@@ -216,8 +209,8 @@ const TableComponent = ({
                   }`}
                   style={{ backgroundColor: rowColor }}
                 >
-                  {/* Editability is applied */}
-                  {editable ? (
+                  {/* Conditional rendering based on isCellEditable */}
+                  {isCellEditable ? (
                     <input
                       type="text"
                       defaultValue={value?.toString() || ""}
@@ -377,7 +370,7 @@ export default function CountryMetrics() {
                       title={table.title}
                       rowsData={table.rows}
                       headers={table.headers}
-                      editable={table.editable}
+                      editableColumns={table.editableColumns} // Passing the new prop
                       totalColumns={table.totalColumns}
                     />
                   ))}
