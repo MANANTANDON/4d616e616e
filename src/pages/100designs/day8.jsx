@@ -5,12 +5,12 @@ import React from "react";
 export default function Day8() {
   return (
     <>
-      <div className="h-screen w-screen bg-[#F2F2F2]">
-        <Container maxWidth="md" style={{ border: "1px solid green" }}>
-          <Grid2 container className="border border-amber-500">
+      <div className="h-screen w-screen bg-[#F2F2F2] overflow-scroll">
+        <Container maxWidth="md" className="py-10">
+          <Grid2 container>
             <Grid2
               size={{ xs: 12, md: 6 }}
-              className="flex items-center justify-center border border-green-400"
+              className="flex items-center justify-center"
             >
               <div className="bg-[#FFFFFF] rounded-[30px] p-[13px]">
                 <div className="relative overflow-hidden h-[260px] w-[260px] max-w-[260px] rounded-3xl">
@@ -64,7 +64,8 @@ export default function Day8() {
             </Grid2>
             <Grid2
               size={{ xs: 12, md: 6 }}
-              className="flex items-center justify-center border border-green-400"
+              sx={{ mt: { xs: 5, md: 0 } }}
+              className="flex items-center justify-center"
             >
               <div className="bg-[#FFFFFF] rounded-[30px] p-[13px]">
                 <div className="relative overflow-hidden h-[460px] w-[260px] max-w-[260px] rounded-3xl">
