@@ -27,6 +27,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/roboto/RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/roboto/RobotoSerif-Italic-VariableFont_GRAD,opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --background: #efe3c2;
   --foreground: #171717;
@@ -64,6 +82,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.fr {
+  font-family: "Roboto" !important;
 }
 
 .box {
