@@ -137,7 +137,9 @@ export const NotesWidget = () => {
         <Box sx={styles.content}>
           {contactData.map((contact, index) => (
             <Box key={index} sx={styles.contactItem}>
-              <Typography sx={styles.label}>{contact.label}</Typography>
+              <Typography sx={styles.label} className="sfpro">
+                {contact.label}
+              </Typography>
               {contact.isLink ? (
                 <Typography
                   component="a"
@@ -145,11 +147,14 @@ export const NotesWidget = () => {
                   target={contact.external ? "_blank" : undefined}
                   rel={contact.external ? "noopener noreferrer" : undefined}
                   sx={styles.link}
+                  className="sfpro"
                 >
                   {contact.value}
                 </Typography>
               ) : (
-                <Typography sx={styles.link}>{contact.value}</Typography>
+                <Typography sx={styles.link} className="sfpro">
+                  {contact.value}
+                </Typography>
               )}
             </Box>
           ))}
