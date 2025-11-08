@@ -1,4 +1,4 @@
-import React from "reat";
+import React from "react";
 
 export default function Day14() {
   return (
