@@ -140,7 +140,7 @@ export default function Index() {
       <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto">
         <div className="relative">
           {isMobile ? (
-            <div className="relative overflow-hidden h-[210px] w-[100%]">
+            <div className="relative overflow-hidden h-[210px] w-full">
               <Image
                 src={"/images/designs/banner.png"}
                 layout="fill"
