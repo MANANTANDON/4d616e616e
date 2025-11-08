@@ -99,7 +99,7 @@ export default function Index() {
             onClick={copyToClipboard}
             className="sfpro absolute top-5 right-5 px-2 md:px-2.5 py-1 md:py-1.5 text-[14px] md:text-[18px] text-zinc-100 md:text-zinc-800 cursor-pointer rounded-[100px] backdrop-blur-sm bg-zinc-300/50 border border-zinc-200"
           >
-            &#xED02; {/* Using HTML entity for SF Symbol '􀈂' */}
+            􀈂 {/* Using HTML entity for SF Symbol '􀈂' */}
           </div>
         </div>
         <div className="my-10 md:my-20">
@@ -128,7 +128,7 @@ export default function Index() {
                     rel="noopener noreferrer"
                   >
                     <div className="sfpro cursor-pointer hover:text-[#1D9BF0] text-sm md:text-base">
-                      Manan(4d616e616e) &#xED0F;{" "}
+                      Manan(4d616e616e) 􀄯{" "}
                       {/* Using HTML entity for SF Symbol '􀄯' */}
                     </div>
                   </a>
