@@ -1,80 +1,9 @@
 import { from11to20, from1to10 } from "@/utils/constant";
 import { X } from "@mui/icons-material";
 import { Box, Container, Grid2, useMediaQuery } from "@mui/material";
+import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import Head from "next/head";
-
-export const metadata = {
-  title: "100 Days 100 Frontend Designs | Manan Tandon",
-  description:
-    "Follow along as I build one unique UI design every day for 100 days using Next.js, Tailwind CSS, MUI, and SF Symbols. A creative journey of frontend development and interactive design experiences.",
-  keywords: [
-    "100 days of code",
-    "frontend designs",
-    "UI design challenge",
-    "Next.js projects",
-    "Tailwind CSS",
-    "MUI components",
-    "daily UI challenge",
-    "web design portfolio",
-    "React components",
-    "frontend development",
-    "Manan Tandon",
-    "SF Symbols",
-    "interactive UI",
-    "design inspiration",
-  ],
-  authors: [{ name: "Manan Tandon", url: "https://www.manantandon.com" }],
-  creator: "Manan Tandon",
-  publisher: "Manan Tandon",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.manantandon.com/100designs",
-    siteName: "100 Days 100 Frontend Designs",
-    title: "100 Days 100 Frontend Designs | Daily UI Challenge by Manan Tandon",
-    description:
-      "A creative journey where I build one unique UI every day using Next.js, Tailwind, MUI, and SF Symbols. Explore 100 days of frontend designs and interactive experiences.",
-    images: [
-      {
-        url: "https://www.manantandon.com/100DaysDesign.png",
-        width: 1200,
-        height: 630,
-        alt: "100 Days 100 Frontend Designs",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@4d616e616eT",
-    creator: "@4d616e616eT",
-    title: "100 Days 100 Frontend Designs | Daily UI Challenge",
-    description:
-      "Follow my journey building one unique UI design every day for 100 days using Next.js, Tailwind CSS, and MUI.",
-    images: ["https://www.manantandon.com/100DaysDesign.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: "/100DaysDesign.ico",
-    shortcut: "/100DaysDesign.ico",
-    apple: "/100DaysDesign.png",
-  },
-  alternates: {
-    canonical: "https://www.manantandon.com/100designs",
-  },
-  category: "technology",
-};
 
 export default function Index() {
   const URL = "https://www.manantandon.com/100designs";
@@ -88,53 +17,61 @@ export default function Index() {
     }
   };
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "100 Days 100 Frontend Designs",
-    url: "https://www.manantandon.com/100designs",
-    description:
-      "A creative journey where I build one unique UI every day using Next.js, Tailwind, MUI, and SF Symbols",
-    author: {
-      "@type": "Person",
-      name: "Manan Tandon",
-      url: "https://www.manantandon.com",
-      sameAs: "https://x.com/4d616e616eT",
-    },
-    publisher: {
-      "@type": "Person",
-      name: "Manan Tandon",
-    },
-  };
-
-  const creativeWorkJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWorkSeries",
-    name: "100 Days 100 Frontend Designs",
-    description:
-      "Daily frontend design challenges showcasing UI/UX development with modern web technologies",
-    creator: {
-      "@type": "Person",
-      name: "Manan Tandon",
-      url: "https://www.manantandon.com",
-    },
-    genre: "Web Development",
-    keywords:
-      "frontend development, UI design, Next.js, Tailwind CSS, MUI, daily design challenge",
-  };
-
   return (
     <>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        {/* Basic Meta Tags */}
+        <title>
+          100 Days 100 Frontend Designs | Next.js, Tailwind, MUI UI Challenge
+        </title>
+        <meta
+          name="description"
+          content="Welcome to the 100 Days 100 Frontend Designs challenge by Manan Tandon. Explore daily UI builds using Next.js, Tailwind CSS, and MUI. Follow the journey of turning inspiring designs into interactive experiences."
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(creativeWorkJsonLd),
-          }}
+        <meta
+          name="keywords"
+          content="100 Days 100 Designs, Frontend Challenge, UI/UX Design, Next.js, Tailwind CSS, MUI, React, Web Development Portfolio, Manan Tandon"
+        />
+        <link rel="canonical" href="https://www.manantandon.com/100designs" />
+        <link rel="icon" href="/100DaysDesign.ico" />{" "}
+        {/* Use the provided icon path */}
+        {/* Open Graph (OG) Tags for Social Media Sharing (e.g., Facebook, LinkedIn) */}
+        <meta
+          property="og:title"
+          content="100 Days 100 Frontend Designs Challenge"
+        />
+        <meta
+          property="og:description"
+          content="Explore 100 unique UI designs built one-by-one with Next.js, Tailwind, and MUI by Manan Tandon. A daily celebration of design and code."
+        />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs"
+        />
+        <meta property="og:site_name" content="Manan Tandon Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://www.manantandon.com/100DaysDesign.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@4d616e616eT" />{" "}
+        {/* Use your X/Twitter handle */}
+        <meta name="twitter:creator" content="@4d616e616eT" />
+        <meta
+          name="twitter:title"
+          content="100 Days 100 Frontend Designs Challenge"
+        />
+        <meta
+          name="twitter:description"
+          content="Building 100 unique UI designs daily with Next.js, Tailwind, and MUI. See the latest design and follow the progress!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.manantandon.com/100DaysDesign.png"
         />
       </Head>
       <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto">
@@ -162,25 +99,26 @@ export default function Index() {
             onClick={copyToClipboard}
             className="sfpro absolute top-5 right-5 px-2 md:px-2.5 py-1 md:py-1.5 text-[14px] md:text-[18px] text-zinc-100 md:text-zinc-800 cursor-pointer rounded-[100px] backdrop-blur-sm bg-zinc-300/50 border border-zinc-200"
           >
-            􀈂
+            &#xED02; {/* Using HTML entity for SF Symbol '􀈂' */}
           </div>
         </div>
         <div className="my-10 md:my-20">
           <Container maxWidth="lg">
             <Grid2 container>
               <Grid2 size={{ xs: 12, md: 6 }} className="pr-0 md:pr-10">
+                {/* Use the h1 tag for the main title, which is good for SEO */}
                 <h1 className="text-[20px] md:text-3xl  font-extrabold sfpro">
                   100 Days 100 Frontend Designs
                 </h1>
                 <div className="sfpro text-sm md:text-base text-zinc-500 my-5 md:my-7">
-                  Welcome to 100 Days of Frontend Designs – a creative journey
+                  Welcome to 100 Days of Frontend Designs - a creative journey
                   where I build one unique UI every day using Next.js, Tailwind,
                   MUI, and SF Symbols. It's a celebration of design, code, and
                   the art of turning visuals into living, interactive
                   experiences. Follow along as I recreate inspiring designs,
                   share progress, and push the limits of modern frontend
                   development. Dive in, explore each day's build, and see how
-                  ideas come to life – one design at a time.
+                  ideas come to life - one design at a time.
                 </div>
                 <div className="flex items-center gap-4">
                   <X className="text-[#000000]" fontSize="small" />
@@ -190,7 +128,8 @@ export default function Index() {
                     rel="noopener noreferrer"
                   >
                     <div className="sfpro cursor-pointer hover:text-[#1D9BF0] text-sm md:text-base">
-                      Manan(4d616e616e) 􀄯
+                      Manan(4d616e616e) &#xED0F;{" "}
+                      {/* Using HTML entity for SF Symbol '􀄯' */}
                     </div>
                   </a>
                 </div>
@@ -222,6 +161,7 @@ export default function Index() {
           <Container maxWidth="lg">
             {/* 1 - 10*/}
             <section className="mt-20">
+              {/* Use h2 for subheadings */}
               <h2 className="sfpro font-extrabold text-[20px]">
                 Designs: 1-10
               </h2>
