@@ -46,6 +46,12 @@ export const Dock = () => {
       link: "https://snowchildstudio.com/",
       short_name: "Snowchild Studio",
     },
+    {
+      src: "/100DaysDesign.png",
+      name: "100 Days of Frontend Design",
+      link: "/100designs",
+      short_name: "100 Days Design",
+    },
   ];
   return (
     <>

@@ -1,7 +1,80 @@
+import { from11to20, from1to10 } from "@/utils/constant";
 import { X } from "@mui/icons-material";
 import { Box, Container, Grid2, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import Head from "next/head";
+
+export const metadata = {
+  title: "100 Days 100 Frontend Designs | Manan Tandon",
+  description:
+    "Follow along as I build one unique UI design every day for 100 days using Next.js, Tailwind CSS, MUI, and SF Symbols. A creative journey of frontend development and interactive design experiences.",
+  keywords: [
+    "100 days of code",
+    "frontend designs",
+    "UI design challenge",
+    "Next.js projects",
+    "Tailwind CSS",
+    "MUI components",
+    "daily UI challenge",
+    "web design portfolio",
+    "React components",
+    "frontend development",
+    "Manan Tandon",
+    "SF Symbols",
+    "interactive UI",
+    "design inspiration",
+  ],
+  authors: [{ name: "Manan Tandon", url: "https://www.manantandon.com" }],
+  creator: "Manan Tandon",
+  publisher: "Manan Tandon",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.manantandon.com/100designs",
+    siteName: "100 Days 100 Frontend Designs",
+    title: "100 Days 100 Frontend Designs | Daily UI Challenge by Manan Tandon",
+    description:
+      "A creative journey where I build one unique UI every day using Next.js, Tailwind, MUI, and SF Symbols. Explore 100 days of frontend designs and interactive experiences.",
+    images: [
+      {
+        url: "https://www.manantandon.com/100DaysDesign.png",
+        width: 1200,
+        height: 630,
+        alt: "100 Days 100 Frontend Designs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@4d616e616eT",
+    creator: "@4d616e616eT",
+    title: "100 Days 100 Frontend Designs | Daily UI Challenge",
+    description:
+      "Follow my journey building one unique UI design every day for 100 days using Next.js, Tailwind CSS, and MUI.",
+    images: ["https://www.manantandon.com/100DaysDesign.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/100DaysDesign.ico",
+    shortcut: "/100DaysDesign.ico",
+    apple: "/100DaysDesign.png",
+  },
+  alternates: {
+    canonical: "https://www.manantandon.com/100designs",
+  },
+  category: "technology",
+};
 
 export default function Index() {
   const URL = "https://www.manantandon.com/100designs";
@@ -15,96 +88,55 @@ export default function Index() {
     }
   };
 
-  const from1to10 = [
-    {
-      src: "/images/designs/100designs/1.png",
-      name: "Design 1",
-      url: "https://www.manantandon.com/100designs/day1",
-      title: "Apple Music Design.",
-      description:
-        "I tried recreating the macOS 26 Apple Music side menu, and it turned out pretty well, I guess!",
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "100 Days 100 Frontend Designs",
+    url: "https://www.manantandon.com/100designs",
+    description:
+      "A creative journey where I build one unique UI every day using Next.js, Tailwind, MUI, and SF Symbols",
+    author: {
+      "@type": "Person",
+      name: "Manan Tandon",
+      url: "https://www.manantandon.com",
+      sameAs: "https://x.com/4d616e616eT",
     },
-    {
-      src: "/images/designs/100designs/2.png",
-      name: "Design 2",
-      url: "https://www.manantandon.com/100designs/day2",
-      title: "@AugustusDesign",
-      description: "The design is built using Next.js, MUI, and Tailwind CSS.",
+    publisher: {
+      "@type": "Person",
+      name: "Manan Tandon",
     },
-    {
-      src: "/images/designs/100designs/3.png",
-      name: "Design 3",
-      url: "https://www.manantandon.com/100designs/day3",
-      title: "@heysatya_",
-      description:
-        "It’s a Hotel Booking App design. Though it's originally a mobile app concept, I built it using Next.js, Tailwind, Swiper.js, and SF Symbols.",
+  };
+
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWorkSeries",
+    name: "100 Days 100 Frontend Designs",
+    description:
+      "Daily frontend design challenges showcasing UI/UX development with modern web technologies",
+    creator: {
+      "@type": "Person",
+      name: "Manan Tandon",
+      url: "https://www.manantandon.com",
     },
-    {
-      src: "/images/designs/100designs/4.png",
-      name: "Design 4",
-      url: "https://www.manantandon.com/100designs/day4",
-      title: "@OlabodeUIUX",
-      description:
-        "How would a frontend dev implement this?” — and that gave me the idea to build it for Day 4.",
-    },
-    {
-      src: "/images/designs/100designs/5.png",
-      name: "Design 5",
-      url: "https://www.manantandon.com/100designs/day5",
-      title: "@WithWaleedSabir",
-      description: "Keeping it subtle, clean, and minimalist ",
-    },
-    {
-      src: "/images/designs/100designs/6.png",
-      name: "Design 6",
-      url: "https://www.manantandon.com/100designs/day6",
-      title: "@UiUxSeyi ⭐️.",
-      description: "Really sleek and minimal — turned out pretty well 👌",
-    },
-    {
-      src: "/images/designs/100designs/7.png",
-      name: "Design 7",
-      url: "https://www.manantandon.com/100designs/day7",
-      title: "@nataliabrak_",
-      description: "a clean and creative folder-style layout 📁",
-    },
-    {
-      src: "/images/designs/100designs/8.png",
-      name: "Design 8",
-      url: "https://www.manantandon.com/100designs/day8",
-      title: "@Abmankendrick",
-      description:
-        "he card on the right was quite interesting — while developing it, I faced a challenge creating a blurred background at the bottom that flows into the image. However, I somehow managed to pull it off, and it turned out pretty well, I guess 🙃",
-    },
-    {
-      src: "/images/designs/100designs/9.png",
-      name: "Design 9",
-      url: "https://www.manantandon.com/100designs/day9",
-      title: "@uiuxEra",
-      description:
-        "Being a dog owner myself, I felt inspired to recreate this, it’s clean, minimal, and I really love how it turned out! ✨",
-    },
-    {
-      src: "/images/designs/100designs/10.png",
-      name: "Design 10",
-      url: "https://www.manantandon.com/100designs/day10",
-      title: "@mishutkin_x's",
-      description:
-        "Not really a challenge to make — but finding the right assets definitely was 🫣",
-    },
-  ];
-  const from11to20 = [
-    {
-      src: "/images/designs/100designs/11.png",
-      name: "Design 11",
-      url: "https://www.manantandon.com/100designs/day11",
-      title: "@ShruPosts",
-      description:
-        "The image she generated vs the Hero she designed vs the Hero I developed, it turned out really great!",
-    },
-  ];
+    genre: "Web Development",
+    keywords:
+      "frontend development, UI design, Next.js, Tailwind CSS, MUI, daily design challenge",
+  };
+
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(creativeWorkJsonLd),
+          }}
+        />
+      </Head>
       <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto">
         <div className="relative">
           {isMobile ? (
@@ -114,6 +146,7 @@ export default function Index() {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
+                alt="100 Days 100 Frontend Designs Banner"
               />
             </div>
           ) : (
@@ -122,6 +155,7 @@ export default function Index() {
               layout="intrinsic"
               height={1396}
               width={5688}
+              alt="100 Days 100 Frontend Designs Banner"
             />
           )}
           <div
@@ -135,9 +169,9 @@ export default function Index() {
           <Container maxWidth="lg">
             <Grid2 container>
               <Grid2 size={{ xs: 12, md: 6 }} className="pr-0 md:pr-10">
-                <div className="text-[20px] md:text-3xl  font-extrabold sfpro">
+                <h1 className="text-[20px] md:text-3xl  font-extrabold sfpro">
                   100 Days 100 Frontend Designs
-                </div>
+                </h1>
                 <div className="sfpro text-sm md:text-base text-zinc-500 my-5 md:my-7">
                   Welcome to 100 Days of Frontend Designs – a creative journey
                   where I build one unique UI every day using Next.js, Tailwind,
@@ -150,7 +184,11 @@ export default function Index() {
                 </div>
                 <div className="flex items-center gap-4">
                   <X className="text-[#000000]" fontSize="small" />
-                  <a href="https://x.com/4d616e616eT" target="_blank">
+                  <a
+                    href="https://x.com/4d616e616eT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="sfpro cursor-pointer hover:text-[#1D9BF0] text-sm md:text-base">
                       Manan(4d616e616e) 􀄯
                     </div>
@@ -161,13 +199,15 @@ export default function Index() {
                 <a
                   href="https://x.com/4d616e616eT"
                   className="inline-block transform -rotate-1 "
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={"/images/designs/100designs/tweet.png"}
                     layout="intrinsic"
                     height={2700}
                     width={3810}
-                    alt="100 Days Frontend Designs"
+                    alt="100 Days Frontend Designs Tweet"
                     style={{
                       boxShadow: "rgba(0, 0, 0, 0.1) 0px 20px 30px",
                       borderRadius: "10px",
@@ -181,10 +221,10 @@ export default function Index() {
         <div>
           <Container maxWidth="lg">
             {/* 1 - 10*/}
-            <div className="mt-20">
-              <div className="sfpro font-extrabold text-[20px]">
+            <section className="mt-20">
+              <h2 className="sfpro font-extrabold text-[20px]">
                 Designs: 1-10
-              </div>
+              </h2>
 
               <Grid2 container className="my-7" rowGap={4}>
                 {from1to10.map((item, key) => (
@@ -228,12 +268,12 @@ export default function Index() {
                   </Grid2>
                 ))}
               </Grid2>
-            </div>
+            </section>
             {/*11 - 20*/}
-            <div className="mt-20">
-              <div className="sfpro font-extrabold text-[20px]">
+            <section className="mt-20">
+              <h2 className="sfpro font-extrabold text-[20px]">
                 Designs: 11-20
-              </div>
+              </h2>
 
               <Grid2 container className="my-7" rowGap={4}>
                 {from11to20.map((item, key) => (
@@ -277,7 +317,7 @@ export default function Index() {
                   </Grid2>
                 ))}
               </Grid2>
-            </div>
+            </section>
           </Container>
         </div>
       </div>
