@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "SFVar";
+  src: url("/fonts/sfpro/SFNS.woff2") format("woff2");
+  font-weight: 100 900; /* variable range */
+  font-style: normal;
+  font-display: swap;
+  /* If your variable axes include ital, you may add separate @font-face for italic */
+}
+
+@font-face {
   font-family: "SF Pro Rounded";
   src: url("/fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
   font-weight: normal;
@@ -86,6 +95,10 @@ a {
 
 .fr {
   font-family: "Roboto" !important;
+}
+
+.varsf {
+  font-family: "SFVar" !important;
 }
 
 .box {
