@@ -33,13 +33,13 @@ export default function Day15() {
                   </div>
                 </div>
                 <div>
-                  <button className="varsf font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1.5">
+                  <button className="varsf font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1.5 cursor-pointer">
                     Book Consultation{" "}
-                    <span className="sfpro font-extralight">􀰾</span>
+                    <span className="sfpro font-extralight text-3xl">􀰾</span>
                   </button>
                 </div>
               </div>
-              <div className="absolute -bottom-5 left-0 right-0 flex justify-between">
+              <div className="absolute -bottom-7 left-0 right-0 flex justify-between">
                 <div className="relative overflow-hidden w-[400px] h-[528px]">
                   <Image
                     src={"/images/designs/kuba_2.png"}
