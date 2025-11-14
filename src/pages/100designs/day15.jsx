@@ -7,7 +7,7 @@ export default function Day15() {
   return (
     <>
       {!laptop && (
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-screen overflow-auto">
           <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
             Switch to screen bigger than 1024
           </div>
@@ -39,7 +39,7 @@ export default function Day15() {
                   </button>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between">
+              <div className="absolute -bottom-5 left-0 right-0 flex justify-between">
                 <div className="relative overflow-hidden w-[400px] h-[528px]">
                   <Image
                     src={"/images/designs/kuba_2.png"}
