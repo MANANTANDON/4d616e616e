@@ -100,6 +100,9 @@ a {
 .varsf {
   font-family: "SFVar" !important;
 }
+.sfpro {
+  font-family: "SF Pro" !important;
+}
 
 .box {
   margin: -10px;
@@ -141,10 +144,6 @@ a {
   color: grey;
   font-family: "SF Pro" !important;
   font-weight: bold;
-}
-
-.sfpro {
-  font-family: "SF Pro" !important;
 }
 
 .menuGlass {
