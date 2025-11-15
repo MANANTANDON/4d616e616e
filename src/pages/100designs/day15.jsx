@@ -20,7 +20,7 @@ export default function Day15() {
               <div className="text-[#363636] varsf text-lg text-center font-semibold py-4">
                 ATELIER VÉRA
               </div>
-              <div className=" flex items-center justify-between mt-30">
+              <div className="flex items-center justify-between mt-30">
                 <div>
                   <div className="varsf text-3xl font-light text-[#363636]">
                     Timeless interiors, sculpted with precision.
@@ -33,9 +33,11 @@ export default function Day15() {
                   </div>
                 </div>
                 <div>
-                  <button className="varsf font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1.5 cursor-pointer">
+                  <button className="sfro-text font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1 cursor-pointer">
                     Book Consultation{" "}
-                    <span className="sfpro font-extralight text-3xl">􀰾</span>
+                    <span className="sfro-text font-extralight text-3xl">
+                      􀰾
+                    </span>
                   </button>
                 </div>
               </div>
@@ -66,8 +68,10 @@ export default function Day15() {
                     />
                   </div>
                   <div className="flex flex-col items-center justify-center mt-10">
-                    <div className="varsf text-2xl font-light">View All</div>
-                    <div className="sfpro text-2xl font-light">􀄩</div>
+                    <div className="sfro-text text-2xl font-normal">
+                      View All
+                    </div>
+                    <div className="sfro-text text-2xl font-extralight">􀄩</div>
                   </div>
                 </div>
               </div>
