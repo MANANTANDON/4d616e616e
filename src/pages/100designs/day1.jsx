@@ -26,7 +26,7 @@ export default function Day1() {
   ];
   return (
     <>
-      <div className="w-screen h-screen bg-[#F2F3F4] overflow-scroll">
+      <div className="w-screen h-screen bg-[#dfdfdf] overflow-scroll">
         <Container maxWidth="xl">
           <Box
             sx={{
@@ -36,8 +36,8 @@ export default function Day1() {
               justifyContent: "center",
             }}
           >
+            {/* Parent div */}
             <Box
-              size={{ xs: 6, md: 2 }}
               sx={{
                 p: "11px",
                 width: "230px",
@@ -250,6 +250,7 @@ export default function Day1() {
                   </Box>
                 </Box>
               </Box>
+              {/* Logged In User */}
               <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Box
                   sx={{
