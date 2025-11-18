@@ -1,4 +1,4 @@
-import { Box, Container, Grid2, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
 
