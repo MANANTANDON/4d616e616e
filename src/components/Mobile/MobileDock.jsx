@@ -32,20 +32,7 @@ export const MobileDock = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "7px",
-          left: "7px",
-          right: "7px",
-          p: 1.5,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 2,
-        }}
-        className="iphone-dock-blur"
-      >
+      <div className="bg-zinc-400/20 border border-zinc-200/40 rounded-[20px] absolute bottom-[7px] left-[7px] right-[7px] flex items-center justify-between p-2.5">
         {DockIcons?.map((item, key) => (
           <Box
             key={key}
@@ -57,7 +44,6 @@ export const MobileDock = () => {
               cursor: "pointer",
               display: "block",
               position: "relative",
-              // Ensure the link is clickable
               pointerEvents: "auto",
             }}
           >
@@ -73,7 +59,7 @@ export const MobileDock = () => {
             />
           </Box>
         ))}
-      </Box>
+      </div>
     </>
   );
 };
