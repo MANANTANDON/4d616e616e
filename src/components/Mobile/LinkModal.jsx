@@ -28,12 +28,12 @@ export const LinkModal = ({ clickLink, open, setOpen }) => {
           </div>
           <div className="mt-[22px] flex flex-col gap-[9px]">
             <a href={clickLink?.link} target="_blank">
-              <div className="sfpro-text bg-zinc-400/40 text-center py-3.5 rounded-[30px] font-semibold text-[17px]">
+              <div className="sfpro-text bg-zinc-400/40 text-center py-3 rounded-[30px] font-semibold text-[17px]">
                 Allow
               </div>
             </a>
             <div
-              className="sfpro-text bg-zinc-400/40 text-center py-3.5 rounded-[30px] font-semibold text-[17px]"
+              className="sfpro-text bg-zinc-400/40 text-center py-3 rounded-[30px] font-semibold text-[17px]"
               onClick={() => setOpen(false)}
             >
               Cancel
