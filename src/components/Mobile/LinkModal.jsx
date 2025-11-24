@@ -1,8 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import Alert from "../IOS26/Alert";
 
 const style = {
   position: "absolute",
@@ -20,71 +18,27 @@ const style = {
 export const LinkModal = ({ clickLink, open, setOpen }) => {
   return (
     <div>
-      <Modal
-        open={open}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        {/* <Box sx={style}>
-          <Alert />
-        </Box> */}
-        <Box sx={style} className="liquidGlass">
-          <Box sx={{ px: "12px" }}>
-            <Typography
-              className="sfpro"
-              sx={{ color: "#000000", fontSize: "17px", fontWeight: "bold" }}
-            >
-              Open "{clickLink?.name}"?
-            </Typography>
-          </Box>
-          <Box sx={{ px: "12px", pt: "9px" }}>
-            <Typography
-              className="sfpro"
-              sx={{ color: "#00000090", fontSize: "17px", fontWeight: "bold" }}
-            >
-              You are trying to open {clickLink?.name}
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              mt: "22px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "9px",
-            }}
-          >
+      <Modal open={open}>
+        <Box sx={style} className="bg-zinc-200/96 border border-zinc-100">
+          <div className="sfpro-text font-bold px-3 text-[17px]">
+            Open "{clickLink?.name}"?
+          </div>
+          <div className="sfpro-text text-zinc-900/50 text-sm px-3 pt-[9px]">
+            You are trying to open {clickLink?.name}
+          </div>
+          <div className="mt-[22px] flex flex-col gap-[9px]">
             <a href={clickLink?.link} target="_blank">
-              <Box
-                className="sfpro"
-                sx={{
-                  borderRadius: "28px",
-                  textAlign: "center",
-                  py: "18px",
-                  fontSize: "17px",
-                  color: "#000000",
-                  fontWeight: "bold",
-                  bgcolor: "#00000020",
-                }}
-              >
+              <div className="sfpro-text bg-zinc-400/40 text-center py-2.5 rounded-[30px] font-semibold text-[17px]">
                 Allow
-              </Box>
+              </div>
             </a>
-            <Box
-              className="sfpro"
-              sx={{
-                borderRadius: "28px",
-                textAlign: "center",
-                py: "18px",
-                fontSize: "17px",
-                color: "#000000",
-                fontWeight: "bold",
-                bgcolor: "#00000020",
-              }}
+            <div
+              className="sfpro-text bg-zinc-400/40 text-center py-2.5 rounded-[30px] font-semibold text-[17px]"
               onClick={() => setOpen(false)}
             >
               Cancel
-            </Box>
-          </Box>
+            </div>
+          </div>
         </Box>
       </Modal>
     </div>
