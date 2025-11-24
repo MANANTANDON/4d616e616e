@@ -5,7 +5,7 @@ export default function Day24() {
   return (
     <>
       <div className="h-screen w-screen bg-[#222122] flex items-center justify-center px-2">
-        <div className="max-w-[552px] w-[552px] h-[552px] max-h-[552px] border border-[#5D5D5E] rounded-[48px] bg-linear-to-r from-[#222121] to-[#323232] shadow-2xl relative overflow-hidden ">
+        <div className="max-w-[552px] w-[552px] h-[552px] max-h-[552px] border-2 border-[#5D5D5E] rounded-[48px] bg-linear-to-r from-[#222121] to-[#323232] shadow-2xl relative overflow-hidden ">
           <div className="absolute -left-70 top-5 animate-spin [animation-duration:45s]">
             <Image
               src="/images/designs/day24icons.png"
