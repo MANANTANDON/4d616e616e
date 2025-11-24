@@ -44,6 +44,12 @@ export const PageOne = () => {
       link: "https://www.brinandi.com/",
       short_name: "Bri Nandi",
     },
+    {
+      src: "/100DaysDesign.png",
+      name: "100 Days of Frontend Design",
+      link: "/100designs",
+      short_name: "100 Design",
+    },
   ];
 
   const handleIconClick = (project) => {
