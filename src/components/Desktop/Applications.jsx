@@ -109,7 +109,7 @@ export const Applications = () => {
                 alt={item?.name}
                 title={item?.name}
                 style={{
-                  borderRadius: "12px",
+                  borderRadius: "16px",
                   border: "1px solid #e8e8e8",
                 }}
               />
