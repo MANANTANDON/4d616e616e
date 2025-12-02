@@ -268,13 +268,13 @@ export default function Day1() {
                   }}
                   className="sfpro"
                 >
-                  MT
+                  SS
                 </Box>
                 <Typography
                   className="sfpro"
                   sx={{ fontSize: "15px", fontWeight: "bold" }}
                 >
-                  Manan Tandon
+                  Snowchild Studio
                 </Typography>
               </Box>
             </Box>
