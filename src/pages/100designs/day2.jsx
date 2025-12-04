@@ -57,10 +57,10 @@ export const Day2 = () => {
               </div>
               {/* Auth Button */}
               <div className="flex items-center gap-2">
-                <button className="border border-[#EBECEE] bg-[#FFFFFF] sfpro rounded-[10px] py-[8px] px-[18px] text-[15px] cursor-pointer">
+                <button className="border border-[#EBECEE] bg-[#FFFFFF] sfpro rounded-[10px] py-2 px-[18px] text-[15px] cursor-pointer">
                   Log In
                 </button>
-                <button className="border border-[#2A292E] bg-[#2A292E] text-[#FFFFFF] sfpro rounded-[10px] py-[8px] px-[18px] text-[15px] cursor-pointer">
+                <button className="border border-[#2A292E] bg-[#2A292E] text-[#FFFFFF] sfpro rounded-[10px] py-2 px-[18px] text-[15px] cursor-pointer">
                   Get Started
                 </button>
               </div>
@@ -89,11 +89,11 @@ export const Day2 = () => {
                 </div>
               </div>
               {/* Buttons */}
-              <div className="flex items-center justify-center gap-[10px] mt-[55px]">
-                <button className="sfpro rounded-[11px] bg-[#242328] text-zinc-100 px-[24px] py-[9px] text-[17px] cursor-pointer shadow-2xl">
+              <div className="flex items-center justify-center gap-2.5 mt-[55px]">
+                <button className="sfpro rounded-[11px] bg-[#242328] text-zinc-100 px-6 py-[9px] text-[17px] cursor-pointer shadow-2xl">
                   Get Started
                 </button>
-                <button className="sfpro rounded-[11px] bg-[#ffffff] border border-[#EAEBEF] px-[24px] py-[9px] text-[17px] text-[#242527] cursor-pointer">
+                <button className="sfpro rounded-[11px] bg-[#ffffff] border border-[#EAEBEF] px-6 py-[9px] text-[17px] text-[#242527] cursor-pointer">
                   􀊃 Watch demo
                 </button>
               </div>
