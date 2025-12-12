@@ -15,10 +15,10 @@
     "@mui/material": "^6.4.6",
     "@tailwindcss/postcss": "^4.1.15",
     "axios": "^1.12.2",
-    "next": "15.2.1",
+    "next": "^16.0.10",
     "postcss": "^8.5.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.15",
     "typewriter-effect": "^2.22.0"
