@@ -33,7 +33,7 @@ export const MobileDock = () => {
 
   return (
     <>
-      <div className="bottom-[7px] left-[7px] right-[7px]">
+      <div className=" absolute bottom-[7px] left-[7px] right-[7px]">
         <IOS26 styles="justify-between">
           {DockIcons?.map((item, key) => (
             <Box
