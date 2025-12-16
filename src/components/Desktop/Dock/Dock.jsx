@@ -1,3 +1,4 @@
+import { IOS26 } from "@/components/Misc/IOS26";
 import { Box, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
@@ -93,43 +94,40 @@ export const Dock = () => {
           click on the Projects folder to see all
         </Typography>
       </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "10px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          p: 1.5,
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-        }}
-        className="mac-dock-blur"
-      >
-        {DockIcons?.map((item, key) => (
-          <Tooltip arrow title={item?.short_name} key={key}>
-            <a href={item.link} target="_blank">
-              <Box
-                sx={{
-                  position: "relative",
-                  overflow: "hidden",
-                  height: "60px",
-                  width: "60px",
-                  borderRadius: "12px",
-                }}
-              >
-                <Image
-                  src={item?.src}
-                  alt={item?.name}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </Box>
-            </a>
-          </Tooltip>
-        ))}
-      </Box>
+      <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2">
+        <IOS26 styles="gap-4">
+          {DockIcons?.map((item, key) => (
+            <Tooltip
+              key={key}
+              title={item?.short_name}
+              componentsProps={{
+                tooltip: {
+                  sx: {
+                    backdropFilter: "blur(12px)",
+                    bgcolor: "#00000030",
+                    color: "#fff",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "10px",
+                    fontSize: "12px",
+                  },
+                },
+              }}
+            >
+              <a href={item.link} target="_blank">
+                <div className="relative overflow-hidden h-[60px] w-[60px] rounded-[14px]">
+                  <Image
+                    src={item?.src}
+                    alt={item?.name}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+              </a>
+            </Tooltip>
+          ))}
+        </IOS26>
+      </div>
     </>
   );
 };
