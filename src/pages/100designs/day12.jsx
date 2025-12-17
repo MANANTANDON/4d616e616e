@@ -27,10 +27,10 @@ export default function Day12() {
           50% { transform: translate(30px, -100px); }
           75% { transform: translate(-40px, -40px); }
         }
-        .float-1 { animation: float1 8s ease-in-out infinite; }
-        .float-2 { animation: float2 10s ease-in-out infinite; }
-        .float-3 { animation: float3 12s ease-in-out infinite; }
-        .float-4 { animation: float4 14s ease-in-out infinite; }
+        .float-1 { animation: float1 6s ease-in-out infinite; }
+        .float-2 { animation: float2 8s ease-in-out infinite; }
+        .float-3 { animation: float3 10s ease-in-out infinite; }
+        .float-4 { animation: float4 12s ease-in-out infinite; }
       `}</style>
       <div className="h-screen w-screen bg-[#E7E7E7] overflow-scroll flex items-center justify-center">
         <div

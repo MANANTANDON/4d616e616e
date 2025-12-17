@@ -24,6 +24,7 @@ export default function Day14() {
             backgroundRepeat: "no-repeat",
           }}
         >
+          {/* Header */}
           <div className="absolute top-5 left-0 right-0 flex items-center justify-center">
             <div
               className="flex items-center gap-15  bg-zinc-500/20 w-fit px-4 py-3 rounded-[100px] border-t border-zinc-50/20 backdrop-blur-sm"
@@ -45,6 +46,7 @@ export default function Day14() {
               ))}
             </div>
           </div>
+          {/* Hero Footer */}
           <div className="absolute bottom-0 left-10 right-10 pb-6">
             <div className=" pb-5 border-b border-zinc-50/20">
               <div className="text-zinc-50/90 text-[50px] lg:text-[70px] font-light varsf">
