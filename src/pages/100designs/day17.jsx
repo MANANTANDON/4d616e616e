@@ -31,6 +31,7 @@ export default function Day17() {
             backgroundRepeat: "no-repeat",
           }}
         >
+          {/* Header */}
           <div className="absolute top-0 left-0 right-0 flex items-center justify-center gap-15 py-[35px]">
             {Menu.slice(0, 3).map((item, key) => (
               <div
@@ -55,6 +56,7 @@ export default function Day17() {
               </div>
             ))}
           </div>
+          {/* Footer */}
           <div className="absolute bottom-0 left-0 right-0 py-7 px-20">
             <div className="pb-7 border-b border-[#FFFFFF50]">
               <div className="sfpro-text text-[#FFFFFF] text-4xl xl:text-5xl">
@@ -72,18 +74,15 @@ export default function Day17() {
                 <div className="sfpro-text text-xs text-[#C4C2C3]">
                   Step into the fututre of automation. Our AI-driven platform
                   optimizes
-                </div>
-                <div className="sfpro-text text-xs text-[#C4C2C3]">
+                  <br />
                   workflows, predicts outcomes, and accelerates decision-making-
-                </div>
-                <div className="sfpro-text text-xs text-[#C4C2C3]">
+                  <br />
                   effortlessely.
                 </div>
                 <div className="sfpro-text text-xs text-[#C4C2C3] mt-5">
                   AI that doesn't just assist-it anticipates, learns, and
                   executes with
-                </div>
-                <div className="sfpro-text text-xs text-[#C4C2C3]">
+                  <br />
                   precision.
                 </div>
               </div>
@@ -94,3 +93,4 @@ export default function Day17() {
     </>
   );
 }
+2;
