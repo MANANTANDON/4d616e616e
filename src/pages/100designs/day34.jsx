@@ -68,7 +68,7 @@ export default function Day34() {
               movement and intent.
             </div>
             {/* FOOTER CONTENT */}
-            <div className="absolute -bottom-18 left-0 right-0 sfpro-text text-center text-[230px] font-extrabold text-zinc-100">
+            <div className="absolute -bottom-18 left-0 right-0 sfpro-text text-center text-[245px] font-extrabold text-zinc-100 tracking-tighter">
               NEONSHIFT
             </div>
             <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center">
