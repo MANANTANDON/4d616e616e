@@ -64,7 +64,7 @@ export default function Day18() {
               <textarea
                 placeholder="Build SaaS Dashboard..."
                 rows={4}
-                className="text-[#717171] text-sm w-full outline-0 resize-none"
+                className="text-[#FFFFFF] text-sm w-full outline-0 resize-none"
               />
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
