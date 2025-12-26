@@ -85,4 +85,76 @@ export const from11to20 = [
     description:
       "The image she generated vs the Hero she designed vs the Hero I developed, it turned out really great!",
   },
+  {
+    src: "/images/designs/100designs/12.png",
+    name: "Design 12",
+    url: "https://www.manantandon.com/100designs/day12",
+    title: "@olivergoodmano",
+    description:
+      "I really liked this heart rate concept design — it has that minimal and sleek vibe to it.",
+  },
+  {
+    src: "/images/designs/100designs/13.png",
+    name: "Design 13",
+    url: "https://www.manantandon.com/100designs/day13",
+    title: "@GotinGeorgiG",
+    description:
+      "I really love the vibe of the card it has that clean, minimal aesthetic that just clicks instantly 💫",
+  },
+  {
+    src: "/images/designs/100designs/14.png",
+    name: "Design 14",
+    url: "https://www.manantandon.com/100designs/day14",
+    title: "@GotinGeorgiG",
+    description:
+      "Really love how he manages to craft such sleek, minimal, and noise-free layouts — pure elegance 🎨",
+  },
+  {
+    src: "/images/designs/100designs/15.png",
+    name: "Design 15",
+    url: "https://www.manantandon.com/100designs/day15",
+    title: "@uikuba",
+    description:
+      "This is by far one of the simplest Hero designs I’ve seen, yet it clearly conveys the story behind it. Turned out pretty well, I guess 😌",
+  },
+  {
+    src: "/images/designs/100designs/16.png",
+    name: "Design 16",
+    url: "https://www.manantandon.com/100designs/day16",
+    title: "@BenjaminUIX",
+    description:
+      "As he perfectly described in his post: “Design that feels easy on the eyes 👀.”",
+  },
+  {
+    src: "/images/designs/100designs/17.png",
+    name: "Design 17",
+    url: "https://www.manantandon.com/100designs/day17",
+    title: "@kubadesigns",
+    description:
+      "Kuba’s work is something else, insanely minimalist, ultra-sleek, and effortlessly modern. ",
+  },
+  {
+    src: "/images/designs/100designs/18.png",
+    name: "Design 18",
+    url: "https://www.manantandon.com/100designs/day18",
+    title: "@ShruPosts",
+    description:
+      "loved the clean flow and calm gradient vibe, had to recreate it in my style ✨",
+  },
+  {
+    src: "/images/designs/100designs/19.png",
+    name: "Design 19",
+    url: "https://www.manantandon.com/100designs/day19",
+    title: "@Chandadesign",
+    description:
+      "Loved how clean, bold and service-focused this design is, the hero instantly builds trust while keeping everything super modern and easy on the eyes.⚡️✨",
+  },
+  {
+    src: "/images/designs/100designs/20.png",
+    name: "Design 20",
+    url: "https://www.manantandon.com/100designs/day20",
+    title: "@UIxAdri",
+    description:
+      "I loved how the design balances warmth and elegance, especially with that glowing hero visual that instantly sets the mood 🔥💛.",
+  },
 ];
