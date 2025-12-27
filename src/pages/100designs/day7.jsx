@@ -10,8 +10,7 @@ export default function Day7() {
   return (
     <>
       <div className="h-screen w-screen bg-[#F6F6F6] overflow-scroll">
-        <Container maxWidth="md" className="h-screen py-5">
-          <div className=" my-10 text-4xl font-bold">Day 6</div>
+        <Container maxWidth="md" className="h-screen  py-30">
           <Grid2 container>
             <Grid2
               size={{ xs: 12, md: 6 }}
