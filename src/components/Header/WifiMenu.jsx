@@ -1,4 +1,4 @@
-import { Box, Menu, Typography } from "@mui/material";
+import { Box, Menu } from "@mui/material";
 import React, { useState } from "react";
 
 export const WifiMenu = () => {
@@ -15,18 +15,8 @@ export const WifiMenu = () => {
 
   return (
     <>
-      <Typography
-        className="sfpro"
-        sx={{
-          cursor: "default",
-          fontSize: "14px",
-          px: 1,
-          "&:hover": {
-            bgcolor: "#00000020",
-            cursor: "default",
-            borderRadius: "5px",
-          },
-        }}
+      <div
+        className="sfpro-text cursor-default text-[14px] text-zinc-50"
         onClick={handleClick}
         id="wifi-icon"
         aria-controls={open ? "wifi-menu" : undefined}
@@ -34,7 +24,7 @@ export const WifiMenu = () => {
         aria-expanded={open ? "true" : undefined}
       >
         􀙇
-      </Typography>
+      </div>
       <Menu
         id="wifi-menu"
         anchorEl={anchorEl}
@@ -71,58 +61,22 @@ export const WifiMenu = () => {
             gap: 0.7,
           }}
         >
-          <Typography
-            className="sfpro"
-            sx={{ color: "#CECCCF", fontSize: "12px" }}
-          >
+          <div className="sfpro-text text-[#CECCCF] text-[12px]">
             Known Networks
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 1,
-                alignItems: "center",
-              }}
-            >
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1.5 items-center">
               {/*wifi*/}
-              <Typography
-                className="sfpro"
-                sx={{
-                  color: "#fff",
-                  bgcolor: "#3B82F7",
-                  width: "fit-content",
-                  p: 0.5,
-                  fontSize: "14px",
-                  height: "20px",
-                  width: "20px",
-                  borderRadius: "50px",
-                }}
-              >
+              <div className="sfpro-text text-zinc-50 bg-[#3B82F7] rounded-[100px] px-[1.7px] py-[0.7px] text-sm">
                 􀙇
-              </Typography>
-              <Typography
-                className="sfpro"
-                sx={{ fontSize: "12px", color: "#CECCCF" }}
-              >
+              </div>
+              <div className="sfpro-text text-[12px] text-[#CECCCF]">
                 4d616e616e-5G
-              </Typography>
-            </Box>
+              </div>
+            </div>
             {/*lock.fill*/}
-            <Typography
-              className="sfpro"
-              sx={{ color: "#CECCCF", fontSize: "14px" }}
-            >
-              􀎡
-            </Typography>
-          </Box>
+            <div className="sfpro-text text-[14px] text-[#CECCCF]">􀎡</div>
+          </div>
         </Box>
       </Menu>
     </>

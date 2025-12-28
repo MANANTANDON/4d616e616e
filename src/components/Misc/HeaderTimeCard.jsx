@@ -32,13 +32,12 @@ export const HeaderTimeCard = () => {
 
   return (
     <>
-      <Typography
-        className="sfpro"
-        fontSize="14px"
+      <div
+        className="sfpro-text cursor-default text-[14px] text-zinc-50 flex items-center"
         onClick={() => setOpenDrawer(true)}
       >
         {time}
-      </Typography>
+      </div>
       <Drawer
         anchor="right"
         open={openDrawer}

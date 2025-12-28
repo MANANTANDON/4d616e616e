@@ -32,9 +32,9 @@ export const IOS26 = ({ styles, children }) => {
               y2="100%" // End Y position
             >
               {/* Adjust stopColor values for different colors and opacity */}
-              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.3" />
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
               <stop offset="50%" stopColor="#ffffff" stopOpacity="0" />
-              <stop offset="100%" stopColor="#ffffff" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="1" />
             </linearGradient>
           </defs>
           <rect
@@ -46,7 +46,7 @@ export const IOS26 = ({ styles, children }) => {
             ry="28" // Adjust for border radius
             fill="none"
             stroke="url(#borderGradient)"
-            strokeWidth="1.5" // Adjust for border thickness
+            strokeWidth="0.7" // Adjust for border thickness
           />
         </svg>
       </div>

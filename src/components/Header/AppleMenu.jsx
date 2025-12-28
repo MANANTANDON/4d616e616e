@@ -57,18 +57,8 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
 
   return (
     <>
-      <Typography
-        className="sfpro"
-        sx={{
-          cursor: "default",
-          fontSize: "14px",
-          px: 1.5,
-          "&:hover": {
-            bgcolor: "#00000020",
-            cursor: "default",
-            borderRadius: "5px",
-          },
-        }}
+      <div
+        className="sfpro-text cursor-default text-[14px] text-zinc-50"
         onClick={handleClick}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
@@ -76,7 +66,7 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
         aria-expanded={open ? "true" : undefined}
       >
         􀣺
-      </Typography>
+      </div>
       <Menu
         id="apple-menu"
         anchorEl={anchorEl}

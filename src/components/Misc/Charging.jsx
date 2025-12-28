@@ -1,4 +1,4 @@
-import { Box, Divider, Menu, Tooltip, Typography } from "@mui/material";
+import { Box, Menu, Tooltip, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const useBatteryStatus = () => {
@@ -59,20 +59,8 @@ export const Charging = ({ type }) => {
     <div>
       {level !== null ? (
         <>
-          <Typography
-            className="sfpro"
-            sx={{
-              fontSize: "14px",
-              display: "flex",
-              alignItems: "center",
-              cursor: "default",
-              px: 1,
-              "&:hover": {
-                bgcolor: "#00000020",
-                cursor: "default",
-                borderRadius: "5px",
-              },
-            }}
+          <div
+            className="sfpro-text cursor-default text-[14px] text-zinc-50 flex items-center"
             onClick={handleClick}
             id="charging-icon"
             aria-controls={open ? "charging-menu" : undefined}
@@ -91,7 +79,7 @@ export const Charging = ({ type }) => {
               : level <= 75
               ? "􀺸"
               : "􀛨"}
-          </Typography>
+          </div>
           <Menu
             id="charging-menu"
             anchorEl={anchorEl}
