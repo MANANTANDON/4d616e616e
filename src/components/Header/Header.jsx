@@ -8,7 +8,7 @@ export const Header = ({ setShowApp, onShutdown }) => {
   const LeftMenu = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
   return (
     <>
-      <div className="flex items-center justify-between px-[18px] py-1 bg-linear-to-b from-zinc-100/50  to-transparent backdrop-blur-xs">
+      <div className="flex items-center justify-between px-[18px] py-1 bg-linear-to-b from-zinc-900/30 via-zinc-900-10 to-transparent ">
         {/* MENUS */}
         <div className="flex items-center gap-5">
           <AppleMenu setShowApp={setShowApp} onShutdown={onShutdown} />

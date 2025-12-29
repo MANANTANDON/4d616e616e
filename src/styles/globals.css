@@ -208,7 +208,7 @@
 } */
 
 body {
-  background-image: url("/images/macos_Light.webp");
+  background-image: url("/images/wp1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -426,7 +426,7 @@ a {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-image: url("/images/macos_dark.webp");
+    background-image: url("/images/wp2.png");
   }
 }
 

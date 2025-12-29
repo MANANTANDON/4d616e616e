@@ -5,8 +5,6 @@ import React from "react";
 const styles = {
   container: {
     pt: 0,
-    mx: -1,
-    pl: 2,
     position: "relative",
   },
   widget: {
