@@ -11,6 +11,7 @@ const modalStyle = {
   width: "100%",
   height: "100%",
   m: -1,
+  inset: 0,
   pointerEvents: "none", // Allow clicks to pass through
 };
 
@@ -115,14 +116,13 @@ export const Folder = () => {
     );
   };
 
+  console.log(modalOpen, "MODEL OPEN");
+
   return (
     <>
       <Box
         sx={{
           width: "fit-content",
-          mt: "30.39px",
-          pt: 2,
-          pr: 2,
           display: "flex",
           alignItems: "center",
           flexDirection: "column",

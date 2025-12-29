@@ -63,7 +63,7 @@ export const MobileHome = () => {
         threshold={10}
       >
         <SwiperSlide style={{ height: "100%" }}>
-          <div style={{ height: "100%", overflow: "hidden" }}>
+          <div style={{ height: "100%", overflow: "hidden" }} className="p-4">
             <MusicWidgetMobile />
             <Projects />
           </div>

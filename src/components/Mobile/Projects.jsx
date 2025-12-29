@@ -64,7 +64,7 @@ export const Projects = () => {
   };
   return (
     <>
-      <Box sx={{ mt: 2.5, mx: -0.5 }}>
+      <Box sx={{ mt: 2.5 }}>
         <Grid
           container
           sx={{
