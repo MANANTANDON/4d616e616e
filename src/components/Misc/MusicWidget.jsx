@@ -89,7 +89,7 @@ export const MusicWidget = () => {
             ry="27" // Adjust for border radius
             fill="none"
             stroke="url(#borderGradient)"
-            strokeWidth="0.7" // Adjust for border thickness
+            strokeWidth="1" // Adjust for border thickness
           />
         </svg>
       </div>

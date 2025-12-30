@@ -50,7 +50,7 @@ export const MusicWidgetMobile = () => {
                 WebkitBoxOrient: "vertical",
               }}
             >
-              Thursday (Original Explicit)
+              Enjoy The Show
             </div>
             <div className="sfpro-text text-zinc-50/70 font-medium text-base">
               The Weeknd
