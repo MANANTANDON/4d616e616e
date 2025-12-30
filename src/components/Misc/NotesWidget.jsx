@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import React from "react";
 
 // Contact data for better maintainability
@@ -40,6 +40,7 @@ const contactData = [
 ];
 
 export const NotesWidget = () => {
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <>
       <div className="absolute left-[370px] top-[35%] bg-zinc-950/70 px-4 py-1.5 rounded-xl pointer-none border border-zinc-100/60">
@@ -60,21 +61,31 @@ export const NotesWidget = () => {
               􀈕 Notes
             </div>
           </div>
-          <div className="bg-zinc-100 h-full pt-[5px]">
-            <div className="w-full border-t border-dotted border-[#E6E6E6]" />
+          <div className="notes-bg-color h-full pt-[5px]">
+            <div
+              className={`w-full border-t ${
+                isDarkMode
+                  ? "border-dotted border-zinc-600"
+                  : "border-dotted border-zinc-300"
+              }`}
+            />
             <div className=" px-[17px]">
               {contactData?.map((contact, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col ${
-                    index !== 4 && "border-b border-zinc-300"
-                  } py-[9px]`}
+                  className={`flex flex-col py-[9px] ${
+                    index !== 4
+                      ? isDarkMode
+                        ? "border-b border-zinc-600"
+                        : "border-b border-zinc-300"
+                      : ""
+                  }`}
                 >
-                  <div className="sfpro-text text-[13px] font-medium">
+                  <div className="sfpro-text notes-text-color text-[13px] font-medium">
                     {contact.label}
                   </div>
                   <a
-                    className="sfpro-text text-[13px] font-regular text-[#808080] w-full"
+                    className="sfpro-text text-[13px] font-regular w-full notes-text-color-2"
                     href={contact.href}
                     target={contact.external ? "_blank" : undefined}
                     rel={contact.external ? "noopener noreferrer" : undefined}
@@ -120,81 +131,3 @@ export const NotesWidget = () => {
     </>
   );
 };
-
-//  <Box sx={styles.container}>
-//       <Box
-//         sx={{
-//           position: "absolute",
-//           right: "-280px",
-//           top: "40%",
-//           bgcolor: "#00000090",
-//           py: 1,
-//           px: 4,
-//           borderRadius: "12px",
-//           pointerEvents: "none",
-//           border: "1px solid #66666680",
-//         }}
-//       >
-//         <Typography
-//           sx={{
-//             color: "#FFFFFF",
-//             fontSize: "14px",
-//             fontWeight: "600",
-//             textAlign: "center",
-//           }}
-//           className="sfpro"
-//         >
-//           Lets Connect.
-//         </Typography>
-//         <Typography
-//           sx={{
-//             color: "#dfdfdf",
-//             fontSize: "12px",
-//             fontWeight: "600",
-//             textAlign: "center",
-//             width: "200px",
-//             mt: 0.5,
-//           }}
-//           className="sfpro"
-//         >
-//           Have a project in mind or want to collaborate? Feel free to reach out
-//           to me anytime.
-//         </Typography>
-//       </Box>
-//       <Box sx={styles.widget}>
-//         <Box sx={styles.header}>
-//           <Typography
-//             className="sfpro"
-//             sx={{ pl: 2, fontSize: "16px", display: "flex", gap: 1 }}
-//           >
-//             <span>􀈕</span>
-//             <span>Notes</span>
-//           </Typography>
-//         </Box>
-//         <Box sx={styles.content}>
-//           {contactData.map((contact, index) => (
-//             <Box key={index} sx={styles.contactItem}>
-//               <Typography sx={styles.label} className="sfpro">
-//                 {contact.label}
-//               </Typography>
-//               {contact.isLink ? (
-//                 <Typography
-//                   component="a"
-//                   href={contact.href}
-//                   target={contact.external ? "_blank" : undefined}
-//                   rel={contact.external ? "noopener noreferrer" : undefined}
-//                   sx={styles.link}
-//                   className="sfpro"
-//                 >
-//                   {contact.value}
-//                 </Typography>
-//               ) : (
-//                 <Typography sx={styles.link} className="sfpro">
-//                   {contact.value}
-//                 </Typography>
-//               )}
-//             </Box>
-//           ))}
-//         </Box>
-//       </Box>
-//     </Box>

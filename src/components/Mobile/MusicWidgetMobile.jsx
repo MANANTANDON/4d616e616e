@@ -1,9 +1,9 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 export const MusicWidgetMobile = () => {
-  const is320 = useMediaQuery("(max-width:320px)");
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -22,7 +22,7 @@ export const MusicWidgetMobile = () => {
       <div
         className={`relative flex items-center backdrop-blur-md bg-zinc-600/10 rounded-[27px] pb-px px-px pt-[0.5px]`}
       >
-        <div className="h-[164px] w-full rounded-[27px] p-[18px] bg-linear-to-b from-[#FF5E80] to-[#FF002E] flex flex-row gap-3">
+        <div className="h-[164px] w-full rounded-[27px] p-[18px] flex flex-row gap-3 music-widget-bg-color">
           <div className="shrink-0">
             <Image
               src="/images/enjoytheshow.webp"
@@ -34,10 +34,18 @@ export const MusicWidgetMobile = () => {
           </div>
 
           <div className="w-full">
-            <div className="sfpro-text text-zinc-50 text-lg flex justify-end">
+            <div
+              className={`sfpro-text ${
+                isDarkMode ? "text-[#FF0041]" : "text-zinc-50"
+              } text-lg flex justify-end`}
+            >
               􀑪
             </div>
-            <div className="sfpro-text text-zinc-50/70 font-medium text-[12px] tracking-[1px]">
+            <div
+              className={`sfpro-text ${
+                isDarkMode ? "text-[#FF4C75]" : "text-zinc-50/70"
+              } font-medium text-[12px] tracking-[1px]`}
+            >
               RECENTLY PLAYED
             </div>
             <div

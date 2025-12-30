@@ -424,9 +424,38 @@ a {
   animation: textGlow 2s ease-in-out infinite;
 }
 
+.music-widget-bg-color {
+  background: linear-gradient(to bottom, #ff5e80, #ff002e);
+}
+
+.notes-bg-color {
+  background-color: #ffffff;
+}
+
+.notes-text-color {
+  color: #272727;
+}
+
+.notes-text-color-2 {
+  color: #808080;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-image: url("/images/wp2.png");
+  }
+  .notes-text-color {
+    color: #ffffff;
+  }
+
+  .notes-text-color-2 {
+    color: #9a9a9a;
+  }
+  .notes-bg-color {
+    background: linear-gradient(to bottom, #323333, #1e1e1e);
+  }
+  .music-widget-bg-color {
+    background: linear-gradient(to bottom, #454345, #141614);
   }
 }
 
