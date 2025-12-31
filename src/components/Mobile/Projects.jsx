@@ -85,14 +85,14 @@ export const Projects = () => {
                 <Image
                   src={item?.src}
                   layout="intrinsic"
-                  width={"60"}
-                  height={"60"}
+                  width={"65"}
+                  height={"65"}
                   objectFit="cover"
                   objectPosition="center"
                   alt={item?.name}
                   title={item?.name}
                   style={{
-                    borderRadius: "12px",
+                    borderRadius: "17px",
                     border: item?.short_name === "CMS" && "1px solid #3c3c3c",
                   }}
                 />

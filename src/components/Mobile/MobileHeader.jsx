@@ -1,47 +1,35 @@
-import { useCurrentMobileTime } from "@/hooks/useCurrentMobileTime";
-import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MobileCharging } from "../Misc/MobileCharging";
 
 export const MobileHeader = () => {
-  const currentTime = useCurrentMobileTime();
+  const getTime = () =>
+    new Date().toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: false,
+    });
+
+  const [currentTime, setCurrentTime] = useState(getTime());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(getTime());
+    }, 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          pt: 2,
-        }}
-      >
-        <Box sx={{ ml: 2.5 }}>
-          <Typography
-            className="sfpro"
-            sx={{ color: "#FFFFFF", fontWeight: "bolder" }}
-          >
-            {currentTime}
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mr: 1.4 }}>
-          {/* Signal Icon*/}
-          <Typography
-            className="sfpro"
-            sx={{ color: "#FFFFFF", fontSize: "14px" }}
-          >
-            􀭧
-          </Typography>
-          {/*Wifi Icon*/}
-          <Typography
-            className="sfpro"
-            sx={{ color: "#FFFFFF", fontSize: "14px" }}
-          >
-            􀙇
-          </Typography>
-          {/*Battery Icon*/}
-          <MobileCharging />
-        </Box>
-      </Box>
-    </>
+    <div className="flex items-center justify-between pt-2 mx-9">
+      <div className="sfpro-text text-zinc-100 font-semibold text-[14px]">
+        {currentTime}
+      </div>
+
+      <div className="flex items-center gap-[5px]">
+        <div className="sfpro-text text-zinc-100 text-[14px]">􀭧</div>
+        <div className="sfpro-text text-zinc-100 text-[14px]">􀙇</div>
+        <MobileCharging />
+      </div>
+    </div>
   );
 };

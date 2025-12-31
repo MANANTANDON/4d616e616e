@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { IOS26 } from "../Misc/IOS26";
@@ -36,29 +35,21 @@ export const MobileDock = () => {
       <div className=" absolute bottom-[7px] left-[7px] right-[7px]">
         <IOS26 styles="justify-between">
           {DockIcons?.map((item, key) => (
-            <Box
+            <a
               key={key}
-              component="a"
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              sx={{
-                cursor: "pointer",
-                display: "block",
-                position: "relative",
-                pointerEvents: "auto",
-              }}
+              className="cursor-pointer block relative pointer-events-auto"
             >
               <Image
                 src={item.path}
                 alt={item.title}
                 width={60}
                 height={60}
-                style={{
-                  pointerEvents: "none",
-                }}
+                className="rounded-[17px]"
               />
-            </Box>
+            </a>
           ))}
         </IOS26>
       </div>
