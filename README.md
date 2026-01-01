@@ -1,9 +1,9 @@
 site: https://www.manantandon.com
 
-Laptop UI
+Laptop UI (LIGHT)
+<img width="1702" height="1037" alt="Screenshot 2026-01-01 at 1 05 52 PM" src="https://github.com/user-attachments/assets/9f17ee73-24b4-4b80-b74b-aa39a9d051e2" />
 
-<img width="1438" alt="Screenshot 2025-04-24 at 9 25 08 PM" src="https://github.com/user-attachments/assets/241aee57-579f-4350-8ae8-b6b5fc02440d" />
+Laptop UI (DARK)
+<img width="1702" height="1037" alt="Screenshot 2026-01-01 at 1 05 20 PM" src="https://github.com/user-attachments/assets/61385734-6259-406e-b987-da5c87e4f78a" />
 
-Mobile UI
 
-<img width="320" alt="Screenshot 2025-05-03 at 8 27 22 PM" src="https://github.com/user-attachments/assets/1cf3eccf-31d4-4d1d-b301-6ee1693447fa" />
