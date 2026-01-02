@@ -39,7 +39,10 @@ export default function Day19() {
             </div>
             <div className="sfpro-text flex items-center gap-10">
               {MENU.map((item, key) => (
-                <div key={key} className="sfpro-text text-[#FFFFFF]">
+                <div
+                  key={key}
+                  className="sfpro-text text-[#FFFFFF] cursor-pointer"
+                >
                   {item}
                 </div>
               ))}
