@@ -158,3 +158,85 @@ export const from11to20 = [
       "I loved how the design balances warmth and elegance, especially with that glowing hero visual that instantly sets the mood 🔥💛.",
   },
 ];
+export const from21to30 = [
+  {
+    src: "/images/designs/100designs/21.png",
+    name: "Design 21",
+    url: "https://www.manantandon.com/100designs/day21",
+    title: "@ayomiolawuyi",
+    description:
+      "Loved how she blends minimal UI with strong visuals clean, calm, impactful 🤌",
+  },
+  {
+    src: "/images/designs/100designs/22.png",
+    name: "Design 22",
+    url: "https://www.manantandon.com/100designs/day22",
+    title: "@UiUxSeyi",
+    description:
+      "Loved how the design uses depth, contrast and a bold visual narrative to instantly pull focus.",
+  },
+  {
+    src: "/images/designs/100designs/23.png",
+    name: "Design 23",
+    url: "https://www.manantandon.com/100designs/day23",
+    title: "@grigoryzero",
+    description:
+      "I loved the bold colors, soft gradients, and how the playful character instantly draws your focus.",
+  },
+  {
+    src: "/images/designs/100designs/24.png",
+    name: "Design 24",
+    url: "https://www.manantandon.com/100designs/day24",
+    title: "@ShruPosts",
+    description:
+      "The design itself was already simple, sleek, and creative, it instantly clicked with me, so I had to bring it to life using code. 💻🎨",
+  },
+  {
+    src: "/images/designs/100designs/25.png",
+    name: "Design 25",
+    url: "https://www.manantandon.com/100designs/day25",
+    title: "@berlickfold",
+    description:
+      "The lighting, depth and calm futuristic mood really caught my attention.",
+  },
+  {
+    src: "/images/designs/100designs/26.png",
+    name: "Design 26",
+    url: "https://www.manantandon.com/100designs/day26",
+    title: "@santu_design",
+    description:
+      "Loved the clean, premium split-screen vibe, had to rebuild it and push myself to match that polish in code.",
+  },
+  {
+    src: "/images/designs/100designs/27.png",
+    name: "Design 27",
+    url: "https://www.manantandon.com/100designs/day27",
+    title: "@silexdev",
+    description:
+      "That hacker vibe instantly grabbed my attention. lowkey different yet super clean. Loving how this one turned out 👨🏻‍💻✨",
+  },
+  {
+    src: "/images/designs/100designs/28.png",
+    name: "Design 28",
+    url: "https://www.manantandon.com/100designs/day28",
+    title: "@ShruPosts",
+    description:
+      "loved the clean flow and calm gradient vibe, had to recreate it in my style ✨",
+  },
+  {
+    src: "/images/designs/100designs/29.png",
+    name: "Design 29",
+    url: "https://www.manantandon.com/100designs/day29",
+    title: "@DesignsByGolem",
+    description:
+      "Calm, cinematic visuals with minimal UI and depth-driven focus ✨🎬",
+  },
+  {
+    src: "/images/designs/100designs/30.png",
+    name: "Design 30",
+    url: "https://www.manantandon.com/100designs/day30",
+    title: "@martomads",
+    description:
+      "Cinematic hero sections work not because they look good, but because they slow the user down.",
+  },
+];
