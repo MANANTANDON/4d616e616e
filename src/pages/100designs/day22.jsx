@@ -175,7 +175,7 @@ export default function Day22() {
               maxWidth="xl"
               className="sfpro-text text-[#AFB5B5] flex flex-col items-center justify-center relative"
             >
-              <div>􀆇</div>
+              <div class="icon">􀆇</div>
               <div>Swipe up to see more</div>
             </Container>
           </div>

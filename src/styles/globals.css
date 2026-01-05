@@ -314,6 +314,11 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.icon {
+  display: inline-block;
+  animation: floatUpDown 1.5s ease-in-out infinite;
+}
+
 /* Shutdown Screen Animations */
 @keyframes fadeInBlack {
   from {
@@ -375,6 +380,18 @@ a {
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
     transform: translateY(0);
   }
 }
