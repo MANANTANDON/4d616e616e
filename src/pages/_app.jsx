@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -35,8 +36,9 @@ export default function App({ Component, pageProps }) {
           });
         `}
       </Script>
-
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

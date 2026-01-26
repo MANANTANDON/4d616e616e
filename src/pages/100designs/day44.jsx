@@ -1,6 +1,10 @@
+import { useTheme } from "@/context/ThemeContext";
 import React from "react";
 
 const Day44 = () => {
+  const { theme, setTheme } = useTheme();
+
+  console.log(theme);
   const MENU = ["Work", "Approach", "Journal", "Product", "Contact"];
 
   const handleButtonClick = () => {
