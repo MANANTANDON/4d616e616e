@@ -240,3 +240,85 @@ export const from21to30 = [
       "Cinematic hero sections work not because they look good, but because they slow the user down.",
   },
 ];
+export const from31to40 = [
+  {
+    src: "/images/designs/100designs/31.png",
+    name: "Design 31",
+    url: "https://www.manantandon.com/100designs/day31",
+    title: "@ayomiolawuyi",
+    description:
+      "Loved how she blends minimal UI with strong visuals clean, calm, impactful 🤌",
+  },
+  {
+    src: "/images/designs/100designs/32.png",
+    name: "Design 32",
+    url: "https://www.manantandon.com/100designs/day32",
+    title: "@UiUxSeyi",
+    description:
+      "Loved how the design uses depth, contrast and a bold visual narrative to instantly pull focus.",
+  },
+  {
+    src: "/images/designs/100designs/33.png",
+    name: "Design 33",
+    url: "https://www.manantandon.com/100designs/day33",
+    title: "@grigoryzero",
+    description:
+      "I loved the bold colors, soft gradients, and how the playful character instantly draws your focus.",
+  },
+  {
+    src: "/images/designs/100designs/34.png",
+    name: "Design 34",
+    url: "https://www.manantandon.com/100designs/day34",
+    title: "@ShruPosts",
+    description:
+      "The design itself was already simple, sleek, and creative, it instantly clicked with me, so I had to bring it to life using code. 💻🎨",
+  },
+  {
+    src: "/images/designs/100designs/35.png",
+    name: "Design 35",
+    url: "https://www.manantandon.com/100designs/day35",
+    title: "@berlickfold",
+    description:
+      "The lighting, depth and calm futuristic mood really caught my attention.",
+  },
+  {
+    src: "/images/designs/100designs/36.png",
+    name: "Design 36",
+    url: "https://www.manantandon.com/100designs/day36",
+    title: "@santu_design",
+    description:
+      "Loved the clean, premium split-screen vibe, had to rebuild it and push myself to match that polish in code.",
+  },
+  {
+    src: "/images/designs/100designs/37.png",
+    name: "Design 37",
+    url: "https://www.manantandon.com/100designs/day37",
+    title: "@silexdev",
+    description:
+      "That hacker vibe instantly grabbed my attention. lowkey different yet super clean. Loving how this one turned out 👨🏻‍💻✨",
+  },
+  {
+    src: "/images/designs/100designs/38.png",
+    name: "Design 38",
+    url: "https://www.manantandon.com/100designs/day38",
+    title: "@ShruPosts",
+    description:
+      "loved the clean flow and calm gradient vibe, had to recreate it in my style ✨",
+  },
+  {
+    src: "/images/designs/100designs/39.png",
+    name: "Design 39",
+    url: "https://www.manantandon.com/100designs/day39",
+    title: "@DesignsByGolem",
+    description:
+      "Calm, cinematic visuals with minimal UI and depth-driven focus ✨🎬",
+  },
+  {
+    src: "/images/designs/100designs/40.png",
+    name: "Design 40",
+    url: "https://www.manantandon.com/100designs/day40",
+    title: "@martomads",
+    description:
+      "Cinematic hero sections work not because they look good, but because they slow the user down.",
+  },
+];
