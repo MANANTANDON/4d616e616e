@@ -62,7 +62,7 @@ const Day49 = () => {
           </div>
           <div className="flex flex-col gap-5 mt-10">
             <div className="sfpro-text text-zinc-100/80 text-xl font-medium">
-              Our Partners:
+              Selected partners we've worked with:
             </div>
             <div className="flex gap-7">
               {IMG.map((item, key) => (
