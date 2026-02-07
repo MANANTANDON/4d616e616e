@@ -1,4 +1,3 @@
-import { width } from "@mui/system";
 import Image from "next/image";
 import React from "react";
 
