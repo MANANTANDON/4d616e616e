@@ -3,6 +3,7 @@ import {
   from1to10,
   from21to30,
   from31to40,
+  from41to50,
 } from "@/utils/constant";
 import { X } from "@mui/icons-material";
 import { Box, Container, Grid2, useMediaQuery } from "@mui/material";
@@ -320,6 +321,55 @@ export default function Index() {
 
               <Grid2 container className="my-7" rowGap={4}>
                 {from31to40.map((item, key) => (
+                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          src={item.src}
+                          height={100}
+                          width={100}
+                          style={{ borderRadius: "7px", objectFit: "contain" }}
+                          alt={item.name}
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0 pr-4">
+                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
+                          {item.name}
+                        </div>
+                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
+                          Inspired by {item.title}
+                        </div>
+                        <Box
+                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
+                          sx={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: "2",
+                            WebkitBoxOrient: "vertical",
+                          }}
+                        >
+                          {item.description}
+                        </Box>
+                      </div>
+                    </a>
+                  </Grid2>
+                ))}
+              </Grid2>
+            </section>
+            {/*41 - 50*/}
+            <section className="mt-20">
+              <h2 className="sfpro font-extrabold text-[20px]">
+                Designs: 41-50
+              </h2>
+
+              <Grid2 container className="my-7" rowGap={4}>
+                {from41to50.map((item, key) => (
                   <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
                     <a
                       href={item.url}

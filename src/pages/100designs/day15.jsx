@@ -14,7 +14,7 @@ export default function Day15() {
         </div>
       )}
       {laptop && (
-        <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto">
+        <div className="sfpro-text h-screen w-screen bg-[#FFFFFF] overflow-auto">
           <Container maxWidth="xl">
             <div className="mx-15 relative h-screen">
               <div className="text-[#363636] varsf text-lg text-center font-semibold py-4">
@@ -33,11 +33,9 @@ export default function Day15() {
                   </div>
                 </div>
                 <div>
-                  <button className="sfro-text font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1 cursor-pointer">
+                  <button className=" font-extralight text-4xl border-b border-[#363636] text-[#363636] px-1 cursor-pointer">
                     Book Consultation{" "}
-                    <span className="sfro-text font-extralight text-3xl">
-                      􀰾
-                    </span>
+                    <span className="font-extralight text-3xl">􀰾</span>
                   </button>
                 </div>
               </div>
@@ -68,10 +66,8 @@ export default function Day15() {
                     />
                   </div>
                   <div className="flex flex-col items-center justify-center mt-10">
-                    <div className="sfro-text text-2xl font-normal">
-                      View All
-                    </div>
-                    <div className="sfro-text text-2xl font-extralight">􀄩</div>
+                    <div className="text-2xl font-normal">View All</div>
+                    <div className="text-2xl font-extralight">􀄩</div>
                   </div>
                 </div>
               </div>
