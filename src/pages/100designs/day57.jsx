@@ -65,7 +65,7 @@ export default function Day57() {
             <br />
             of the summer with enhanced acoustics and mind-blowing visuals.
           </p>
-          <button className="bg-zinc-100 text-zinc-900 px-6 py-4 rounded-4xl cursor-pointer shadow-[0_5px_0_0_#223D94] text-lg tracking-tighter mt-[40px]">
+          <button className="bg-zinc-100 text-zinc-900 px-6 py-4 rounded-4xl cursor-pointer shadow-[0_5px_0_0_#223D94] text-lg tracking-tighter mt-10">
             Reserve Your Seat
           </button>
         </div>
