@@ -12,8 +12,13 @@ const Day60 = () => {
   );
   return (
     <>
+      <div className="flex items-center justify-center h-screen lg:hidden">
+        <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
+          Switch to Desktop
+        </div>
+      </div>
       <div
-        className="h-screen w-screen bg-zinc-800 sfpro-text py-[43px] px-[100px]"
+        className="h-screen w-screen bg-zinc-800 sfpro-text py-[43px] px-[100px] hidden lg:block"
         style={{
           backgroundImage: "url(/images/designs/day60/bg.png)",
           backgroundPosition: "center",
