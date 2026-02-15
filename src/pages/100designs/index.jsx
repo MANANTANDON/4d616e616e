@@ -141,7 +141,7 @@ export default function Index() {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src={"/images/designs/100designs/tweet.png"}
+                    src={"/images/designs/100days/tweet.png"}
                     layout="intrinsic"
                     height={2700}
                     width={3810}
