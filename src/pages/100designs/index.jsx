@@ -1,12 +1,5 @@
-import {
-  from11to20,
-  from1to10,
-  from21to30,
-  from31to40,
-  from41to50,
-} from "@/utils/constant";
 import { X } from "@mui/icons-material";
-import { Box, Container, Grid2, useMediaQuery } from "@mui/material";
+import { Container, Grid2, useMediaQuery } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -80,7 +73,7 @@ export default function Index() {
           content="https://www.manantandon.com/100DaysDesign.png"
         />
       </Head>
-      <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto">
+      <div className="h-screen w-screen bg-[#FFFFFF] overflow-auto sfpro-text">
         <div className="relative">
           {isMobile ? (
             <div className="relative overflow-hidden h-[210px] w-full">
@@ -165,251 +158,34 @@ export default function Index() {
         </div>
         <div>
           <Container maxWidth="lg">
-            {/* 1 - 10*/}
             <section className="mt-20">
-              {/* Use h2 for subheadings */}
-              <h2 className="sfpro font-extrabold text-[20px]">
-                Designs: 1-10
-              </h2>
-
-              <Grid2 container className="my-7" rowGap={4}>
-                {from1to10.map((item, key) => (
-                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
+              <div className="flex flex-wrap">
+                {Array.from(Array(60)).map((item, key) => (
+                  <div
+                    key={key}
+                    className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2"
+                  >
                     <a
-                      href={item.url}
+                      href={`https://manantandon.com/100designs/day${key + 1}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3"
+                      className="group block relative overflow-hidden rounded-lg"
                     >
-                      <div className="shrink-0">
-                        <Image
-                          src={item.src}
-                          height={100}
-                          width={100}
-                          style={{ borderRadius: "7px", objectFit: "contain" }}
-                          alt={item.name}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-4">
-                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
-                          {item.name}
-                        </div>
-                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
-                          Inspired by {item.title}
-                        </div>
-                        <Box
-                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
-                          sx={{
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical",
-                          }}
-                        >
-                          {item.description}
-                        </Box>
-                      </div>
-                    </a>
-                  </Grid2>
-                ))}
-              </Grid2>
-            </section>
-            {/*11 - 20*/}
-            <section className="mt-20">
-              <h2 className="sfpro font-extrabold text-[20px]">
-                Designs: 11-20
-              </h2>
+                      <Image
+                        src={`/images/designs/100days/${key + 1}.png`}
+                        width={285}
+                        height={285}
+                        alt={`MANAN TANDON FRONTEND DESIGN DAY ${key + 1}`}
+                        className="rounded-lg"
+                      />
 
-              <Grid2 container className="my-7" rowGap={4}>
-                {from11to20.map((item, key) => (
-                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3"
-                    >
-                      <div className="shrink-0">
-                        <Image
-                          src={item.src}
-                          height={100}
-                          width={100}
-                          style={{ borderRadius: "7px", objectFit: "contain" }}
-                          alt={item.name}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-4">
-                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
-                          {item.name}
-                        </div>
-                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
-                          Inspired by {item.title}
-                        </div>
-                        <Box
-                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
-                          sx={{
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical",
-                          }}
-                        >
-                          {item.description}
-                        </Box>
+                      <div className="absolute inset-0 bg-zinc-900/30 backdrop-blur-sm flex items-center justify-center text-zinc-100 font-bold text-2xl tracking-tighter translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                        DAY <i className="font-normal ml-2">{key + 1}</i>
                       </div>
                     </a>
-                  </Grid2>
+                  </div>
                 ))}
-              </Grid2>
-            </section>
-            {/*21 - 30*/}
-            <section className="mt-20">
-              <h2 className="sfpro font-extrabold text-[20px]">
-                Designs: 21-30
-              </h2>
-
-              <Grid2 container className="my-7" rowGap={4}>
-                {from21to30.map((item, key) => (
-                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3"
-                    >
-                      <div className="shrink-0">
-                        <Image
-                          src={item.src}
-                          height={100}
-                          width={100}
-                          style={{ borderRadius: "7px", objectFit: "contain" }}
-                          alt={item.name}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-4">
-                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
-                          {item.name}
-                        </div>
-                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
-                          Inspired by {item.title}
-                        </div>
-                        <Box
-                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
-                          sx={{
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical",
-                          }}
-                        >
-                          {item.description}
-                        </Box>
-                      </div>
-                    </a>
-                  </Grid2>
-                ))}
-              </Grid2>
-            </section>
-            {/*31 - 40*/}
-            <section className="mt-20">
-              <h2 className="sfpro font-extrabold text-[20px]">
-                Designs: 31-40
-              </h2>
-
-              <Grid2 container className="my-7" rowGap={4}>
-                {from31to40.map((item, key) => (
-                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3"
-                    >
-                      <div className="shrink-0">
-                        <Image
-                          src={item.src}
-                          height={100}
-                          width={100}
-                          style={{ borderRadius: "7px", objectFit: "contain" }}
-                          alt={item.name}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-4">
-                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
-                          {item.name}
-                        </div>
-                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
-                          Inspired by {item.title}
-                        </div>
-                        <Box
-                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
-                          sx={{
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical",
-                          }}
-                        >
-                          {item.description}
-                        </Box>
-                      </div>
-                    </a>
-                  </Grid2>
-                ))}
-              </Grid2>
-            </section>
-            {/*41 - 50*/}
-            <section className="mt-20">
-              <h2 className="sfpro font-extrabold text-[20px]">
-                Designs: 41-50
-              </h2>
-
-              <Grid2 container className="my-7" rowGap={4}>
-                {from41to50.map((item, key) => (
-                  <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={key}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3"
-                    >
-                      <div className="shrink-0">
-                        <Image
-                          src={item.src}
-                          height={100}
-                          width={100}
-                          style={{ borderRadius: "7px", objectFit: "contain" }}
-                          alt={item.name}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-4">
-                        <div className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold">
-                          {item.name}
-                        </div>
-                        <div className="wrap-break-word text-md text-zinc-800 sfpro font-extrabold">
-                          Inspired by {item.title}
-                        </div>
-                        <Box
-                          className="wrap-break-word text-xs text-zinc-500 sfpro font-extrabold"
-                          sx={{
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical",
-                          }}
-                        >
-                          {item.description}
-                        </Box>
-                      </div>
-                    </a>
-                  </Grid2>
-                ))}
-              </Grid2>
+              </div>
             </section>
           </Container>
         </div>
