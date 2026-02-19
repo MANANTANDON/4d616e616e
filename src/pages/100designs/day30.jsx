@@ -31,7 +31,8 @@ export default function Day30() {
             {/* Header */}
             <div className="flex items-center justify-center gap-12 border-b border-zinc-200/20 -mx-6 py-7">
               {MENU.map((item, key) => (
-                <div
+                <a
+                  href=""
                   key={key}
                   className="sfpro-text text-zinc-200/90 text-xl font-light flex items-center gap-3"
                 >
@@ -42,7 +43,7 @@ export default function Day30() {
                       item === "Journal") &&
                       "􀆈"}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
             {/* Hero Section */}
