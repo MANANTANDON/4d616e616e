@@ -319,6 +319,19 @@ a {
   animation: floatUpDown 1.5s ease-in-out infinite;
 }
 
+.animate-fadeInDown {
+  animation: fadeInDown 1.5s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.animate-fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
 /* Shutdown Screen Animations */
 @keyframes fadeInBlack {
   from {
@@ -397,12 +410,13 @@ a {
   }
 }
 
-.animate-fadeInDown {
-  animation: fadeInDown 1.5s ease-out forwards;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 1.5s ease-out forwards;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Shutdown Screen Classes */
