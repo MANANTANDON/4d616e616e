@@ -77,7 +77,7 @@ const Day64 = () => {
                     <br />
                     intelligent design and mordern materials.
                   </p>
-                  <button className="text-zinc-100 flex items-center gap-2 text-sm cursor-pointer bg-zinc-100/10 w-fit pr-4 pl-2 py-2 rounded-4xl mt-[40px]">
+                  <button className="text-zinc-100 flex items-center gap-2 text-sm cursor-pointer bg-zinc-100/10 w-fit pr-4 pl-2 py-2 rounded-4xl mt-10">
                     <div className="bg-linear-to-br from-[#EFB15C] via-[#E1633B] to-[#070709] px-1 py-0.5 rounded-[100px]">
                       􂷸
                     </div>{" "}
