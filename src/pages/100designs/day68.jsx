@@ -49,6 +49,11 @@ export default function Day68() {
             </h6>
           </div>
         </div>
+        {/* Footer */}
+        <div className=" absolute bottom-0 left-0 right-0 border-t border-zinc-900/10 flex items-center justify-between py-7 px-[34px]">
+          <h2 className="text-sm text-zinc-900/50">System Status: Online</h2>
+          <h2 className="text-sm text-zinc-900/50">v.2.0.4 [Beta]</h2>
+        </div>
       </div>
     </>
   );
