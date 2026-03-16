@@ -26,7 +26,7 @@ const Day70 = () => {
             <br />
             NENT AI
           </h1>
-          <div className="bg-zinc-900/10 backdrop-blur-2xl text-zinc-100 px-6 py-3 flex items-center gap-0.5 rounded-[100px] border border-zinc-100/20 ml-40">
+          <div className="bg-zinc-900/10 backdrop-blur-2xl text-zinc-100 p-3 flex items-center gap-0.5 rounded-[100px] border border-zinc-100/20 ml-40">
             {MENU.map((item, key) => (
               <a
                 href=""
