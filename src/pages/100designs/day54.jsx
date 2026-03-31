@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 const Day54 = () => {
   const MENU = ["Features", "How It Works", "FAQ", "Pricing"];
@@ -14,6 +15,46 @@ const Day54 = () => {
   );
   return (
     <>
+      <Head>
+        <title>Day 54 – Flowstate Finance UI | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 54 of 100 Days of Design by Manan Tandon. Flowstate is a modern finance SaaS UI focused on trust-first infrastructure and seamless product workflows."
+        />
+
+        <meta
+          name="keywords"
+          content="Flowstate UI, finance SaaS design, fintech UI, dashboard design, frontend design, UI UX inspiration, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day54"
+        />
+
+        <meta property="og:title" content="Day 54 – Flowstate UI Design" />
+        <meta
+          property="og:description"
+          content="Fintech SaaS UI focused on trust-first infrastructure."
+        />
+        <meta property="og:image" content="/images/designs/100days/54.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day54"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 54 – Flowstate UI Design" />
+        <meta
+          name="twitter:description"
+          content="Modern fintech UI design for digital finance systems."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/54.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

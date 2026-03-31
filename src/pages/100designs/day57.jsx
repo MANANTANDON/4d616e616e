@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 export default function Day57() {
@@ -13,6 +14,49 @@ export default function Day57() {
   ];
   return (
     <>
+      <Head>
+        <title>Day 57 – Tame Impala Tour UI | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 57 of 100 Days of Design by Manan Tandon. A music tour landing page inspired by Tame Impala featuring immersive visuals and tour schedule UI."
+        />
+
+        <meta
+          name="keywords"
+          content="Tame Impala UI, music website design, tour landing page, concert UI, frontend design, UI UX inspiration, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day57"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Day 57 – Tame Impala Tour UI" />
+        <meta
+          property="og:description"
+          content="Music tour landing page UI with immersive design and schedule."
+        />
+        <meta property="og:image" content="/images/designs/100days/57.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day57"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 57 – Tame Impala Tour UI" />
+        <meta
+          name="twitter:description"
+          content="Concert tour UI design with modern visuals and layout."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/57.png" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

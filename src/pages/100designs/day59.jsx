@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 const Day59 = () => {
@@ -10,6 +11,49 @@ const Day59 = () => {
   );
   return (
     <>
+      <Head>
+        <title>Day 59 – Stravo UI Design | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 59 of 100 Days of Design by Manan Tandon. Stravo is a modern SaaS platform UI designed for smarter teams, better collaboration, and productivity."
+        />
+
+        <meta
+          name="keywords"
+          content="Stravo UI, SaaS design, team productivity UI, dashboard design, frontend design, UI UX inspiration, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day59"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Day 59 – Stravo UI Design" />
+        <meta
+          property="og:description"
+          content="Modern SaaS UI for team productivity and collaboration."
+        />
+        <meta property="og:image" content="/images/designs/100days/59.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day59"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 59 – Stravo UI Design" />
+        <meta
+          name="twitter:description"
+          content="SaaS platform UI design for smarter teams and productivity."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/59.png" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

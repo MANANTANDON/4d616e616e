@@ -68,7 +68,6 @@ export default function Test() {
         <link rel="canonical" href="https://www.manantandon.com/ferrari" />
         <link rel="icon" href="/4d_logo_one.ico" />
 
-        {/* ── Open Graph ── */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.manantandon.com/ferrari" />
         <meta property="og:site_name" content="Manan Tandon" />

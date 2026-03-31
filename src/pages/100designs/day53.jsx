@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 const Day53 = () => {
   const MENU = ["Home", "Services", "Resources", "Company"];
@@ -9,6 +10,46 @@ const Day53 = () => {
   );
   return (
     <>
+      <Head>
+        <title>Day 53 – Logiflix Logistics UI | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 53 of 100 Days of Design by Manan Tandon. Logiflix is a modern logistics SaaS UI focused on reliable delivery, efficiency, and business scalability."
+        />
+
+        <meta
+          name="keywords"
+          content="Logistics UI, Logiflix design, SaaS logistics dashboard, frontend design, UI UX inspiration, 100 days design, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day53"
+        />
+
+        <meta property="og:title" content="Day 53 – Logiflix UI Design" />
+        <meta
+          property="og:description"
+          content="Modern logistics SaaS UI for efficient and reliable delivery."
+        />
+        <meta property="og:image" content="/images/designs/100days/53.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day53"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 53 – Logiflix UI Design" />
+        <meta
+          name="twitter:description"
+          content="Logistics SaaS UI design focused on delivery and efficiency."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/53.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop
@@ -39,7 +80,7 @@ const Day53 = () => {
         {/* Hero Section */}
         <div className="sfpro-text z-1 flex flex-col justify-center items-center gap-5 mt-[30px]">
           <div className="bg-[#F4F4F4] py-1.5 px-3 rounded-lg border border-zinc-400/20 w-fit flex gap-2">
-            <span className="text-[#FFB500]">􀋃</span> Delivered oever 900
+            <span className="text-[#FFB500]">􀋃</span> Delivered over 900
             operations for 4000+ clients
           </div>
           <h1 className=" font-bold text-7xl border border-amber-100 text-center tracking-tighter">

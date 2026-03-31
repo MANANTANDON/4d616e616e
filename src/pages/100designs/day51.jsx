@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 const Day51 = () => {
   const MENU = ["Lenses", "FAQ", "Contact"];
@@ -10,6 +11,46 @@ const Day51 = () => {
   );
   return (
     <>
+      <Head>
+        <title>Day 51 – Lensmart UI Design | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 51 of 100 Days of Design by Manan Tandon. Lensmart is a modern contact lens UI design focused on clarity, comfort, and seamless user experience."
+        />
+
+        <meta
+          name="keywords"
+          content="Lens UI design, contact lens website, ecommerce UI, frontend design, UI UX inspiration, 100 days design, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day51"
+        />
+
+        <meta property="og:title" content="Day 51 – Lensmart UI Design" />
+        <meta
+          property="og:description"
+          content="Modern contact lens UI focused on clarity and comfort."
+        />
+        <meta property="og:image" content="/images/designs/100days/51.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day51"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 51 – Lensmart UI Design" />
+        <meta
+          name="twitter:description"
+          content="Ecommerce UI design for contact lenses and vision products."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/51.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

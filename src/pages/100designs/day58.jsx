@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useRef } from "react";
 
 export default function Day58() {
@@ -5,6 +6,49 @@ export default function Day58() {
   const MENU = ["HOME", "FEATURES", "RESOURCES", "PRICING"];
   return (
     <>
+      <Head>
+        <title>Day 58 – Neurix AI UI Design | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 58 of 100 Days of Design by Manan Tandon. Neurix is an AI-powered SaaS UI designed for smarter decision-making, adaptive workflows, and team productivity."
+        />
+
+        <meta
+          name="keywords"
+          content="Neurix AI UI, AI SaaS design, AI dashboard UI, frontend design, UI UX inspiration, 100 days design, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day58"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Day 58 – Neurix AI UI Design" />
+        <meta
+          property="og:description"
+          content="AI-powered SaaS UI for smarter workflows and decision-making."
+        />
+        <meta property="og:image" content="/images/designs/100days/58.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day58"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 58 – Neurix AI UI Design" />
+        <meta
+          name="twitter:description"
+          content="Modern AI SaaS UI built for teams and productivity."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/58.png" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

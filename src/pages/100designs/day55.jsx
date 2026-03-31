@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Head from "next/head";
 
 const Day55 = () => {
   const MENU = ["How It Works", "Use Cases", "Pricing", "Research Feed"];
@@ -12,6 +13,46 @@ const Day55 = () => {
   ];
   return (
     <>
+      <Head>
+        <title>Day 55 – Polaris AI UI Design | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 55 of 100 Days of Design by Manan Tandon. Polaris AI is a modern SaaS UI designed to deliver smarter insights and better decision-making."
+        />
+
+        <meta
+          name="keywords"
+          content="Polaris AI UI, SaaS design, AI dashboard UI, frontend design, UI UX inspiration, 100 days design, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day55"
+        />
+
+        <meta property="og:title" content="Day 55 – Polaris AI UI Design" />
+        <meta
+          property="og:description"
+          content="Modern AI SaaS UI focused on insights and understanding."
+        />
+        <meta property="og:image" content="/images/designs/100days/55.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day55"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 55 – Polaris AI UI Design" />
+        <meta
+          name="twitter:description"
+          content="AI-powered SaaS UI for better insights and smarter decisions."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/55.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

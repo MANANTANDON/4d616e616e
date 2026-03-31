@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 const Day60 = () => {
@@ -12,6 +13,40 @@ const Day60 = () => {
   );
   return (
     <>
+      <Head>
+        <title>Day 60 – WordPilot UI Design | 100 Days of Design</title>
+        <meta
+          name="description"
+          content="Day 60 of 100 Days of Design by Manan Tandon. A modern SaaS landing page UI for WordPilot."
+        />
+        <meta
+          name="keywords"
+          content="SaaS UI, WordPilot, frontend design, UI UX, 100 days design"
+        />
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day60"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Day 60 – WordPilot UI Design" />
+        <meta
+          property="og:description"
+          content="Modern SaaS landing page UI design."
+        />
+        <meta property="og:image" content="/images/designs/100days/60.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day60"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/images/designs/100days/60.png" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

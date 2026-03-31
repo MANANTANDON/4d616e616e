@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Head from "next/head";
 
 const Day56 = () => {
   const MENU = ["Home", "Library", "Sleep", "Focus"];
@@ -11,6 +12,46 @@ const Day56 = () => {
   ];
   return (
     <>
+      <Head>
+        <title>Day 56 – Auralis Soundscape UI | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 56 of 100 Days of Design by Manan Tandon. Auralis is a calming soundscape UI designed for focus, relaxation, and better sleep."
+        />
+
+        <meta
+          name="keywords"
+          content="Auralis UI, meditation app design, soundscape UI, sleep app UI, frontend design, UI UX inspiration, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day56"
+        />
+
+        <meta property="og:title" content="Day 56 – Auralis UI Design" />
+        <meta
+          property="og:description"
+          content="Immersive soundscape UI for relaxation, focus, and sleep."
+        />
+        <meta property="og:image" content="/images/designs/100days/56.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day56"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 56 – Auralis UI Design" />
+        <meta
+          name="twitter:description"
+          content="Relaxation and sleep-focused UI design with immersive visuals."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/56.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop

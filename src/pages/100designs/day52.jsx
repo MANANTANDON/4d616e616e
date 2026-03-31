@@ -1,5 +1,6 @@
 import { Instagram, X, YouTube } from "@mui/icons-material";
 import React from "react";
+import Head from "next/head";
 
 const Day52 = () => {
   const MENU = ["How it works", "Examples", "Contact"];
@@ -8,6 +9,46 @@ const Day52 = () => {
 
   return (
     <>
+      <Head>
+        <title>Day 52 – ASCII Art Generator UI | 100 Days of Design</title>
+
+        <meta
+          name="description"
+          content="Day 52 of 100 Days of Design by Manan Tandon. A modern ASCII Art Generator UI that converts images into high-quality text-based art designs."
+        />
+
+        <meta
+          name="keywords"
+          content="ASCII art UI, image to ASCII converter, creative UI design, frontend design, UI UX inspiration, 100 days design, Manan Tandon"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.manantandon.com/100designs/day52"
+        />
+
+        <meta property="og:title" content="Day 52 – ASCII Art Generator UI" />
+        <meta
+          property="og:description"
+          content="Convert images into high-quality ASCII art with this modern UI design."
+        />
+        <meta property="og:image" content="/images/designs/100days/52.png" />
+        <meta
+          property="og:url"
+          content="https://www.manantandon.com/100designs/day52"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Day 52 – ASCII Art Generator UI" />
+        <meta
+          name="twitter:description"
+          content="Creative ASCII art generator UI for image transformation."
+        />
+        <meta name="twitter:image" content="/images/designs/100days/52.png" />
+
+        <link rel="icon" href="/4d_logo_one.ico" />
+      </Head>
       <div className="flex items-center justify-center h-screen lg:hidden">
         <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
           Switch to Desktop
