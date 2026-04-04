@@ -154,7 +154,7 @@ export const ProjectsModal = ({ handleModalClose }) => {
                 >
                   {item.icons}
                 </Typography>
-                <Typography sx={{ fontSize: "13px" }}>{item?.name}</Typography>
+                <div className="sfpro-text text-[13px]">{item?.name}</div>
               </Box>
             ))}
           </Box>
@@ -186,12 +186,9 @@ export const ProjectsModal = ({ handleModalClose }) => {
             <Typography className="sfpro" sx={{ color: "#B5B5B9" }}>
               􀆊
             </Typography>
-            <Typography
-              className="sfpro"
-              sx={{ fontSize: "14px", fontWeight: "bold" }}
-            >
+            <h3 className="sfpro-text text-[14px] font-bold">
               {selectMenu === "manantandon" ? "manantandon" : "Applications"}
-            </Typography>
+            </h3>
           </Box>
           <Box
             sx={{
