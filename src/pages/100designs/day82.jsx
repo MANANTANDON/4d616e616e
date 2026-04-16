@@ -12,8 +12,13 @@ export default function Day82() {
   );
   return (
     <>
+      <div className="flex items-center justify-center h-screen lg:hidden">
+        <div className=" border border-slate-600 bg-slate-800 p-5 text-zinc-100 rounded-3xl">
+          Switch to Desktop
+        </div>
+      </div>
       <div
-        className="h-screen w-screen sfpro-text"
+        className="h-screen w-screen sfpro-text hidden lg:block"
         style={{
           backgroundImage: "url(/images/designs/day82/bg.png)",
           backgroundPosition: "top",
