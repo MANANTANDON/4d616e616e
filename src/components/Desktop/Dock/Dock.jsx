@@ -1,5 +1,4 @@
 import { IOS26 } from "@/components/Misc/IOS26";
-import { Box, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -56,64 +55,24 @@ export const Dock = () => {
   ];
   return (
     <>
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "110px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          bgcolor: "#00000090",
-          py: 1,
-          px: 4,
-          borderRadius: "12px",
-          pointerEvents: "none",
-          border: "1px solid #66666680",
-        }}
-      >
-        <Typography
-          sx={{
-            color: "#FFFFFF",
-            fontSize: "14px",
-            fontWeight: "600",
-            textAlign: "center",
-          }}
-          className="sfpro"
-        >
+      <div className="absolute bottom-[110px] left-1/2 -translate-x-1/2 bg-[#00000090] py-1 px-4 rounded-xl pointer-events-none border border-[#66666680]">
+        <p className="sfpro text-white text-sm font-semibold text-center">
           These are my recent projects.
-        </Typography>
-        <Typography
-          sx={{
-            color: "#dfdfdf80",
-            fontSize: "12px",
-            fontWeight: "600",
-            textAlign: "center",
-            mt: 0.5,
-          }}
-          className="sfpro"
-        >
+        </p>
+        <p className="sfpro text-[#dfdfdf80] text-xs font-semibold text-center mt-0.5">
           click on the Projects folder to see all
-        </Typography>
-      </Box>
+        </p>
+      </div>
       <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2">
         <IOS26 styles="gap-4">
           {DockIcons?.map((item, key) => (
-            <Tooltip
-              key={key}
-              title={item?.short_name}
-              componentsProps={{
-                tooltip: {
-                  sx: {
-                    backdropFilter: "blur(12px)",
-                    bgcolor: "#00000030",
-                    color: "#fff",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    borderRadius: "10px",
-                    fontSize: "12px",
-                  },
-                },
-              }}
-            >
-              <a href={item.link} target="_blank">
+            <div key={key} className="relative group">
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10">
+                <div className="backdrop-blur-xl bg-zinc-900/60 text-white border border-white/15 rounded-[10px] text-xs px-2 py-1 whitespace-nowrap">
+                  {item?.short_name}
+                </div>
+              </div>
+              <a href={item.link} target="_blank" rel="noreferrer">
                 <div className="relative overflow-hidden h-[60px] w-[60px] rounded-[14px]">
                   <Image
                     src={item?.src}
@@ -124,7 +83,7 @@ export const Dock = () => {
                   />
                 </div>
               </a>
-            </Tooltip>
+            </div>
           ))}
         </IOS26>
       </div>

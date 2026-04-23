@@ -1,42 +1,24 @@
-import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 export const MananTandon = ({ setOpen }) => {
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "fit-content",
-        }}
+      <div
+        className="flex flex-col items-center justify-center w-fit cursor-pointer"
         onClick={() => setOpen(true)}
       >
-        <Box
-          sx={{
-            position: "relative",
-            overflow: "hidden",
-            width: "70px",
-            height: "40px",
-            borderRadius: "3px",
-            boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-          }}
-        >
+        <div className="relative overflow-hidden w-[70px] h-10 rounded-[3px] shadow-[0_1px_2px_rgba(60,64,67,0.3),0_2px_6px_2px_rgba(60,64,67,0.15)]">
           <Image
             src="/images/slides/slide1.png"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            alt="projects"
           />
-        </Box>
-        <Typography className="sfpro" sx={{ fontSize: "12px", mt: 2 }}>
-          projects
-        </Typography>
-      </Box>
+        </div>
+        <p className="sfpro text-[12px] mt-2">projects</p>
+      </div>
     </>
   );
 };

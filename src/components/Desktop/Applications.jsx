@@ -1,4 +1,3 @@
-import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -85,25 +84,20 @@ export const Applications = () => {
   ];
   return (
     <>
-      <Grid container>
+      <div className="grid grid-cols-6 gap-y-4">
         {projects?.map((item, key) => (
-          <Grid xs={2} key={key}>
-            <Box
-              component={"a"}
+          <div key={key} className="col-span-1">
+            <a
               href={item.link}
               target="_blank"
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                mb: 2,
-              }}
+              rel="noreferrer"
+              className="flex flex-col items-center mb-2"
             >
               <Image
                 src={item?.src}
                 layout="intrinsic"
-                width={"60"}
-                height={"60"}
+                width={60}
+                height={60}
                 objectFit="cover"
                 objectPosition="center"
                 alt={item?.name}
@@ -113,26 +107,13 @@ export const Applications = () => {
                   border: "1px solid #e8e8e8",
                 }}
               />
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  display: "-webkit-box",
-                  WebkitLineClamp: "1",
-                  WebkitBoxOrient: "vertical",
-                  textAlign: "center",
-                  color: "#000000",
-                  mt: 1,
-                }}
-                className="sfpro"
-              >
+              <p className="sfpro text-[12px] text-center text-black mt-1 w-full px-1 overflow-hidden text-ellipsis whitespace-nowrap">
                 {item?.short_name}
-              </Typography>
-            </Box>
-          </Grid>
+              </p>
+            </a>
+          </div>
         ))}
-      </Grid>
+      </div>
     </>
   );
 };
