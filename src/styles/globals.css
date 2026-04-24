@@ -181,6 +181,42 @@
   font-style: italic;
 }
 
+/* Hind Font Faces */
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/hind/Hind-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/hind/Hind-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/hind/Hind-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/hind/Hind-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/hind/Hind-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --background: #efe3c2;
   --foreground: #171717;
@@ -222,6 +258,10 @@ a {
 
 .fr {
   font-family: "Roboto" !important;
+}
+
+.fh {
+  font-family: "Hind" !important;
 }
 
 .varsf {
