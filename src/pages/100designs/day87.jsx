@@ -56,7 +56,7 @@ export default function Day85() {
               <i>
                 They remember
                 <br />
-                feeling.
+                feelings.
               </i>
             </h1>
           </div>
