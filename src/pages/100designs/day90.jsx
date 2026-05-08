@@ -2,11 +2,7 @@ import React from "react";
 
 export default function Day90() {
   const MENU = ["PRODUCT", "SOLUTIONS", "RESOURCES", "PRICING"];
-  const CTAButton = ({ text }) => (
-    <button className="bg-zinc-100 px-6.5 py-2.5 font-light text-lg cursor-pointer">
-      {text}
-    </button>
-  );
+
   return (
     <>
       <div className="flex items-center justify-center h-screen lg:hidden">
