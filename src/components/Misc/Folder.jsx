@@ -1,23 +1,7 @@
 "use client";
-import { Box, Modal, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ProjectsModal } from "../Modals/ProjectsModal";
-
-const modalStyle = {
-  bgcolor: "transparent",
-  boxShadow: 24,
-  position: "absolute",
-  width: "100%",
-  height: "100%",
-  m: -1,
-  inset: 0,
-  pointerEvents: "none", // Allow clicks to pass through
-};
-
-const modalContentStyle = {
-  pointerEvents: "auto", // Re-enable pointer events for the modal content
-};
 
 export const Folder = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,8 +13,8 @@ export const Folder = () => {
     {
       type: "folder",
       src: "/images/folder.png",
-      iconHeight: "70px",
-      iconWidth: "80px",
+      iconHeight: "60px",
+      iconWidth: "70px",
       name: "Projects",
       description: "Click to view my projects.",
       left: "-220px",
@@ -39,8 +23,8 @@ export const Folder = () => {
     {
       type: "file",
       src: "/images/resume.png",
-      iconHeight: "80px",
-      iconWidth: "57px",
+      iconHeight: "70px",
+      iconWidth: "47px",
       name: "Resume",
       description: "You can check my resume",
       left: "-220px",
@@ -50,41 +34,30 @@ export const Folder = () => {
 
   const IconComponent = ({ icon }) => {
     const content = (
-      <>
-        <Box
-          sx={{
-            position: "relative",
-            overflow: "hidden",
-            height: icon.iconHeight,
-            width: icon.iconWidth,
-            cursor: "pointer",
-          }}
+      <div className="flex flex-col items-center justify-center">
+        <div
+          className="relative overflow-hidden cursor-pointer"
+          style={{ height: icon.iconHeight, width: icon.iconWidth }}
         >
           <Image
             src={icon.src}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
             alt={`${icon.name} Icon`}
           />
-        </Box>
-        <Typography
-          sx={{
-            color: "#ffffff",
-            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
-            textAlign: "center",
-            fontSize: "13px",
-            mt: icon.type === "folder" ? 1 : 0,
-          }}
-          className="sfpro"
+        </div>
+        <p
+          className={`sfpro text-center text-[13px] text-white [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)] ${
+            icon.type === "folder" ? "mt-1" : "mt-0"
+          }`}
         >
           {icon.name}
-        </Typography>
-      </>
+        </p>
+      </div>
     );
 
     return (
-      <Box sx={{ position: "relative" }}>
+      <div className="relative">
         {icon.type === "file" ? (
           <a href={icon.href} target="_blank" rel="noopener noreferrer">
             {content}
@@ -92,54 +65,32 @@ export const Folder = () => {
         ) : (
           <div onClick={icon.onClick}>{content}</div>
         )}
-        <Box
-          sx={{
-            position: "absolute",
-            left: icon.left,
-            top: "30px",
-            bgcolor: "#00000090",
-            py: 0.5,
-            px: 2,
-            borderRadius: "12px",
-            pointerEvents: "none",
-            border: "1px solid #66666680",
-          }}
+        <div
+          className="absolute top-[30px] rounded-xl border border-[#66666680] bg-[#00000090] px-4 py-1"
+          style={{ left: icon.left }}
         >
-          <Typography
-            sx={{ color: "#FFFFFF", fontSize: "14px", fontWeight: "600" }}
-            className="sfpro"
-          >
+          <p className="text-[14px] font-light text-white">
             {icon.description}
-          </Typography>
-        </Box>
-      </Box>
+          </p>
+        </div>
+      </div>
     );
   };
 
-  console.log(modalOpen, "MODEL OPEN");
-
   return (
     <>
-      <Box
-        sx={{
-          width: "fit-content",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          gap: 2,
-        }}
-      >
+      <div className="w-fit flex flex-col items-center gap-5">
         {desktopIcons.map((icon, index) => (
           <IconComponent key={index} icon={icon} />
         ))}
-      </Box>
+      </div>
 
       {modalOpen && (
-        <Box sx={modalStyle}>
-          <Box sx={modalContentStyle}>
+        <div className="fixed inset-0 z-50 pointer-events-none">
+          <div className="pointer-events-auto">
             <ProjectsModal handleModalClose={handleModalClose} />
-          </Box>
-        </Box>
+          </div>
+        </div>
       )}
     </>
   );

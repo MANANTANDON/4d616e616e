@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
-  Box,
   LinearProgress,
   linearProgressClasses,
   styled,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
 import dynamic from "next/dynamic";
@@ -12,11 +10,11 @@ import styles from "./Layout.module.css";
 
 const Desktop = dynamic(
   () => import("@/components/Desktop/Desktop").then((mod) => mod.Desktop),
-  { ssr: false }
+  { ssr: false },
 );
 const Mobile = dynamic(
   () => import("@/components/Misc/Mobile").then((mod) => mod.Mobile),
-  { ssr: false }
+  { ssr: false },
 );
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -117,13 +115,13 @@ export const Layout = () => {
   };
 
   const LoadingScreen = () => (
-    <Box className={styles.loadingContainer} sx={{}}>
-      <Typography
+    <div className={styles.loadingContainer}>
+      <h1
         className={`${styles.loadingTitle} sfpro`}
         aria-label="Loading screen"
       >
         m.
-      </Typography>
+      </h1>
       {showProgressBar && (
         <div className={styles.progressContainer}>
           <BorderLinearProgress
@@ -133,15 +131,13 @@ export const Layout = () => {
           />
         </div>
       )}
-    </Box>
+    </div>
   );
 
   const ShutdownScreen = () => (
     <div className={`shutdown-screen ${showPressKey ? "blurred" : ""}`}>
       {showPressKey && (
-        <Typography className="sfpro shutdown-text">
-          Press any key to enter.
-        </Typography>
+        <div className="sfpro shutdown-text">Press any key to enter.</div>
       )}
     </div>
   );

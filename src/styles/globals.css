@@ -250,6 +250,7 @@ body {
   background-position: center center;
   height: 100vh;
   overflow-y: hidden;
+  font-family: "SF Pro Text" !important;
 }
 
 a {

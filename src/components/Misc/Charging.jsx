@@ -1,5 +1,4 @@
-import { Box, Menu, Tooltip, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const useBatteryStatus = () => {
   const [batteryInfo, setBatteryInfo] = useState({
@@ -44,6 +43,8 @@ const useBatteryStatus = () => {
 export const Charging = ({ type }) => {
   const { level, charging } = useBatteryStatus();
 
+  const popupRef = useRef(null);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -55,8 +56,22 @@ export const Charging = ({ type }) => {
     setAnchorEl(null);
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <div>
+    <div ref={popupRef}>
       {level !== null ? (
         <>
           <div
@@ -73,90 +88,34 @@ export const Charging = ({ type }) => {
             {charging
               ? "􀢋"
               : level <= 25
-              ? "􀛩"
-              : level <= 50
-              ? "􀺶"
-              : level <= 75
-              ? "􀺸"
-              : "􀛨"}
+                ? "􀛩"
+                : level <= 50
+                  ? "􀺶"
+                  : level <= 75
+                    ? "􀺸"
+                    : "􀛨"}
           </div>
-          <Menu
-            id="charging-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "charging-icon",
-            }}
-            PaperProps={{
-              sx: {
-                mt: "4px",
-                ml: "-150px",
-                py: "0px !important ",
-                width: "230px",
-                bgcolor: "rgba( 0, 0, 0, 0.5 )",
-                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                backdropFilter: "blur( 20px )",
-                border: "1px solid rgba( 255, 255, 255, 0.3 )",
-                borderRadius: "6px",
-              },
-            }}
-            sx={{
-              "& .MuiList-root.MuiMenu-list": {
-                paddingTop: 0,
-                paddingBottom: 0,
-              },
-            }}
-          >
-            <Box
-              sx={{
-                p: 1.5,
-              }}
-            >
-              <Typography
-                className="sfpro"
-                sx={{ color: "#FFFFFF", fontSize: "14px" }}
-              >
-                Battery
-              </Typography>
-              <Typography
-                className="sfpro"
-                sx={{ color: "#FFFFFF90", fontSize: "12px" }}
-              >
-                Power Source: Battery
-              </Typography>
-              <hr style={{ border: "0.5px solid #FFFFFF90" }} />
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              ></Box>
-            </Box>
-          </Menu>
+          {open && (
+            <div className="absolute bg-zinc-900/60 z-100 py-[13px] px-3.5 rounded-[15px] backdrop-blur-md w-52 max-w-52 border border-zinc-100/20">
+              <h4 className="text-zinc-100 text-[14px]">Battery</h4>
+              <h4 className="text-[#FFFFFF90] text-[12px] mt-1.5">
+                Power Source: {charging ? "Power Adapter" : "Battery"}
+              </h4>
+              {/* <hr style={{ border: "0.5px solid #FFFFFF90" }} /> */}
+            </div>
+          )}
         </>
       ) : (
-        <Tooltip arrow title="Real Time Battery does not supports Safari.">
-          <Typography
-            className="sfpro"
-            sx={{
-              fontSize: "14px",
-              display: "flex",
-              alignItems: "center",
-              cursor: "default",
-              px: 1,
-              "&:hover": {
-                bgcolor: "#00000020",
-                cursor: "default",
-                borderRadius: "5px",
-              },
-            }}
-          >
-            <span style={{ fontSize: "12px" }}>100% </span>
+        <div className="relative group w-fit">
+          <div className="text-[14px] text-zinc-100 flex items-center px-1 hover:bg-[#00000020] hover:rounded-[5px] cursor-default">
+            <span className="text-[12px]">100% </span>
             􀛨
-          </Typography>
-        </Tooltip>
+          </div>
+
+          <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 bg-zinc-900/50 backdrop-blur-md border border-zinc-100/10 text-zinc-100 text-[11px] px-2 py-1.5 rounded-[10px] whitespace-nowrap z-50">
+            Safari does not supports Real Time Battery.
+          </div>
+        </div>
       )}
     </div>
   );

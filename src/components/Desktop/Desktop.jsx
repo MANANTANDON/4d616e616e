@@ -18,7 +18,6 @@ export const Desktop = ({ setShowApp, onShutdown }) => {
           <Folder />
         </div>
       </div>
-      {/* Dock */}
       <Dock />
     </>
   );
