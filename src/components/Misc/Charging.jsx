@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { HeaderMenu } from "../HeaderMenu";
+import { useMediaQuery } from "@mui/material";
 
 const useBatteryStatus = () => {
   const [batteryInfo, setBatteryInfo] = useState({
@@ -41,6 +43,7 @@ const useBatteryStatus = () => {
 };
 
 export const Charging = ({ type }) => {
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const { level, charging } = useBatteryStatus();
 
   const popupRef = useRef(null);
@@ -96,12 +99,21 @@ export const Charging = ({ type }) => {
                     : "􀛨"}
           </div>
           {open && (
-            <div className="absolute bg-zinc-900/60 z-100 py-[13px] px-3.5 rounded-[15px] backdrop-blur-md w-52 max-w-52 border border-zinc-100/20">
-              <h4 className="text-zinc-100 text-[14px]">Battery</h4>
-              <h4 className="text-[#FFFFFF90] text-[12px] mt-1.5">
-                Power Source: {charging ? "Power Adapter" : "Battery"}
-              </h4>
-              {/* <hr style={{ border: "0.5px solid #FFFFFF90" }} /> */}
+            <div className="absolute rounded-[15px] w-52 max-w-52 z-100">
+              <HeaderMenu>
+                <div className="flex flex-col">
+                  <h4
+                    className={`${isDarkMode ? "text-zinc-100" : "text-zinc-900"} text-[14px] font-semibold tracking-tight`}
+                  >
+                    Battery
+                  </h4>
+                  <h4
+                    className={`${isDarkMode ? "text-[#FFFFFF90]" : "#00000090"} text-[12px] mt-1.5`}
+                  >
+                    Power Source: {charging ? "Power Adapter" : "Battery"}
+                  </h4>
+                </div>
+              </HeaderMenu>
             </div>
           )}
         </>

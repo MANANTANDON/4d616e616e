@@ -1,7 +1,9 @@
-import { Box, Menu } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { HeaderMenu } from "../HeaderMenu";
+import { useMediaQuery } from "@mui/material";
 
 export const WifiMenu = () => {
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -13,8 +15,28 @@ export const WifiMenu = () => {
     setAnchorEl(null);
   };
 
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !event.target.closest("#wifi-icon")
+      ) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <>
+    <div className="relative">
       <div
         className="sfpro-text cursor-default text-[14px] text-zinc-50"
         onClick={handleClick}
@@ -25,60 +47,31 @@ export const WifiMenu = () => {
       >
         􀙇
       </div>
-      <Menu
-        id="wifi-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "wifi-icon",
-        }}
-        PaperProps={{
-          sx: {
-            mt: "4px",
-            ml: "5px",
-            py: "0px !important ",
-            width: "230px",
-            bgcolor: "rgba( 0, 0, 0, 0.5 )",
-            boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-            backdropFilter: "blur( 20px )",
-            border: "1px solid rgba( 255, 255, 255, 0.3 )",
-            borderRadius: "6px",
-          },
-        }}
-        sx={{
-          "& .MuiList-root.MuiMenu-list": {
-            paddingTop: 0,
-            paddingBottom: 0,
-          },
-        }}
-      >
-        <Box
-          sx={{
-            p: 1,
-            display: "flex",
-            flexDirection: "column",
-            gap: 0.7,
-          }}
-        >
-          <div className="sfpro-text text-[#CECCCF] text-[12px]">
-            Known Networks
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex gap-1.5 items-center">
-              {/*wifi*/}
-              <div className="sfpro-text text-zinc-50 bg-[#3B82F7] rounded-[100px] px-[1.7px] py-[0.7px] text-sm">
-                􀙇
-              </div>
-              <div className="sfpro-text text-[12px] text-[#CECCCF]">
-                4d616e616e-5G
+      {open && (
+        <div ref={menuRef} className="absolute z-50 w-[230px]">
+          <HeaderMenu>
+            <div className="flex flex-col w-full">
+              <h4
+                className={`${isDarkMode ? "text-zinc-100" : "text-zinc-900"} text-[14px] font-semibold tracking-tight`}
+              >
+                Known Networks
+              </h4>
+
+              <div
+                className={`${isDarkMode ? "text-[#FFFFFF90]" : "#00000090"} text-[12px] mt-2 flex items-center justify-between`}
+              >
+                <div>
+                  <span className="bg-[#008BFF] text-zinc-100 py-1 px-1 rounded-[100px] mr-1.5">
+                    􀙇
+                  </span>
+                  4d616e616e-5G
+                </div>
+                <div>􀎡</div>
               </div>
             </div>
-            {/*lock.fill*/}
-            <div className="sfpro-text text-[14px] text-[#CECCCF]">􀎡</div>
-          </div>
-        </Box>
-      </Menu>
-    </>
+          </HeaderMenu>
+        </div>
+      )}
+    </div>
   );
 };
