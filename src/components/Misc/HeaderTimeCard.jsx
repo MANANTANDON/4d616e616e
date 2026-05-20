@@ -33,7 +33,7 @@ export const HeaderTimeCard = () => {
   return (
     <>
       <div
-        className="sfpro-text cursor-default text-[14px] text-zinc-50 flex items-center"
+        className="text-[14px] text-zinc-50 flex items-center hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] cursor-default"
         onClick={() => setOpenDrawer(true)}
       >
         {time}

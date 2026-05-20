@@ -1,48 +1,35 @@
-import { Box, Divider, Menu, Modal, Typography } from "@mui/material";
 import Image from "next/image";
-import React, { useState } from "react";
-
-const style = {
-  position: "absolute",
-  top: "25%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 200,
-  bgcolor: "rgba( 0, 0, 0, 0.5 )",
-  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-  backdropFilter: "blur( 20px )",
-  border: "1px solid rgba( 255, 255, 255, 0.3 )",
-  boxShadow: 24,
-  borderRadius: "12px",
-  p: 1,
-};
-
-const styleTwo = {
-  color: "#ffffff",
-  px: 1,
-  fontSize: "14px",
-  "&:hover": {
-    bgcolor: "rgb(73,119,220)",
-    borderRadius: "4px",
-    cursor: "default",
-  },
-};
+import React, { useEffect, useRef, useState } from "react";
+import { HeaderAppleMenu } from "../HeaderAppleMenu";
+import { useMediaQuery } from "@mui/material";
 
 export const AppleMenu = ({ setShowApp, onShutdown }) => {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const open = Boolean(anchorEl);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleModalOpen = () => {
-    handleClose();
+    setOpen(false);
     setModalOpen(true);
   };
 
@@ -51,15 +38,42 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
   };
 
   const handleShutdown = () => {
-    handleClose();
+    setOpen(false);
     onShutdown();
   };
+
+  const menuItems = [
+    {
+      label: "About Manan",
+      icon: "􁟬",
+      onClick: handleModalOpen,
+    },
+    {
+      label: "System Settings...",
+      icon: "􁓹",
+    },
+    {
+      label: "Sleep",
+      icon: "􀜚",
+    },
+    {
+      label: "Restart...",
+      icon: "􀯆",
+      onClick: () => setShowApp(false),
+    },
+    {
+      label: "Shutdown...",
+      icon: "􀆨",
+      onClick: handleShutdown,
+    },
+  ];
 
   return (
     <>
       <div
-        className="sfpro-text cursor-default text-[14px] text-zinc-50"
-        onClick={handleClick}
+        ref={buttonRef}
+        className="cursor-default text-[14px] text-zinc-50 hover:bg-zinc-900/10 py-1 px-3 rounded-[100px]"
+        onClick={() => setOpen((prev) => !prev)}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
         aria-haspopup="true"
@@ -67,149 +81,67 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
       >
         􀣺
       </div>
-      <Menu
-        id="apple-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "apple-icon",
-        }}
-        PaperProps={{
-          sx: {
-            mt: "3px",
-            ml: "-10px",
-            py: "0px !important ",
-            width: "250px",
-            bgcolor: "rgba( 0, 0, 0, 0.5 )",
-            boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-            backdropFilter: "blur( 20px )",
-            border: "1px solid rgba( 255, 255, 255, 0.3 )",
-          },
-        }}
-        sx={{
-          "& .MuiList-root.MuiMenu-list": {
-            paddingTop: 0,
-            paddingBottom: 0,
-          },
-        }}
-      >
-        <Box sx={{ p: 0.7 }}>
-          <Typography
-            sx={styleTwo}
-            className="simpleFont"
-            onClick={handleModalOpen}
-          >
-            About Manan
-          </Typography>
-          <Divider sx={{ my: 1, borderColor: "#ffffff50", px: 2 }} />
-          <Typography sx={styleTwo} className="simpleFont">
-            System Settings...
-          </Typography>
-          <Typography sx={styleTwo} className="simpleFont">
-            App Store
-          </Typography>
-          <Divider sx={{ my: 1, borderColor: "#ffffff50", px: 2 }} />
-          <Typography sx={styleTwo} className="simpleFont">
-            Sleep
-          </Typography>
-          <Typography
-            sx={styleTwo}
-            className="simpleFont"
-            onClick={() => setShowApp(false)}
-          >
-            Restart...
-          </Typography>
-          <Typography
-            sx={styleTwo}
-            className="simpleFont"
-            onClick={handleShutdown}
-          >
-            Shutdown...
-          </Typography>
-        </Box>
-      </Menu>
 
-      <Modal
-        open={modalOpen}
-        onClose={handleModalClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={{
-          backdropFilter: "none", // Removes blur effect
-          "& .MuiBackdrop-root": {
-            backgroundColor: "transparent", // Makes backdrop transparent
-          },
-        }}
-      >
-        <Box sx={style}>
-          <Box sx={{ display: "flex", gap: 0.5 }}>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#ED6A5E",
-                borderRadius: "50%",
-                "&:hover": {
-                  bgcolor: "#ED6A5E90",
-                },
-              }}
-              onClick={handleModalClose}
-            ></Box>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#54504E",
-                borderRadius: "50%",
-              }}
-            ></Box>
-            <Box
-              sx={{
-                height: "12px",
-                width: "12px",
-                bgcolor: "#54504E",
-                borderRadius: "50%",
-              }}
-            ></Box>
-          </Box>
-          <Box sx={{ my: 2 }}>
-            <Box
-              sx={{
-                position: "relative",
-                overflow: "hidden",
-                height: "150px",
-                width: "106px",
-                margin: "auto",
-              }}
-            >
-              <Image
-                src="/images/manananimoji.png"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
+      {open && (
+        <div
+          ref={menuRef}
+          id="apple-menu"
+          className="absolute left-2 top-7 z-50 w-[250px]"
+        >
+          <HeaderAppleMenu>
+            <div className="flex flex-col w-full">
+              {menuItems.map((item, index) => (
+                <div
+                  key={index}
+                  className={`cursor-default rounded-md px-2 py-1 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-2 font-medium`}
+                  onClick={item.onClick}
+                >
+                  <div className="w-5 font-light">{item.icon}</div>
+                  <div>{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </HeaderAppleMenu>
+        </div>
+      )}
+
+      {modalOpen && (
+        <div className="fixed inset-0 z-60 flex items-start justify-center">
+          <div className="absolute inset-0" onClick={handleModalClose} />
+
+          <div className="relative mt-[12%] w-[200px] rounded-xl border border-white/30 bg-black/50 p-3 shadow-2xl backdrop-blur-[20px]">
+            <div className="flex gap-1">
+              <div
+                className="h-3 w-3 rounded-full bg-[#ED6A5E] transition-all hover:bg-[#ED6A5E90]"
+                onClick={handleModalClose}
               />
-            </Box>
-            <Typography
-              className="sfpro"
-              fontSize="22px"
-              textAlign="center"
-              fontWeight={800}
-              sx={{ color: "white" }}
-            >
-              Manan Tandon
-            </Typography>
-            <Typography
-              textAlign="center"
-              fontSize="12px"
-              className="sfpro"
-              sx={{ color: "lightgrey" }}
-            >
-              CEO
-            </Typography>
-          </Box>
-        </Box>
-      </Modal>
+
+              <div className="h-3 w-3 rounded-full bg-[#54504E]" />
+
+              <div className="h-3 w-3 rounded-full bg-[#54504E]" />
+            </div>
+
+            <div className="my-5">
+              <div className="relative mx-auto h-[150px] w-[106px] overflow-hidden">
+                <Image
+                  src="/images/manananimoji.png"
+                  fill
+                  className="object-cover object-center"
+                  alt="Manan Tandon"
+                />
+              </div>
+
+              <h2 className="sfpro text-center text-[22px] font-extrabold text-white">
+                Manan Tandon
+              </h2>
+
+              <p className="sfpro text-center text-[12px] text-lightgrey">
+                CEO
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

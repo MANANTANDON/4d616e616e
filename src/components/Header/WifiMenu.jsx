@@ -36,9 +36,9 @@ export const WifiMenu = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] cursor-default">
       <div
-        className="sfpro-text cursor-default text-[14px] text-zinc-50"
+        className="cursor-default text-[14px] text-zinc-50"
         onClick={handleClick}
         id="wifi-icon"
         aria-controls={open ? "wifi-menu" : undefined}
@@ -48,17 +48,17 @@ export const WifiMenu = () => {
         􀙇
       </div>
       {open && (
-        <div ref={menuRef} className="absolute z-50 w-[230px]">
+        <div ref={menuRef} className="absolute top-7 z-50 w-[230px] ">
           <HeaderMenu>
             <div className="flex flex-col w-full">
               <h4
-                className={`${isDarkMode ? "text-zinc-100" : "text-zinc-900"} text-[14px] font-semibold tracking-tight`}
+                className={`${isDarkMode ? "text-zinc-100/70" : "text-zinc-900/70"} text-[12px] font-medium`}
               >
                 Known Networks
               </h4>
 
               <div
-                className={`${isDarkMode ? "text-[#FFFFFF90]" : "#00000090"} text-[12px] mt-2 flex items-center justify-between`}
+                className={`${isDarkMode ? "text-[#FFFFFF90]" : "#00000090"} text-[14px] mt-2 flex items-center justify-between font-medium`}
               >
                 <div>
                   <span className="bg-[#008BFF] text-zinc-100 py-1 px-1 rounded-[100px] mr-1.5">

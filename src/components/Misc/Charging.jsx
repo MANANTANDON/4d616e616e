@@ -74,11 +74,14 @@ export const Charging = ({ type }) => {
   }, []);
 
   return (
-    <div ref={popupRef}>
+    <div
+      ref={popupRef}
+      className="hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] cursor-default"
+    >
       {level !== null ? (
         <>
           <div
-            className="sfpro-text cursor-default text-[14px] text-zinc-50 flex items-center"
+            className="cursor-default text-[14px] text-zinc-50 flex items-center"
             onClick={handleClick}
             id="charging-icon"
             aria-controls={open ? "charging-menu" : undefined}
@@ -99,7 +102,7 @@ export const Charging = ({ type }) => {
                     : "􀛨"}
           </div>
           {open && (
-            <div className="absolute rounded-[15px] w-52 max-w-52 z-100">
+            <div className="absolute rounded-[15px] w-52 max-w-52 z-100 top-7">
               <HeaderMenu>
                 <div className="flex flex-col">
                   <h4
