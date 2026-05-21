@@ -76,7 +76,7 @@ export const Charging = ({ type }) => {
   return (
     <div
       ref={popupRef}
-      className="hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] cursor-default"
+      className="hover:bg-zinc-900/10 py-1 px-2 rounded-[100px] cursor-default"
     >
       {level !== null ? (
         <>
@@ -122,12 +122,12 @@ export const Charging = ({ type }) => {
         </>
       ) : (
         <div className="relative group w-fit">
-          <div className="text-[14px] text-zinc-100 flex items-center px-1 hover:bg-[#00000020] hover:rounded-[5px] cursor-default">
+          <div className="text-[14px] text-zinc-100 flex items-center px-1 cursor-default">
             <span className="text-[12px]">100% </span>
             􀛨
           </div>
 
-          <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 bg-zinc-900/50 backdrop-blur-md border border-zinc-100/10 text-zinc-100 text-[11px] px-2 py-1.5 rounded-[10px] whitespace-nowrap z-50">
+          <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 bg-zinc-900/50 backdrop-blur-md border border-zinc-100/10 text-zinc-100 text-[11px] px-4 pt-1.25 pb-1 rounded-[100px] whitespace-nowrap z-50">
             Safari does not supports Real Time Battery.
           </div>
         </div>

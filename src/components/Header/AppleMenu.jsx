@@ -96,7 +96,9 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
                   className={`cursor-default rounded-md px-2 py-1 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-2 font-medium`}
                   onClick={item.onClick}
                 >
-                  <div className="w-5 font-light">{item.icon}</div>
+                  <div className="w-5.5 font-light flex items-center justify-center">
+                    {item.icon}
+                  </div>
                   <div>{item.label}</div>
                 </div>
               ))}
