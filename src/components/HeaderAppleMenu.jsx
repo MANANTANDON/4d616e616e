@@ -9,9 +9,9 @@ export const HeaderAppleMenu = ({ children }) => {
         className={`relative 
           flex
           items-center
-          backdrop-blur-xs
+          backdrop-blur-sm
           ${isDarkMode ? "bg-zinc-900/60" : "bg-zinc-100/60"} 
-          border-[0.4px] ${isDarkMode ? "border-zinc-500" : "border-zinc-400"}
+          border-[0.4px] ${isDarkMode ? "border-zinc-500" : "border-zinc-200"}
           rounded-[11px]
           py-1.5
           px-1.5

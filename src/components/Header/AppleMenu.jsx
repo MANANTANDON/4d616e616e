@@ -104,7 +104,7 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
                   </div>
                   {(index === 0 || index === 1) && (
                     <hr
-                      className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-400"} opacity-60`}
+                      className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-500"} opacity-40`}
                     />
                   )}
                 </div>
