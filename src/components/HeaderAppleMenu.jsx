@@ -6,39 +6,18 @@ export const HeaderAppleMenu = ({ children }) => {
   return (
     <>
       <div
-        className={`relative flex items-center backdrop-blur-xs ${isDarkMode ? "bg-zinc-900/60" : "bg-zinc-100/60"} rounded-xl py-1.5 px-1.5 `}
+        className={`relative 
+          flex
+          items-center
+          backdrop-blur-xs
+          ${isDarkMode ? "bg-zinc-900/60" : "bg-zinc-100/60"} 
+          border-[0.4px] ${isDarkMode ? "border-zinc-500" : "border-zinc-400"}
+          rounded-[11px]
+          py-1.5
+          px-1.5
+          shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]`}
       >
         {children}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient
-              id="borderGradient"
-              x1="0%" // Start X position
-              y1="0%" // Start Y position
-              x2="100%" // End X position
-              y2="100%" // End Y position
-            >
-              {/* Adjust stopColor values for different colors and opacity */}
-              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.5" />
-              <stop offset="50%" stopColor="#ffffff" stopOpacity="0" />
-              <stop offset="100%" stopColor="#ffffff" stopOpacity="0.5" />
-            </linearGradient>
-          </defs>
-          <rect
-            x="1"
-            y="1"
-            width="calc(100% - 2px)"
-            height="calc(100% - 2px)"
-            rx="10" // Adjust for border radius (same value in rounded-[25px] above)
-            ry="10" // Adjust for border radius
-            fill="none"
-            stroke="url(#borderGradient)"
-            strokeWidth="1" // Adjust for border thickness
-          />
-        </svg>
       </div>
     </>
   );

@@ -86,20 +86,27 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
         <div
           ref={menuRef}
           id="apple-menu"
-          className="absolute left-2 top-7 z-50 w-[250px]"
+          className="absolute left-2 top-7 z-50 w-[300px]"
         >
           <HeaderAppleMenu>
             <div className="flex flex-col w-full">
               {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  className={`cursor-default rounded-md px-2 py-1 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-2 font-medium`}
-                  onClick={item.onClick}
-                >
-                  <div className="w-5.5 font-light flex items-center justify-center">
-                    {item.icon}
+                <div>
+                  <div
+                    key={index}
+                    className={`cursor-default rounded-md px-2.5 py-1.25 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-2 font-normal -tracking-[0.01em]`}
+                    onClick={item.onClick}
+                  >
+                    <div className="w-5.5 font-normal flex items-center justify-center">
+                      {item.icon}
+                    </div>
+                    <div>{item.label}</div>
                   </div>
-                  <div>{item.label}</div>
+                  {(index === 0 || index === 1) && (
+                    <hr
+                      className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-400"} opacity-60`}
+                    />
+                  )}
                 </div>
               ))}
             </div>
