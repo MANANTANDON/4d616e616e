@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { HeaderAppleMenu } from "../HeaderAppleMenu";
 import { useMediaQuery } from "@mui/material";
 
-export const AppleMenu = ({ setShowApp, onShutdown }) => {
+export const Finder = ({ setShowApp, onShutdown }) => {
   const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -44,27 +44,27 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
 
   const menuItems = [
     {
-      label: "About Manan",
-      icon: "􁟬",
-      onClick: handleModalOpen,
+      label: "About Finder",
     },
     {
-      label: "System Settings...",
-      icon: "􁓹",
+      label: "Settings...",
+      icon: "􀍟",
     },
     {
-      label: "Sleep",
-      icon: "􀜚",
+      label: "Empty Trash",
+      icon: "􀈑",
     },
     {
-      label: "Restart...",
-      icon: "􀯆",
-      onClick: () => setShowApp(false),
+      label: "Services",
     },
     {
-      label: "Shutdown...",
-      icon: "􀆨",
-      onClick: handleShutdown,
+      label: "Hide Finder",
+    },
+    {
+      label: "Hide Others",
+    },
+    {
+      label: "Show All",
     },
   ];
 
@@ -72,21 +72,21 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
     <>
       <div
         ref={buttonRef}
-        className="cursor-default text-[14px] text-zinc-50 hover:bg-zinc-900/10 py-1 px-3 rounded-[100px]"
+        className="cursor-default text-[14px] text-zinc-50 hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] font-semibold"
         onClick={() => setOpen((prev) => !prev)}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
       >
-        􀣺
+        Finder
       </div>
 
       {open && (
         <div
           ref={menuRef}
           id="apple-menu"
-          className="absolute left-2 top-7 z-50 w-[280px]"
+          className="absolute left-15 top-7 z-50 w-[202px]"
         >
           <HeaderAppleMenu>
             <div className="flex flex-col w-full">
@@ -97,12 +97,17 @@ export const AppleMenu = ({ setShowApp, onShutdown }) => {
                     className={`cursor-default rounded-md px-2.5 py-0.5 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-2 font-normal -tracking-[0.01em]`}
                     onClick={item.onClick}
                   >
-                    <div className="w-5.5 font-normal flex items-center justify-center">
-                      {item.icon}
-                    </div>
+                    {item.icon && (
+                      <div className="w-5.5 font-normal flex items-center justify-center">
+                        {item.icon}
+                      </div>
+                    )}
                     <div>{item.label}</div>
                   </div>
-                  {(index === 0 || index === 1) && (
+                  {(index === 0 ||
+                    index === 1 ||
+                    index === 2 ||
+                    index === 3) && (
                     <hr
                       className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-500"} opacity-40`}
                     />
