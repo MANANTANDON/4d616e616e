@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { HeaderAppleMenu } from "../HeaderAppleMenu";
 import { useMediaQuery } from "@mui/material";
 
-export const Finder = ({ setShowApp, onShutdown }) => {
+export const File = ({ setShowApp, onShutdown }) => {
   const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -44,27 +44,76 @@ export const Finder = ({ setShowApp, onShutdown }) => {
 
   const menuItems = [
     {
-      label: "About Finder",
+      label: "New Finder Window",
     },
     {
-      label: "Settings...",
-      icon: "􀍟",
+      label: "New Folder",
     },
     {
-      label: "Empty Trash",
+      label: "New Folder with Selection",
+    },
+    {
+      label: "New Smart Folder",
+    },
+    {
+      label: "New Tab",
+    },
+    {
+      label: "Open",
+    },
+    {
+      label: "Open With",
+    },
+    {
+      label: "Close Window",
+    },
+    {
+      label: "Get Info",
+    },
+    {
+      label: "Rename",
+    },
+    {
+      label: "Compress",
+    },
+    {
+      label: "Duplicate",
+    },
+    {
+      label: "Make Alias",
+    },
+    {
+      label: "Quick Look",
+    },
+    {
+      label: "Share",
+      icon: "􀈂",
+    },
+    {
+      label: "Manage Shared Files",
+      icon: "􀉫",
+    },
+    {
+      label: "Show Original",
+    },
+    {
+      label: "Add to Dock",
+    },
+    {
+      label: "Move To Trash",
       icon: "􀈑",
     },
     {
-      label: "Services",
+      label: "Eject",
+      icon: "􀆥",
     },
     {
-      label: "Hide Finder",
+      label: "Tags",
+      icon: "􀋡",
     },
     {
-      label: "Hide Others",
-    },
-    {
-      label: "Show All",
+      label: "Print",
+      icon: "􀎚",
     },
   ];
 
@@ -72,21 +121,21 @@ export const Finder = ({ setShowApp, onShutdown }) => {
     <>
       <div
         ref={buttonRef}
-        className="cursor-default text-[14px] text-zinc-50 hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] font-semibold"
+        className="cursor-default text-[13px] text-zinc-50 hover:bg-zinc-900/10 py-1 px-3 rounded-[100px] font-regular"
         onClick={() => setOpen((prev) => !prev)}
         id="apple-icon"
         aria-controls={open ? "apple-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
       >
-        Finder
+        File
       </div>
 
       {open && (
         <div
           ref={menuRef}
           id="apple-menu"
-          className="absolute left-15 top-7 z-50 w-[202px]"
+          className="absolute left-30 top-7 z-50 w-[285px]"
         >
           <HeaderAppleMenu>
             <div className="flex flex-col w-full">
@@ -104,10 +153,12 @@ export const Finder = ({ setShowApp, onShutdown }) => {
                     )}
                     <div>{item.label}</div>
                   </div>
-                  {(index === 0 ||
-                    index === 1 ||
-                    index === 2 ||
-                    index === 3) && (
+                  {(index === 7 ||
+                    index === 13 ||
+                    index === 15 ||
+                    index === 17 ||
+                    index === 19 ||
+                    index === 20) && (
                     <hr
                       className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-500"} opacity-40`}
                     />
