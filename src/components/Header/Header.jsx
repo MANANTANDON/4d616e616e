@@ -5,9 +5,10 @@ import { WifiMenu } from "./WifiMenu";
 import { HeaderTimeCard } from "../Misc/HeaderTimeCard";
 import { Finder } from "./Finder";
 import { File } from "./File";
+import { Edit } from "./Edit";
 
 export const Header = ({ setShowApp, onShutdown }) => {
-  const LeftMenu = ["Edit", "View", "Go", "Window", "Help"];
+  const LeftMenu = ["View", "Go", "Window", "Help"];
   return (
     <>
       <div className="flex items-center justify-between px-[15px]  bg-linear-to-b from-zinc-900/30 via-zinc-900-10 to-transparent ">
@@ -16,6 +17,7 @@ export const Header = ({ setShowApp, onShutdown }) => {
           <AppleMenu setShowApp={setShowApp} onShutdown={onShutdown} />
           <Finder setShowApp={setShowApp} onShutdown={onShutdown} />
           <File setShowApp={setShowApp} onShutdown={onShutdown} />
+          <Edit setShowApp={setShowApp} onShutdown={onShutdown} />
           {LeftMenu.map((item, key) => (
             <div
               className={`sfpro-text text-zinc-50 font-regular text-[13px] cursor-default hover:bg-zinc-900/10 py-1 px-3 rounded-[100px]`}

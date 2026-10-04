@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { HeaderAppleMenu } from "../HeaderAppleMenu";
 import { useMediaQuery } from "@mui/material";
 
-export const File = ({ setShowApp, onShutdown }) => {
+export const Edit = ({ setShowApp, onShutdown }) => {
   const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -34,76 +34,52 @@ export const File = ({ setShowApp, onShutdown }) => {
 
   const menuItems = [
     {
-      label: "New Finder Window",
+      label: "Undo",
+      shortcut: "􀆔 Z",
     },
     {
-      label: "New Folder",
+      label: "Redo",
+      shortcut: "􀆝 􀆔 Z",
     },
     {
-      label: "New Folder with Selection",
+      label: "Cut",
+      shortcut: "􀆔 X",
     },
     {
-      label: "New Smart Folder",
+      label: "Copy",
+      shortcut: "􀆔 C",
     },
     {
-      label: "New Tab",
+      label: "Paste",
+      shortcut: "􀆔 V",
     },
     {
-      label: "Open",
+      label: "Select All",
+      shortcut: "􀆔 A",
     },
     {
-      label: "Open With",
+      label: "Show Clipboard",
+      shortcut: "",
     },
     {
-      label: "Close Window",
+      label: "Search",
+      icon: "􀊫",
+      shortcut: "􀆔 F",
     },
     {
-      label: "Get Info",
+      label: "AutoFill",
+      icon: "􀈏",
+      shortcut: "",
     },
     {
-      label: "Rename",
+      label: "Start Dictation",
+      icon: "􀊰",
+      shortcut: "􀊰",
     },
     {
-      label: "Compress",
-    },
-    {
-      label: "Duplicate",
-    },
-    {
-      label: "Make Alias",
-    },
-    {
-      label: "Quick Look",
-    },
-    {
-      label: "Share",
-      icon: "􀈂",
-    },
-    {
-      label: "Manage Shared Files",
-      icon: "􀉫",
-    },
-    {
-      label: "Show Original",
-    },
-    {
-      label: "Add to Dock",
-    },
-    {
-      label: "Move To Trash",
-      icon: "􀈑",
-    },
-    {
-      label: "Eject",
-      icon: "􀆥",
-    },
-    {
-      label: "Tags",
-      icon: "􀋡",
-    },
-    {
-      label: "Print",
-      icon: "􀎚",
+      label: "Emoji & Symbols",
+      icon: "􀙌",
+      shortcut: "􀆪",
     },
   ];
 
@@ -118,14 +94,14 @@ export const File = ({ setShowApp, onShutdown }) => {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
       >
-        File
+        Edit
       </div>
 
       {open && (
         <div
           ref={menuRef}
           id="apple-menu"
-          className="absolute left-32 top-7 z-50 w-[285px]"
+          className="absolute left-43 top-7 z-50 w-[220px]"
         >
           <HeaderAppleMenu>
             <div className="flex flex-col w-full">
@@ -133,22 +109,25 @@ export const File = ({ setShowApp, onShutdown }) => {
                 <div>
                   <div
                     key={index}
-                    className={`cursor-default rounded-md px-2.5 py-0.5 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 flex gap-1 font-normal -tracking-[0.01em]`}
+                    className={`flex items-center justify-between cursor-default rounded-md px-2.5 py-0.5 text-[13px] ${isDarkMode ? "text-zinc-100" : "text-zinc-900"} hover:bg-[rgb(73,119,220)] hover:text-zinc-100 font-normal -tracking-[0.01em]`}
                     onClick={item.onClick}
                   >
-                    {item.icon && (
-                      <div className="w-5.5 font-normal flex items-center justify-center text-[12px]">
-                        {item.icon}
-                      </div>
-                    )}
-                    <div>{item.label}</div>
+                    <div className="flex gap-1">
+                      {item.icon && (
+                        <div className="w-5.5 font-normal flex items-center justify-center text-[12px]">
+                          {item.icon}
+                        </div>
+                      )}
+                      <div>{item.label}</div>
+                    </div>
+                    <div className="text-zinc-400/60 text-[12px] font-light">
+                      {item.shortcut}
+                    </div>
                   </div>
-                  {(index === 7 ||
-                    index === 13 ||
-                    index === 15 ||
-                    index === 17 ||
-                    index === 19 ||
-                    index === 20) && (
+                  {(index === 1 ||
+                    index === 5 ||
+                    index === 6 ||
+                    index === 7) && (
                     <hr
                       className={`my-1 mx-2.5 border-0.5 ${isDarkMode ? "border-zinc-500" : "border-zinc-500"} opacity-40`}
                     />
